@@ -96,7 +96,7 @@ c.setTitle('AI벙커하우스 1호 - 타코마 장수 리조트 콘셉트 브로
 c.setAuthor('AI Bunker House No.1 Concept Team')
 
 # Cover
-hero = ROOT / 'public/images/site/blue-hour-1692.webp'
+hero = ROOT / 'public/images/site/night-arrival-1692.webp'
 draw_image_cover(c, hero, 0, 0, W, H, .46)
 c.setFillColor(EMERALD); c.rect(42, H - 64, 60, 2, fill=1, stroke=0)
 text(c, 'AI BUNKER HOUSE NO.1', 42, H - 52, 8, EMERALD, 'MalgunBold')
@@ -141,7 +141,7 @@ tour_images = [
     (ROOT / 'public/images/site/garden-walk-1280.webp', '보행 진입 · AI 재구성', False),
     (ROOT / 'public/images/site/healing-terrace-1280.webp', '치유 테라스 · AI 재구성', False),
     (ROOT / 'public/images/site/aerial-masterplan-1280.webp', '경관 조감 · AI 재구성', False),
-    (ROOT / 'public/images/site/blue-hour-1280.webp', '야간 경관 · AI 재구성', False),
+    (ROOT / 'public/images/site/night-arrival-1280.webp', '야간 경관 · AI 재구성', False),
 ]
 for i,(path,label,is_actual) in enumerate(tour_images):
     col=i%3; row=i//3; x=42+col*255; y=H-290-row*195

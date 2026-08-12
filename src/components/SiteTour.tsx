@@ -60,7 +60,7 @@ const scenes = [
     nav: '야간 조명',
     badge: 'AI 경관 재구성 · 조명 콘셉트',
     description: '로비의 온기와 낮은 보행등을 중심으로 눈부심과 상향광을 줄인 야간 도착 장면입니다. 조도와 전력량은 조명설계에서 검증해야 합니다.',
-    base: '/images/site/blue-hour',
+    base: '/images/site/night-arrival',
     widths: [640, 1280, 1693],
     icon: MoonStar,
   },
