@@ -55,7 +55,7 @@ export default function App() {
       <Header language={language} onLanguage={() => setLanguage((v) => v === 'ko' ? 'en' : 'ko')} />
       <main id="main">
         <section className="hero" aria-labelledby="hero-title">
-          <ResponsiveImage className="hero-image" base="/images/site/blue-hour" widths={[640, 1280, 1693]} sizes="100vw" loading="eager" fetchPriority="high" alt="실제 타코마 장수리조트 본관 외관을 기준으로 재구성한 블루아워 야간 경관 콘셉트" />
+          <ResponsiveImage className="hero-image" base="/images/site/blue-hour" widths={[640, 1280, 1692]} sizes="100vw" loading="eager" fetchPriority="high" alt="실제 타코마 장수리조트 본관 외관을 기준으로 재구성한 블루아워 야간 경관 콘셉트" />
           <div className="hero-overlay" />
           <div className="hero-grid" aria-hidden="true" />
           <div className="hero-content">

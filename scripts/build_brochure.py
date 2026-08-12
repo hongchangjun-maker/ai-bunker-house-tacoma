@@ -96,7 +96,7 @@ c.setTitle('AI벙커하우스 1호 - 타코마 장수 리조트 콘셉트 브로
 c.setAuthor('AI Bunker House No.1 Concept Team')
 
 # Cover
-hero = ROOT / 'public/images/site/blue-hour-1693.webp'
+hero = ROOT / 'public/images/site/blue-hour-1692.webp'
 draw_image_cover(c, hero, 0, 0, W, H, .46)
 c.setFillColor(EMERALD); c.rect(42, H - 64, 60, 2, fill=1, stroke=0)
 text(c, 'AI BUNKER HOUSE NO.1', 42, H - 52, 8, EMERALD, 'MalgunBold')

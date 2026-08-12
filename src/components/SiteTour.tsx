@@ -21,7 +21,7 @@ const scenes = [
     badge: 'AI 경관 재구성 · 설계 전 콘셉트',
     description: '실제 전면 구도를 유지하고 장수 고원의 소나무, 초화, 돌과 빗물정원을 더한 시공 가능성 중심의 도착 경관 제안입니다.',
     base: '/images/site/landscape-arrival',
-    widths: [640, 1280, 1693],
+    widths: [640, 1280, 1692],
     icon: Trees,
   },
   {
