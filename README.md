@@ -18,6 +18,8 @@
 - Cloudflare Pages Function + D1 문의 저장 API
 - 스팸 허니팟, 본문 크기 제한, 입력 검증, 동일 이메일 속도 제한
 
+운영 로그는 Pages Functions 대시보드 또는 `wrangler pages deployment tail`로 확인합니다.
+
 ## 로컬 실행
 
 ```powershell

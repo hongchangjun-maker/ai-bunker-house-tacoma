@@ -8,9 +8,5 @@
     "binding": "DB",
     "database_name": "ai-bunker-tacoma-db",
     "database_id": "e0ac15b8-4f72-44b5-9b9c-979ff18fef49"
-  }],
-  "observability": {
-    "enabled": true,
-    "head_sampling_rate": 1
-  }
+  }]
 }
