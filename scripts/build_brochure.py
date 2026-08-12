@@ -96,7 +96,7 @@ c.setTitle('AI벙커하우스 1호 - 타코마 장수 리조트 콘셉트 브로
 c.setAuthor('AI Bunker House No.1 Concept Team')
 
 # Cover
-hero = ROOT / 'public/images/hero/tacoma-gateway-dusk.webp'
+hero = ROOT / 'public/images/site/blue-hour-1693.webp'
 draw_image_cover(c, hero, 0, 0, W, H, .46)
 c.setFillColor(EMERALD); c.rect(42, H - 64, 60, 2, fill=1, stroke=0)
 text(c, 'AI BUNKER HOUSE NO.1', 42, H - 52, 8, EMERALD, 'MalgunBold')
@@ -131,8 +131,28 @@ text(c, 'CONCEPT STATUS', 568, H - 112, 6.5, HexColor('#8A6423'), 'MalgunBold')
 wrap(c, '공식 사업·판매·예약 페이지가 아닙니다. 운영 상태, 소유·권리, 인허가, 안전성, 수용·자립 성능은 확인·승인되지 않았습니다.', 568, H - 134, 205, 7.5, 12, HexColor('#6C5838'))
 footer(c); c.showPage()
 
+# Actual site and landscape tour
+c.setFillColor(NAVY); c.rect(0,0,W,H,fill=1,stroke=0); header(c,3,'Actual site & landscape tour')
+text(c, '실제 본관에서 출발한 경관 투어', 42, H - 82, 23, HexColor('#FFFFFF'), 'MalgunBold')
+text(c, '첫 장면은 제공된 현장 사진 · 나머지는 실제 본관 외관을 기준으로 생성한 AI 경관 재구성', 42, H - 105, 7.5, GOLD, 'MalgunBold')
+tour_images = [
+    (ROOT / 'docs/reference/tacoma-jangsu-site-photo-2026-08-12.jpeg', '실제 현장 전경 · 2026.08.12', True),
+    (ROOT / 'public/images/site/landscape-arrival-1280.webp', '도착 정원 · AI 재구성', False),
+    (ROOT / 'public/images/site/garden-walk-1280.webp', '보행 진입 · AI 재구성', False),
+    (ROOT / 'public/images/site/healing-terrace-1280.webp', '치유 테라스 · AI 재구성', False),
+    (ROOT / 'public/images/site/aerial-masterplan-1280.webp', '경관 조감 · AI 재구성', False),
+    (ROOT / 'public/images/site/blue-hour-1280.webp', '야간 경관 · AI 재구성', False),
+]
+for i,(path,label,is_actual) in enumerate(tour_images):
+    col=i%3; row=i//3; x=42+col*255; y=H-290-row*195
+    draw_image_cover(c, path, x,y,235,154,.06)
+    c.setFillColor(NAVY); c.setFillAlpha(.88); c.rect(x,y,235,26,fill=1,stroke=0); c.setFillAlpha(1)
+    text(c,label,x+9,y+9,6.7,GOLD if is_actual else HexColor('#FFFFFF'),'MalgunBold')
+text(c,'AI 장면은 현황·측량·설계도·시공 결과를 의미하지 않으며 위치·식재·조명은 전문 검토 전 가정입니다.',42,23,6.3,MUTED,'MalgunBold')
+c.showPage()
+
 # Location
-c.setFillColor(NAVY); c.rect(0,0,W,H,fill=1,stroke=0); header(c,3,'Location & evidence')
+c.setFillColor(NAVY); c.rect(0,0,W,H,fill=1,stroke=0); header(c,4,'Location & evidence')
 text(c, '주소는 실제로, 판단은 근거와 조건으로.', 42, H - 92, 24, HexColor('#FFFFFF'), 'MalgunBold')
 text(c, '전북특별자치도 장수군 계남면 장수로 2662-11', 42, H - 120, 9, EMERALD, 'MalgunBold')
 facts = [
@@ -159,18 +179,18 @@ for i,s in enumerate(sources): text(c, s, 465, 96-i*15, 6.3, MUTED)
 footer(c); c.showPage()
 
 # Cutaway
-c.setFillColor(NAVY); c.rect(0,0,W,H,fill=1,stroke=0); header(c,4,'Architecture')
-cutaway = ROOT / 'public/images/renders/six-level-cutaway.webp'
+c.setFillColor(NAVY); c.rect(0,0,W,H,fill=1,stroke=0); header(c,5,'Architecture')
+cutaway = ROOT / 'public/images/renders/actual-site-cutaway-1672.webp'
 draw_image_cover(c, cutaway, 0, 0, W, H - 36, .08)
 c.setFillColor(NAVY); c.setFillAlpha(.88); c.rect(30,35,355,84,fill=1,stroke=0); c.setFillAlpha(1)
 text(c, 'SURFACE × SUBTERRANEAN', 48, 96, 6.5, EMERALD, 'MalgunBold')
 text(c, '본관 내부에서 6개 지하층까지', 48, 72, 17, HexColor('#FFFFFF'), 'MalgunBold')
-wrap(c, 'AI로 제작한 비공식 개념 절개 조감. 현재 현장 모습·확정 설계·시공 가능성을 나타내지 않습니다.', 48, 52, 315, 6.5, 10, HexColor('#A6B4BD'))
+wrap(c, '실제 본관 외관을 참조한 비공식 AI 개념 절개 조감. 지하 시설의 현황·확정 설계·시공 가능성을 나타내지 않습니다.', 48, 52, 315, 6.5, 10, HexColor('#A6B4BD'))
 text(c, 'NOT FOR CONSTRUCTION', W-155, 45, 7, GOLD, 'MalgunBold')
 c.showPage()
 
 # Floors
-c.setFillColor(PAPER); c.rect(0,0,W,H,fill=1,stroke=0); header(c,5,'Floor program')
+c.setFillColor(PAPER); c.rect(0,0,W,H,fill=1,stroke=0); header(c,6,'Floor program')
 text(c, '6개 층, 하나의 생활 생태계.', 42, H - 88, 25, INK, 'MalgunBold')
 text(c, '총 프로그램 면적 가정 약 13,000㎡ · 실측·법규·설비 조건에 따라 변경', 42, H - 112, 8, HexColor('#65736C'))
 floors = [
@@ -193,7 +213,7 @@ text(c, '면적·수용인원·피난·설비용량은 프로그램 검토용 �
 footer(c); c.showPage()
 
 # Systems
-c.setFillColor(NAVY); c.rect(0,0,W,H,fill=1,stroke=0); header(c,6,'Five-year operations')
+c.setFillColor(NAVY); c.rect(0,0,W,H,fill=1,stroke=0); header(c,7,'Five-year operations')
 text(c, '5년은 숫자가 아니라 운영 규율입니다.', 42, H-88, 24, HexColor('#FFFFFF'), 'MalgunBold')
 wrap(c, '저장·재배·외부 보급·예비 설비를 조합하고, 자원 재고와 품질을 사람이 검증하는 운영 모델입니다. 완전 자립을 보장하지 않습니다.',42,H-116,560,8.5,14,MUTED)
 systems=[('주거','144석'),('식량','다중 조달'),('물','다중 수원'),('공기','구역 분리'),('에너지','N+1 개념'),('의료','1차 대응'),('자원순환','분리 처리'),('AI 운영','사람이 최종 결정')]
@@ -209,7 +229,7 @@ text(c,'권한 최소화  ·  수동 우회  ·  감사 기록  ·  오프라인
 footer(c); c.showPage()
 
 # Visuals
-c.setFillColor(PAPER); c.rect(0,0,W,H,fill=1,stroke=0); header(c,7,'Interior concepts')
+c.setFillColor(PAPER); c.rect(0,0,W,H,fill=1,stroke=0); header(c,8,'Interior concepts')
 imgs=[
     ('community-lounge.webp','B2 커먼즈'),('residential-suite.webp','B3 리빙'),('medical-wellbeing.webp','B4 웰빙·의료'),
     ('smart-farm.webp','B5 스마트팜'),('ai-operations.webp','B6 운영센터'),('resort-connection.webp','본관 연결 게이트')]
@@ -222,7 +242,7 @@ text(c,'모든 이미지는 독자 AI 재구성물이며 현재 시설·확정 �
 c.showPage()
 
 # Next steps
-c.setFillColor(NAVY); c.rect(0,0,W,H,fill=1,stroke=0); header(c,8,'Next steps')
+c.setFillColor(NAVY); c.rect(0,0,W,H,fill=1,stroke=0); header(c,9,'Next steps')
 text(c,'다음 단계는 현장 확인에서 시작합니다.',42,H-92,25,HexColor('#FFFFFF'),'MalgunBold')
 steps=[('01','권리·현황','소유·경계·영업·용도·시설 상태 원문 확인'),('02','기술 실사','구조·지질·수문·사면·배수·환경 기준선'),('03','사업 게이트','범위·CAPEX/OPEX·단계·운영주체·중단 조건'),('04','설계 착수','건축·구조·MEP·소방·의료·식량 전문팀 통합')]
 for i,(n,title,body) in enumerate(steps):

@@ -12,7 +12,7 @@
     "cf:types": "wrangler types",
     "cf:dev": "wrangler pages dev dist --d1 DB=ai-bunker-tacoma-db",
     "cf:deploy": "wrangler pages deploy dist --project-name ai-bunker-house-tacoma",
-    "cf:dry": "wrangler pages deploy dist --project-name ai-bunker-house-tacoma --dry-run"
+    "cf:dry": "wrangler pages functions build --outdir .wrangler/functions-build"
   },
   "dependencies": {
     "framer-motion": "13.1.0",

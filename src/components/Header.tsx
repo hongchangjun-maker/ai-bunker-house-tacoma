@@ -5,6 +5,7 @@ type Props = { language: 'ko' | 'en'; onLanguage: () => void };
 
 const nav = [
   ['overview', '프로젝트', 'Project'],
+  ['site-tour', '현장 투어', 'Site tour'],
   ['location', '입지', 'Location'],
   ['architecture', '구조', 'Architecture'],
   ['floors', '층별 구성', 'Floors'],

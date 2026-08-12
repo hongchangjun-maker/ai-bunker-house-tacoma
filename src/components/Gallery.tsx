@@ -33,7 +33,7 @@ export function Gallery() {
           <button type="button" className="lightbox-close" onClick={() => setSelected(null)} aria-label="확대 보기 닫기"><X /></button>
           <figure onClick={(event) => event.stopPropagation()}>
             <img src={gallery[selected].src} alt={gallery[selected].alt} />
-            <figcaption><span>{gallery[selected].tag}</span>{gallery[selected].title}<small>AI로 제작한 비공식 건축 콘셉트 이미지입니다.</small></figcaption>
+            <figcaption><span>{gallery[selected].tag}</span>{gallery[selected].title}<small>실제 본관을 참조했더라도 현황·설계도·시공 결과가 아닌 비공식 AI 콘셉트 이미지입니다.</small></figcaption>
           </figure>
         </div>
       )}

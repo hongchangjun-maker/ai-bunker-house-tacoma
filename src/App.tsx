@@ -6,7 +6,9 @@ import { Gallery } from './components/Gallery';
 import { Header } from './components/Header';
 import { MapEvidence } from './components/MapEvidence';
 import { Reveal } from './components/Reveal';
+import { ResponsiveImage } from './components/ResponsiveImage';
 import { SectionDiagram } from './components/SectionDiagram';
+import { SiteTour } from './components/SiteTour';
 import { SystemGrid } from './components/SystemGrid';
 
 type Lang = 'ko' | 'en';
@@ -53,7 +55,7 @@ export default function App() {
       <Header language={language} onLanguage={() => setLanguage((v) => v === 'ko' ? 'en' : 'ko')} />
       <main id="main">
         <section className="hero" aria-labelledby="hero-title">
-          <img className="hero-image" src="/images/hero/tacoma-gateway-dusk.webp" alt="장수 산지에 자리한 독자 설계 리조트 게이트웨이의 해질녘 AI 건축 조감도" />
+          <ResponsiveImage className="hero-image" base="/images/site/blue-hour" widths={[640, 1280, 1693]} sizes="100vw" loading="eager" fetchPriority="high" alt="실제 타코마 장수리조트 본관 외관을 기준으로 재구성한 블루아워 야간 경관 콘셉트" />
           <div className="hero-overlay" />
           <div className="hero-grid" aria-hidden="true" />
           <div className="hero-content">
@@ -93,21 +95,30 @@ export default function App() {
           </div>
         </section>
 
-        <section id="location" className="section section-location">
+        <section id="site-tour" className="section section-site-tour">
           <div className="section-number">02</div>
+          <div className="section-heading two-col light">
+            <Reveal><div><p className="eyebrow">ACTUAL SITE × LANDSCAPE TOUR</p><h2>실제 본관에서 출발해,<br /><em>가능한 경관을 걷습니다.</em></h2></div></Reveal>
+            <Reveal delay={0.08}><p className="lead">제공된 실제 전경을 첫 장면에 그대로 싣고, 그 건물의 외관 정체성을 유지한 도착정원·보행로·테라스·조감·야간 장면을 이어 붙였습니다. 각 장면의 실제/AI 여부와 가정 범위를 이미지 위에 표시했습니다.</p></Reveal>
+          </div>
+          <SiteTour />
+        </section>
+
+        <section id="location" className="section section-location">
+          <div className="section-number">03</div>
           <Reveal><div className="section-heading"><p className="eyebrow">LOCATION & EVIDENCE</p><h2>{t.locationTitle}</h2><p className="lead narrow">주소, 고원 지형, 도로 접근은 공개 자료로 확인했습니다. 개별 부지의 고도·경계·지반·지하수·배수·소유 관계는 현장과 원문 서류로 다시 검증해야 합니다.</p></div></Reveal>
           <div id="evidence"><MapEvidence /></div>
         </section>
 
         <section id="architecture" className="section section-architecture">
-          <div className="section-number">03</div>
+          <div className="section-number">04</div>
           <div className="section-heading two-col light">
             <Reveal><div><p className="eyebrow">SURFACE × SUBTERRANEAN</p><h2>{t.architectureTitle}</h2></div></Reveal>
             <Reveal delay={0.08}><p className="lead">본관 내부의 일상적 공간에서 보안·위생 전환 통로를 거쳐 지하 주거 코어로 이어지는 구성입니다. 비상출구·환기구·설비샤프트는 독립성과 점검성을 우선하며, 실제 위치는 법규·지질·피난해석으로 확정합니다.</p></Reveal>
           </div>
           <Reveal><div className="cutaway-feature">
-            <img src="/images/renders/six-level-cutaway.webp" alt="지상 리조트와 연결통로, 여섯 개 지하층을 함께 보여주는 AI 개념 절개 조감도" loading="lazy" />
-            <div className="image-legend"><span>AI CONCEPT VISUAL · NOT FOR CONSTRUCTION</span><strong>지상에서 지하까지, 하나의 생활 동선</strong></div>
+            <ResponsiveImage base="/images/renders/actual-site-cutaway" widths={[640, 1280, 1672]} sizes="100vw" alt="실제 타코마 장수리조트 본관 외관과 가상의 여섯 개 지하층을 합성한 비공식 개념 절개 조감도" />
+            <div className="image-legend"><span>ACTUAL FAÇADE REFERENCE × AI CONCEPT · NOT FOR CONSTRUCTION</span><strong>실제 본관의 장소성에서 시작한 지상-지하 연결 가정</strong></div>
           </div></Reveal>
           <Reveal><SectionDiagram /></Reveal>
           <div className="diagram-note"><b>NOT FOR CONSTRUCTION</b><p>단면은 공간 관계를 설명하는 개념도입니다. 굴착 깊이, 구조 형식, 피난거리, 방재구획, 환기·설비 용량은 전문 설계 전 미확정입니다.</p></div>
@@ -122,13 +133,13 @@ export default function App() {
         </section>
 
         <section id="floors" className="section section-floors">
-          <div className="section-number">04</div>
+          <div className="section-number">05</div>
           <Reveal><div className="section-heading"><p className="eyebrow">INTERACTIVE FLOOR PROGRAM</p><h2>{t.floorsTitle}</h2><p className="lead narrow">마우스를 올리거나 탭해 각 층의 역할과 인접 동선을 살펴보세요. 총 프로그램 면적 가정은 약 13,000㎡이며, 실측·법정 면적·설비 요구에 따라 크게 달라질 수 있습니다.</p></div></Reveal>
           <Reveal><FloorExplorer language={language} /></Reveal>
         </section>
 
         <section id="systems" className="section section-systems">
-          <div className="section-number">05</div>
+          <div className="section-number">06</div>
           <div className="section-heading two-col light">
             <Reveal><div><p className="eyebrow">144 PEOPLE × 5 YEARS</p><h2>{t.systemsTitle}</h2></div></Reveal>
             <Reveal delay={0.08}><p className="lead">완전 자립을 단정하지 않습니다. 저장·재배·외부 보급·예비 설비를 조합하고, 자원 재고와 품질을 사람이 검증하는 운영 모델을 제안합니다.</p></Reveal>
@@ -142,7 +153,7 @@ export default function App() {
         </section>
 
         <section className="section section-proposal">
-          <div className="section-number">06</div>
+          <div className="section-number">07</div>
           <Reveal><div className="section-heading"><p className="eyebrow">REGENERATION PROPOSAL</p><h2>{t.proposalTitle}</h2></div></Reveal>
           <div className="proposal-grid">
             <Reveal><article className="proposal-lead"><span>01</span><h3>기존 자산의 재평가</h3><p>방치 또는 저활용 가능성이 제기된 시설을 철거·신축의 이분법이 아니라 구조·운영·지역 연계 관점에서 다시 봅니다.</p><a href="#contact">현장 실사 협의<ArrowRight /></a></article></Reveal>

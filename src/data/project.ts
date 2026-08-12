@@ -32,7 +32,7 @@ export const systems = [
 ];
 
 export const gallery = [
-  { src: '/images/renders/six-level-cutaway.webp', title: '지상-지하 통합 절개 조감', tag: 'CONCEPT VISUAL', alt: '산지 리조트 옆에 정확히 여섯 개 지하층과 연결통로가 보이는 개념 절개 조감도' },
+  { src: '/images/renders/actual-site-cutaway-1280.webp', title: '실제 본관 기반 지상-지하 절개 조감', tag: 'ACTUAL REFERENCE × AI', alt: '실제 타코마 장수리조트 본관 외관과 정확히 여섯 개 지하층을 합성한 비공식 개념 절개 조감도' },
   { src: '/images/renders/resort-connection.webp', title: '본관 내부 연결 게이트', tag: 'CONCEPT VISUAL', alt: '고급 리조트 로비에서 지하 연결통로로 이어지는 접근 가능한 진입 공간' },
   { src: '/images/interiors/community-lounge.webp', title: 'B2 커뮤니티 커먼즈', tag: 'AI RECONSTRUCTION', alt: '식당과 라운지, 실내 정원이 결합된 장기 거주 공동생활 공간' },
   { src: '/images/interiors/residential-suite.webp', title: 'B3 리빙 클러스터', tag: 'AI RECONSTRUCTION', alt: '가족실과 개인실, 세탁 공간이 연결된 따뜻한 주거 구역' },
