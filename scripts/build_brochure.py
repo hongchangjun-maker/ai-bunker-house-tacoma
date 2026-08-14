@@ -101,9 +101,9 @@ draw_image_cover(c, hero, 0, 0, W, H, .46)
 c.setFillColor(EMERALD); c.rect(42, H - 64, 60, 2, fill=1, stroke=0)
 text(c, 'AI BUNKER HOUSE NO.1', 42, H - 52, 8, EMERALD, 'MalgunBold')
 text(c, '장수의 산자락 아래,', 42, H - 145, 24, HexColor('#FFFFFF'), 'Malgun')
-text(c, '144명이 5년을 살아가는', 42, H - 180, 29, HexColor('#FFFFFF'), 'MalgunBold')
+text(c, '144명·5년을 기준으로 설계한', 42, H - 180, 29, HexColor('#FFFFFF'), 'MalgunBold')
 text(c, '방어형 생활기지', 42, H - 215, 29, EMERALD, 'MalgunBold')
-wrap(c, '실제 본관을 바탕으로 태양광·보안 로봇·지하 6개 생활층을 결합해 본 비공식 AI 재구성입니다.', 42, H - 245, 430, 9, 15, HexColor('#CBD4DA'))
+wrap(c, '실제 본관 사진과 144명·5년 운영 가정을 바탕으로 지하 6개 층의 공간 프로그램을 통합한 비공식 AI 개념 제안입니다.', 42, H - 245, 430, 9, 15, HexColor('#CBD4DA'))
 for i, (n, label) in enumerate([('144','계획 인원'),('5년','운영 목표'),('B6','지하 공간'),('사람','최종 판단')]):
     x = 42 + i * 105
     text(c, n, x, 58, 19, HexColor('#FFFFFF'), 'MalgunBold')
@@ -184,12 +184,12 @@ footer(c); c.showPage()
 
 # Cutaway
 c.setFillColor(NAVY); c.rect(0,0,W,H,fill=1,stroke=0); header(c,5,'Architecture')
-cutaway = ROOT / 'public/images/renders/defense-cutaway-1672.webp'
+cutaway = ROOT / 'public/images/renders/program-cutaway-v2-1672.webp'
 draw_image_cover(c, cutaway, 0, 0, W, H - 36, .08)
 c.setFillColor(NAVY); c.setFillAlpha(.88); c.rect(30,35,355,84,fill=1,stroke=0); c.setFillAlpha(1)
 text(c, 'SURFACE × SUBTERRANEAN', 48, 96, 6.5, EMERALD, 'MalgunBold')
-text(c, '다층 방어선에서 6개 지하층까지', 48, 72, 17, HexColor('#FFFFFF'), 'MalgunBold')
-wrap(c, '태양광·풍력·CCTV·철조망·로봇 순찰과 실제 본관 외관을 결합한 비공식 AI 개념 절개 조감입니다.', 48, 52, 315, 6.5, 10, HexColor('#A6B4BD'))
+text(c, '하나의 면적표로 맞춘 지하 6개 층', 48, 72, 17, HexColor('#FFFFFF'), 'MalgunBold')
+wrap(c, 'B1 출입·물류부터 B6 핵심 설비까지 층별 평면도와 같은 프로그램을 사용한 비공식 AI 개념 단면입니다.', 48, 52, 315, 6.5, 10, HexColor('#A6B4BD'))
 text(c, 'NOT FOR CONSTRUCTION', W-155, 45, 7, GOLD, 'MalgunBold')
 c.showPage()
 
@@ -200,7 +200,7 @@ text(c, '총 프로그램 면적 가정 약 13,000㎡ · 실측·법규·설비 
 floors = [
     ('B1','출입·물류층','1,650㎡','출입 확인 · 위생 전환 · 물류 · 안내·관리',GOLD),
     ('B2','식당·커뮤니티층','2,250㎡','공용식당 · 열린 주방 · 라운지 · 교육·회의',EMERALD),
-    ('B3','생활·숙소층','2,850㎡','가족실 · 개인실 · 무장애 객실 · 세탁·수납',HexColor('#7EB8FF')),
+    ('B3','생활·숙소층','2,850㎡','4인 가족실 24실(96명) · 2인실 24실(48명)',HexColor('#7EB8FF')),
     ('B4','건강관리층','1,800㎡','건강관리 · 상담 · 운동·재활 · 회복실',HexColor('#C7A7FF')),
     ('B5','식량·물 관리층','2,400㎡','실내 재배 · 종자 · 저온창고 · 정수·재이용',HexColor('#7ED27B')),
     ('B6','에너지·운영층','2,050㎡','통합 관제 · 전력·배터리 · 공조 · 비상운영',HexColor('#FF896F')),
@@ -212,15 +212,15 @@ for i,(code,name,area,func,color) in enumerate(floors):
     text(c,code,60,y-12,13,color,'MalgunBold'); text(c,name,112,y-10,11,INK,'MalgunBold')
     text(c,area,270,y-10,9,HexColor('#53635B'),'MalgunBold'); text(c,func,360,y-10,8,HexColor('#5F6E66'))
 c.setFillColor(HexColor('#F4E8CE')); c.rect(42,38,W-84,38,fill=1,stroke=0)
-text(c, 'CONCEPT ASSUMPTION', 56, 54, 6.5, HexColor('#876221'), 'MalgunBold')
-text(c, '면적·수용인원·피난·설비용량은 프로그램 검토용 가정이며 전문 설계값이 아닙니다.', 170, 54, 7, HexColor('#6D5935'))
+text(c, 'PROGRAM CHECK', 56, 54, 6.5, HexColor('#876221'), 'MalgunBold')
+text(c, '6개 층 합계 13,000㎡ · B3 정확히 144침상 · 전 층 양 끝 피난계단과 중앙 서비스 코어 공통', 150, 54, 7, HexColor('#6D5935'))
 footer(c); c.showPage()
 
 # Systems
 c.setFillColor(NAVY); c.rect(0,0,W,H,fill=1,stroke=0); header(c,7,'Five-year operations')
 text(c, '144명이 오래 머물려면 무엇이 필요할까요?', 42, H-88, 24, HexColor('#FFFFFF'), 'MalgunBold')
 wrap(c, '저장·재배·외부 보급·예비 설비를 조합하고, 자원 재고와 품질을 사람이 검증하는 운영 모델입니다. 완전 자립을 보장하지 않습니다.',42,H-116,560,8.5,14,MUTED)
-systems=[('주거','144석'),('식량','다중 조달'),('물','다중 수원'),('공기','구역 분리'),('에너지','N+1 개념'),('의료','1차 대응'),('자원순환','분리 처리'),('AI 운영','사람이 최종 결정')]
+systems=[('주거','144침상'),('식량','5.78억 kcal 수요'),('물','394만 L 최소수요'),('공기','구역 분리'),('에너지','부하 산정 전'),('의료','1차 대응'),('자원순환','분리 처리'),('AI 운영','사람이 최종 결정')]
 for i,(title,value) in enumerate(systems):
     x=42+(i%4)*190; y=H-205-(i//4)*105
     c.setStrokeColor(LINE); c.rect(x,y,174,86,fill=0,stroke=1)
@@ -232,17 +232,17 @@ text(c,'AI는 감지·예측·제안을 담당하고, 사람은 승인·기록·
 text(c,'권한 최소화  ·  수동 우회  ·  감사 기록  ·  오프라인 절차',58,58,7,MUTED)
 footer(c); c.showPage()
 
-# Visuals
-c.setFillColor(PAPER); c.rect(0,0,W,H,fill=1,stroke=0); header(c,8,'Interior concepts')
+# 3D floor plans
+c.setFillColor(PAPER); c.rect(0,0,W,H,fill=1,stroke=0); header(c,8,'3D floor plans')
 imgs=[
-    ('community-commons-v1-1280.webp','B2 함께 식사하고 쉬는 공간'),('residential-suite.webp','B3 가족과 개인을 위한 숙소'),('medical-wellbeing.webp','B4 건강관리와 회복 공간'),
-    ('smart-farm.webp','B5 식량 생산과 물 관리'),('defense-operations-1280.webp','B6 에너지·보안 관제실'),('resort-connection.webp','본관에서 지하로 내려가는 길')]
+    ('b1-plan-v1-1280.webp','B1 출입·물류 · 1,650㎡'),('b2-plan-v1-1280.webp','B2 식당·커뮤니티 · 2,250㎡'),('b3-plan-v1-1280.webp','B3 144침상 숙소 · 2,850㎡'),
+    ('b4-plan-v1-1280.webp','B4 건강관리 · 1,800㎡'),('b5-plan-v1-1280.webp','B5 식량·물 · 2,400㎡'),('b6-plan-v1-1280.webp','B6 에너지·운영 · 2,050㎡')]
 for i,(name,label) in enumerate(imgs):
     col=i%3; row=i//3; x=42+col*255; y=H-230-row*205
-    draw_image_cover(c, ROOT / ('public/images/interiors/'+name) if 'connection' not in name else ROOT / ('public/images/renders/'+name), x,y,235,165,.1)
+    draw_image_cover(c, ROOT / ('public/images/floors/'+name), x,y,235,165,.04)
     c.setFillColor(NAVY); c.setFillAlpha(.84); c.rect(x,y,235,28,fill=1,stroke=0); c.setFillAlpha(1)
     text(c,label,x+10,y+10,7,HexColor('#FFFFFF'),'MalgunBold')
-text(c,'모든 이미지는 독자 AI 재구성물이며 현재 시설·확정 설계·성능을 나타내지 않습니다.',42,26,6.5,HexColor('#6D7A73'))
+text(c,'층별 면적표와 같은 프로그램을 사용한 AI 3D 시각화입니다. 인허가·시공 도면이 아니며 실제 치수는 전문 설계가 필요합니다.',42,26,6.5,HexColor('#6D7A73'))
 c.showPage()
 
 # Next steps

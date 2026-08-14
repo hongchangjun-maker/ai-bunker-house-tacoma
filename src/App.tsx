@@ -10,21 +10,22 @@ import { ResponsiveImage } from './components/ResponsiveImage';
 import { SectionDiagram } from './components/SectionDiagram';
 import { SiteTour } from './components/SiteTour';
 import { SystemGrid } from './components/SystemGrid';
+import { planningBaseline } from './data/project';
 
 type Lang = 'ko' | 'en';
 
 const copy = {
   ko: {
     kicker: 'AI BUNKER HOUSE NO.1 · TACOMA JANGSU',
-    hero: <>장수의 산자락 아래,<br /><em>144명이 5년을 살아가는</em><br />방어형 생활기지를 상상했습니다.</>,
-    heroSub: '실제 타코마 장수리조트 본관을 바탕으로 태양광·보안 로봇·지하 6개 생활층을 결합한 비공식 AI 재구성입니다. 확정 설계가 아니라, 이 장소를 어떻게 다시 쓸 수 있는지 보여주는 시각 제안입니다.',
+    hero: <>장수의 산자락 아래,<br /><em>144명·5년을 기준으로 설계한</em><br />방어형 생활기지를 상상했습니다.</>,
+    heroSub: '실제 타코마 장수리조트 본관 사진을 바탕으로, 144명·5년 운영 가정과 지하 6개 층의 통합 공간 프로그램을 시각화한 비공식 AI 개념 제안입니다.',
     primary: '외관부터 둘러보기', secondary: '지하 6개 층 보기',
     concept: '먼저 알려드립니다', conceptText: '주소와 사용자가 제공한 본관 사진은 실제 자료입니다. 화면의 방어 시설·지하 공간·로봇·운영 수치는 모두 검토용 AI 콘셉트이며, 시공·운영이 확정된 내용이 아닙니다.',
     overviewTitle: <>처음 방문하셨다면,<br /><em>사람이 머무는 하루</em>부터 상상해 보세요.</>,
     overviewBody: '이 제안은 벙커의 두꺼운 벽보다 그 안에서 이어질 식사, 휴식, 건강관리와 일상에 먼저 주목합니다. 기존 본관은 방문·숙박·교육의 지상 거점으로 활용하고, 지하 공간은 충분한 조사와 승인을 거쳐 필요한 기능부터 단계적으로 검토합니다.',
     locationTitle: <>어디에 있고,<br /><em>무엇이 확인됐는지</em> 먼저 보여드립니다.</>,
-    architectureTitle: <>본관에서 지하 6개 층까지,<br /><em>이동 흐름</em>을 따라가 보세요.</>,
-    floorsTitle: <>버튼을 눌러, 지하 6개 층을 한 층씩 살펴보세요.</>,
+    architectureTitle: <>하나의 면적표로 맞춘<br /><em>지하 6개 층</em>을 확인하세요.</>,
+    floorsTitle: <>각 층을 눌러, 고화질 3D 평면도를 살펴보세요.</>,
     systemsTitle: <>144명이 오래 머물려면<br /><em>무엇이 필요할까요?</em></>,
     proposalTitle: <>아이디어를 실제 사업으로 옮기려면<br /><em>이 순서</em>가 필요합니다.</>,
     contactTitle: <>궁금한 점과<br /><em>협업 제안</em>을 남겨 주세요.</>,
@@ -139,11 +140,18 @@ export default function App() {
             <Reveal delay={0.08}><p className="lead">지상 본관에서 출입·위생 전환 구역을 지나 식사, 주거, 건강관리, 식량·물, 에너지 운영층으로 내려갑니다. 화면의 단면은 관계를 이해하기 위한 개념도이며 실제 깊이와 구조는 전문 조사 후 정해야 합니다.</p></Reveal>
           </div>
           <Reveal><div className="cutaway-feature">
-            <ResponsiveImage base="/images/renders/defense-cutaway" widths={[640, 1280, 1672]} sizes="100vw" alt="밝게 표현한 실제 본관 기반 태양광·풍력·CCTV·철조망 방어선과 가상의 여섯 개 지하층 비공식 절개 조감도" />
-            <div className="image-legend"><span>AI 재구성 · 시공 도면 아님</span><strong>지상 방어·에너지 설비와 지하 6개 생활층을 한 장면으로 이해합니다.</strong></div>
+            <ResponsiveImage base="/images/renders/program-cutaway-v2" widths={[640, 1280, 1672]} sizes="100vw" alt="실제 본관 사진을 참고하고 동일한 통합 면적표에 맞춘 지하 6개 층의 밝은 AI 개념 단면" />
+            <div className="image-legend"><span>AI 개념 단면 · 인허가·시공 도면 아님</span><strong>B1 출입·물류부터 B6 핵심 설비까지, 층별 평면도와 같은 프로그램으로 구성했습니다.</strong></div>
           </div></Reveal>
+          <Reveal><div className="survival-baseline" aria-label="144명 5년 계획 기준">
+            <article><small>정확한 침상 구성</small><strong>{planningBaseline.beds.total}침상</strong><p>4인 가족실 24실 96명 + 2인실 24실 48명</p></article>
+            <article><small>6개 층 연면적</small><strong>{planningBaseline.grossArea.toLocaleString()}㎡</strong><p>B1~B6 층별 구역 면적 합계와 일치</p></article>
+            <article><small>5년 누적 최소 물 수요</small><strong>394만 L</strong><p>15 L/인·일 기준. 90㎥ 비상 버퍼와 처리·재보급 병행</p></article>
+            <article><small>5년 계획 열량</small><strong>5.78억 kcal</strong><p>2,200 kcal/인·일 기준. 손실·안전재고는 별도 검토</p></article>
+          </div></Reveal>
+          <p className="baseline-sources">계획 기준 참고: <a href="https://www.who.int/teams/environment-climate-change-and-health/water-sanitation-and-health/environmental-health-in-emergencies/humanitarian-emergencies" target="_blank" rel="noreferrer">WHO 비상 물 기준</a><span>·</span><a href="https://www.fema.gov/sites/default/files/2020-07/safe-rooms-design-criteria_recovery-advisory.pdf" target="_blank" rel="noreferrer">FEMA 장기 수용 고려사항</a><span>·</span><a href="https://www.ars.usda.gov/ARSUserFiles/np305/NP%20305%20Action%20Plan%202024-2029_Finalv2.pdf" target="_blank" rel="noreferrer">USDA 환경제어농업 한계</a></p>
           <Reveal><SectionDiagram /></Reveal>
-          <div className="diagram-note"><b>시공용 아님</b><p>굴착 깊이, 구조 형식, 피난거리, 방재구획, 환기·설비 용량은 전문 조사와 설계 전에는 확정할 수 없습니다.</p></div>
+          <div className="diagram-note"><b>통합 개념 설계 · 시공용 아님</b><p>단면, 3D 평면도와 면적표는 동일한 프로그램을 사용합니다. 굴착 깊이, 구조, 피난거리, 방재구획, 환기·설비 용량은 지반·구조·소방·기계 전문가의 현장 조사와 인허가 설계가 필요합니다.</p></div>
         </section>
 
         <section className="section section-gallery">
@@ -156,7 +164,7 @@ export default function App() {
 
         <section id="floors" className="section section-floors">
           <div className="section-number">05</div>
-          <Reveal><div className="section-heading"><p className="eyebrow">층별 둘러보기 · INTERACTIVE FLOOR GUIDE</p><h2>{t.floorsTitle}</h2><p className="lead narrow">왼쪽의 층 버튼을 누르면 그곳에서 무엇을 하고, 어느 층과 연결되는지 바로 확인할 수 있습니다. 표기된 면적과 인원은 공간 구성을 비교하기 위한 계획 가정입니다.</p></div></Reveal>
+          <Reveal><div className="section-heading"><p className="eyebrow">층별 둘러보기 · INTERACTIVE FLOOR GUIDE</p><h2>{t.floorsTitle}</h2><p className="lead narrow">층을 선택하면 축소 미리보기가 바뀌고, 이미지를 누르면 구역별 면적표와 함께 고화질 3D 평면도를 팝업으로 확대해 볼 수 있습니다. 모든 층은 양 끝 피난계단 2곳, 중앙 서비스 코어와 이중 설비 라이저를 공통 기준으로 삼았습니다.</p></div></Reveal>
           <Reveal><FloorExplorer language={language} /></Reveal>
         </section>
 

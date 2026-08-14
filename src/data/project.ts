@@ -9,30 +9,75 @@ export type Floor = {
   functions: string[];
   adjacent: string;
   color: string;
+  planBase: string;
+  planWidths: number[];
+  capacityBasis: string;
+  circulation: string;
+  zones: { name: string; area: number; detail: string }[];
 };
 
 export const floors: Floor[] = [
-  { code: 'B1', name: '출입·물류층', nameEn: 'Arrival & Logistics', area: '1,650㎡', people: '동시 48명', purpose: '방문객과 물자가 지상에서 안전하게 들어오는 첫 관문', purposeEn: 'Safe transition from surface to residence', functions: ['출입 확인', '위생 전환', '하역·창고', '안내·관리'], adjacent: '지상 본관 · B2 · 수직 이동 코어', color: '#f4c46b' },
-  { code: 'B2', name: '식당·커뮤니티층', nameEn: 'Community Commons', area: '2,250㎡', people: '144명', purpose: '함께 먹고 배우고 의논하는 공동생활의 중심', purposeEn: 'The social heart for dining, learning and governance', functions: ['공용식당', '열린 주방', '가족 라운지', '교육·회의'], adjacent: 'B1 · B3 · 실내 정원', color: '#55d7b2' },
-  { code: 'B3', name: '생활·숙소층', nameEn: 'Residential Living', area: '2,850㎡', people: '144명', purpose: '개인과 가족이 편안히 쉬고 사생활을 지키는 공간', purposeEn: 'Restorative privacy for individuals and families', functions: ['가족실', '개인실', '무장애 객실', '세탁·수납'], adjacent: 'B2 · B4 · 피난 코어', color: '#7eb8ff' },
-  { code: 'B4', name: '건강관리층', nameEn: 'Health & Wellbeing', area: '1,800㎡', people: '동시 72명', purpose: '일상 진료부터 상담과 운동까지 회복을 돕는 공간', purposeEn: 'Physical, psychological and social resilience', functions: ['건강관리실', '상담실', '운동·재활', '조용한 회복실'], adjacent: 'B3 · B5 · 서비스 코어', color: '#c7a7ff' },
-  { code: 'B5', name: '식량·물 관리층', nameEn: 'Food & Water', area: '2,400㎡', people: '운영 36명', purpose: '먹거리 재배·저장과 물 관리 과정을 한곳에서 운영', purposeEn: 'Integrated cultivation, storage and water stewardship', functions: ['실내 재배', '종자 보관', '저온 창고', '정수·재이용'], adjacent: 'B4 · B6 · 물류 리프트', color: '#7ed27b' },
-  { code: 'B6', name: '에너지·운영층', nameEn: 'Core Systems', area: '2,050㎡', people: '운영 28명', purpose: '전력·공기·보안 설비를 사람이 한눈에 점검하는 공간', purposeEn: 'Human-supervised operation of critical systems', functions: ['통합 관제실', '전력·배터리', '공조 설비', '비상 운영실'], adjacent: 'B5 · 이중 설비 샤프트', color: '#ff896f' },
+  {
+    code: 'B1', name: '출입·물류층', nameEn: 'Arrival & Logistics', area: '1,650㎡', people: '동시 48명', purpose: '사람·물자·폐기물의 흐름을 분리하는 첫 관문', purposeEn: 'Safe transition from surface to residence', functions: ['출입·보안 확인', '제염·단기 격리', '하역·장기 비축', '정비·관리'], adjacent: '지상 본관 · B2 · 중앙 서비스 코어', color: '#f4c46b', planBase: '/images/floors/b1-plan-v1', planWidths: [640, 1280, 1536], capacityBasis: '방문·입고 피크 동시 48명, 차량 하역과 보행 동선 분리', circulation: '양 끝 피난계단 2곳 + 중앙 승강기·서비스 코어 + 청결/오염 동선 분리',
+    zones: [
+      { name: '출입·보안 확인', area: 180, detail: '안내, 신원 확인, 보안 검색과 대기' }, { name: '제염·단기 격리', area: 160, detail: '전실, 샤워, 탈의, 청결/오염 분리' }, { name: '하역·입고', area: 360, detail: '서비스 차량, 검수, 입고 버퍼' }, { name: '건식·대량 비축', area: 380, detail: '팔레트 랙, 밀폐 식품·소모품' }, { name: '정비 작업실', area: 180, detail: '공구, 부품, 로봇·설비 경정비' }, { name: '보안·운영 사무', area: 140, detail: '경비, 안내, 입출고 기록' }, { name: '코어·지원', area: 250, detail: '피난계단, 승강기, 화장실, 설비' },
+    ],
+  },
+  {
+    code: 'B2', name: '식당·커뮤니티층', nameEn: 'Community Commons', area: '2,250㎡', people: '144명', purpose: '식사·학습·돌봄·의사결정이 만나는 공동생활 중심', purposeEn: 'The social heart for dining, learning and governance', functions: ['공용식당·주방', '가족 라운지', '교육·도서관', '돌봄·협업'], adjacent: 'B1 · B3 · 실내 정원', color: '#55d7b2', planBase: '/images/floors/b2-plan-v1', planWidths: [640, 1280, 1536], capacityBasis: '144명 전원 이용, 식당은 2교대 운영을 기준으로 좌석과 주방 분리', circulation: '양 끝 피난계단 2곳 + 중앙 코어 + 주방 서비스 동선 독립',
+    zones: [
+      { name: '공용식당', area: 360, detail: '2교대 식사, 다양한 연령 좌석' }, { name: '전문 주방', area: 300, detail: '전처리, 조리, 제과, 세척' }, { name: '커뮤니티 라운지', area: 360, detail: '휴식, 소모임, 행사' }, { name: '교육·도서관', area: 300, detail: '교실, 학습실, 자료 보관' }, { name: '아동·가족 공간', area: 180, detail: '놀이, 돌봄, 가족 활동' }, { name: '협업·미디어', area: 210, detail: '회의, 원격업무, 공동 의사결정' }, { name: '실내 정원', area: 180, detail: '채광형 휴게·심리 회복 공간' }, { name: '코어·지원', area: 360, detail: '복도, 화장실, 수납, 피난·설비' },
+    ],
+  },
+  {
+    code: 'B3', name: '생활·숙소층', nameEn: 'Residential Living', area: '2,850㎡', people: '정원 144명', purpose: '24개 가족실과 24개 2인실로 정확히 144개의 침상을 구성', purposeEn: 'Restorative privacy for individuals and families', functions: ['4인 가족실 24실', '2인실 24실', '공용 라운지', '세탁·생활지원'], adjacent: 'B2 · B4 · 양방향 피난계단', color: '#7eb8ff', planBase: '/images/floors/b3-plan-v1', planWidths: [640, 1280, 1536], capacityBasis: '4인 가족실 24실×4명=96명 + 2인실 24실×2명=48명, 합계 144명', circulation: '8개 생활 클러스터 + 순환 복도 + 양 끝 피난계단 2곳 + 중앙 코어',
+    zones: [
+      { name: '4인 가족실 24실', area: 960, detail: '실당 40㎡, 합계 96명' }, { name: '2인실 24실', area: 528, detail: '실당 22㎡, 합계 48명·일부 무장애' }, { name: '클러스터 라운지', area: 240, detail: '8개 생활군의 공동 거실' }, { name: '세탁·위생 지원', area: 240, detail: '세탁, 건조, 공용 위생 보조' }, { name: '생활지원 스테이션', area: 90, detail: '야간 관리, 간호·상담 연계' }, { name: '수납·하우스키핑', area: 132, detail: '침구, 청소, 생활 소모품' }, { name: '순환·피난·코어', area: 660, detail: '순환 복도, 2개 피난계단, 승강기' },
+    ],
+  },
+  {
+    code: 'B4', name: '건강관리층', nameEn: 'Health & Wellbeing', area: '1,800㎡', people: '동시 72명', purpose: '진료·격리·재활·상담·여가를 분리해 장기 체류 건강을 지원', purposeEn: 'Physical, psychological and social resilience', functions: ['진료·관찰', '격리·검사·약제', '상담·재활', '조용한 회복'], adjacent: 'B3 · B5 · 임상 서비스 코어', color: '#c7a7ff', planBase: '/images/floors/b4-plan-v1', planWidths: [640, 1280, 1536], capacityBasis: '일상 진료와 재활·상담의 동시 이용을 분산하고 격리 동선은 별도 운용', circulation: '양 끝 피난계단 2곳 + 중앙 코어 + 청결/의료폐기물 동선 분리',
+    zones: [
+      { name: '진료·관찰', area: 260, detail: '진찰실, 처치실, 관찰 4병상' }, { name: '격리 구역', area: 120, detail: '음압 후보 격리실과 전실' }, { name: '치과·검사·약제', area: 180, detail: '치과, 기초검사, 약품·소모품' }, { name: '상담실', area: 160, detail: '개인·가족·심리 상담' }, { name: '재활·운동', area: 300, detail: '무장애 운동, 물리·작업 재활' }, { name: '조용한 회복·여가', area: 260, detail: '명상, 취미, 사회적 회복' }, { name: '원격의료·운영', area: 120, detail: '협진, 기록, 의료진 지원' }, { name: '코어·지원', area: 400, detail: '복도, 화장실, 청결·오염 지원' },
+    ],
+  },
+  {
+    code: 'B5', name: '식량·물 관리층', nameEn: 'Food & Water', area: '2,400㎡', people: '운영 36명', purpose: '5년 비축 열량과 신선식품 재배, 물 처리·순환을 역할별로 분리', purposeEn: 'Integrated cultivation, storage and water stewardship', functions: ['다단 재배', '장기 식량 비축', '수처리·저장', '자원 회수'], adjacent: 'B4 · B6 · 식품·물류 리프트', color: '#7ed27b', planBase: '/images/floors/b5-plan-v1', planWidths: [640, 1280, 1536], capacityBasis: '실내재배는 신선식품 보완용이며, 주 열량은 건식 비축·순환 입고를 함께 사용', circulation: '양 끝 피난계단 2곳 + 중앙 코어 + 식품 청결 동선/폐기물 동선 분리',
+    zones: [
+      { name: '다단 수경재배', area: 720, detail: '잎채소, 허브, 일부 채소' }, { name: '버섯·마이크로그린', area: 240, detail: '분리 생육실과 위생 전실' }, { name: '건식 주식 비축', area: 360, detail: '팔레트 랙, 밀폐 용기, 선입선출' }, { name: '냉장·냉동', area: 180, detail: '저온·냉동 저장과 완충 전실' }, { name: '종자·양액', area: 120, detail: '종자, 배지, 영양염, 소모품' }, { name: '수처리·비상저장', area: 300, detail: '정수, 재이용, 90㎥급 계획 버퍼' }, { name: '자원 회수', area: 180, detail: '유기성 자원, 폐기물 분리' }, { name: '품질·포장', area: 120, detail: '세척, 검사, 포장, 출고' }, { name: '코어·지원', area: 180, detail: '복도, 기계 지원, 피난·설비' },
+    ],
+  },
+  {
+    code: 'B6', name: '에너지·운영층', nameEn: 'Core Systems', area: '2,050㎡', people: '운영 28명', purpose: '전력·공기·물·통신을 이중화하고 사람이 최종 통제', purposeEn: 'Human-supervised operation of critical systems', functions: ['통합 관제', '전력·배터리', '공조·수처리', '정비·비상운영'], adjacent: 'B5 · 이중 설비 샤프트 · 독립 피난계단', color: '#ff896f', planBase: '/images/floors/b6-plan-v1', planWidths: [640, 1280, 1536], capacityBasis: '24시간 교대 운영, 중요 설비는 화재·침수 구획과 정비 여유 공간을 전제로 검토', circulation: '양 끝 피난계단 2곳 + 중앙 코어 + 이중 설비 라이저 + 배터리 방화구획',
+    zones: [
+      { name: '통합 관제실', area: 180, detail: '사람 중심의 설비·보안 통합 관제' }, { name: '전기실', area: 260, detail: '수배전, 변환, 분전' }, { name: '배터리·UPS', area: 240, detail: '분리 방화구획과 감시' }, { name: '공조·공기처리', area: 360, detail: '구역 공조, 여과, 압력 제어 후보' }, { name: '물·오수·소방 펌프', area: 220, detail: '급배수, 재이용, 소방 계통' }, { name: '통신·보안 IT', area: 160, detail: '통신, 서버, CCTV·출입 데이터' }, { name: '정비·예비부품', area: 260, detail: '공작, 수리, 핵심 부품 보관' }, { name: '비상운영실', area: 160, detail: '상황회의, 수동운전, 기록' }, { name: '코어·방재 지원', area: 210, detail: '피난, 방화, 이중 샤프트' },
+    ],
+  },
 ];
 
+export const planningBaseline = {
+  residents: 144,
+  durationDays: 1825,
+  grossArea: 13000,
+  beds: { familySuites: 24, familyBeds: 96, twinRooms: 24, twinBeds: 48, total: 144 },
+  water: { emergencyLitresPerPersonDay: 15, fiveYearLitres: 3_942_000, plannedBufferLitres: 90_000 },
+  food: { kcalPerPersonDay: 2200, fiveYearKcal: 578_160_000, reserveFactor: '별도 손실·여유율 검토' },
+  commonCore: '전 층 양 끝 피난계단 2곳, 중앙 승강기·서비스 코어, 이중 설비 라이저',
+};
+
 export const systems = [
-  { key: 'home', icon: 'Home', title: '주거', value: '144석', note: '가족실·개인실·무장애 객실의 혼합 구성' },
-  { key: 'food', icon: 'Sprout', title: '식량', value: '다중 조달', note: '저장식 + 외부 공급 + 실내 재배를 조합하는 가정' },
-  { key: 'water', icon: 'Droplets', title: '물', value: '다중 수원', note: '상수·저장·재이용 후보는 수문조사 후 확정' },
+  { key: 'home', icon: 'Home', title: '주거', value: '144침상', note: '4인 가족실 24실 96명 + 2인실 24실 48명' },
+  { key: 'food', icon: 'Sprout', title: '식량', value: '5.78억 kcal 수요', note: '5년 계획 수요. 건식 비축·냉장·재배·재보급을 함께 검토' },
+  { key: 'water', icon: 'Droplets', title: '물', value: '394만 L 최소수요', note: '15 L/인·일 기준 누적치. 90㎥ 버퍼와 처리·재보급 병행' },
   { key: 'air', icon: 'Wind', title: '공기', value: '구역 분리', note: '독립 공조와 필터링, 양압 계획은 전문 설계 대상' },
-  { key: 'energy', icon: 'Zap', title: '에너지', value: 'N+1 개념', note: '계통·저장·발전 조합은 부하 산정 후 확정' },
+  { key: 'energy', icon: 'Zap', title: '에너지', value: '부하 산정 전', note: '계통·저장·발전과 예비 설비 조합은 전문 부하 산정 후 확정' },
   { key: 'care', icon: 'HeartPulse', title: '의료', value: '1차 대응', note: '상시 건강관리와 원격 협진을 전제로 한 공간' },
   { key: 'waste', icon: 'Recycle', title: '자원순환', value: '분리 처리', note: '생활·오수·유기성 폐기물 흐름을 구획' },
   { key: 'ai', icon: 'BrainCircuit', title: 'AI 운영', value: '사람이 최종 결정', note: '예측정비·수요예측을 지원하며 자동 권한은 제한' },
 ];
 
 export const gallery = [
-  { src: '/images/renders/defense-cutaway-1280.webp', base: '/images/renders/defense-cutaway', widths: [640, 1280, 1672], title: '지상 본관과 지하 6개 층 전체 보기', tag: 'AI 재구성 · 전체 구조', alt: '실제 본관 외관에 태양광, 풍력, CCTV, 철조망과 로봇 순찰을 더하고 여섯 개 지하층을 합성한 비공식 개념 절개 조감도' },
+  { src: '/images/renders/program-cutaway-v2-1280.webp', base: '/images/renders/program-cutaway-v2', widths: [640, 1280, 1672], title: '144명·5년 통합 프로그램 단면', tag: 'AI 개념 단면 · 6개 층', alt: '실제 본관 사진을 참고하고 동일한 면적표로 맞춘 여섯 개 지하 생활층의 밝은 비공식 개념 단면' },
   { src: '/images/renders/resort-connection.webp', title: '본관에서 지하로 내려가는 길', tag: 'AI 재구성 · 출입 공간', alt: '리조트 로비에서 지하 연결통로로 이어지는 접근 가능한 진입 공간' },
   { src: '/images/interiors/community-commons-v1-1280.webp', base: '/images/interiors/community-commons-v1', widths: [640, 1280, 1672], title: '함께 식사하고 쉬는 공간', tag: 'AI 재구성 · B2 생활', alt: '한국인 가족과 어르신이 식사와 독서, 휴식을 즐기는 밝은 공동생활 공간' },
   { src: '/images/interiors/residential-suite.webp', title: '가족과 개인을 위한 숙소', tag: 'AI 재구성 · B3 생활', alt: '가족실과 개인실, 세탁 공간이 연결된 따뜻한 주거 구역' },
