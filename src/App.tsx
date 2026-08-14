@@ -1,4 +1,4 @@
-import { ArrowDown, ArrowRight, Building2, ChevronRight, Download, ExternalLink, FileCheck2, Layers3, MapPinned, ShieldCheck, Sparkles } from 'lucide-react';
+import { ArrowDown, ArrowRight, Building2, ChevronRight, Compass, Download, ExternalLink, FileCheck2, Images, Layers3, MapPinned, ShieldCheck, Sparkles } from 'lucide-react';
 import { useState } from 'react';
 import { ContactForm } from './components/ContactForm';
 import { FloorExplorer } from './components/FloorExplorer';
@@ -16,26 +16,26 @@ type Lang = 'ko' | 'en';
 const copy = {
   ko: {
     kicker: 'AI BUNKER HOUSE NO.1 · TACOMA JANGSU',
-    hero: <>지상 리조트와 연결된,<br /><em>지하 6층형</em> 144인 레지던스</>,
-    heroSub: '전북 장수 고원의 입지와 기존 리조트 부지 재생 가능성을 바탕으로 제안하는 5년 자립형 AI 재난대응 레지던스 콘셉트.',
-    primary: '프로젝트 탐색', secondary: '브로슈어 PDF',
-    concept: '비공식 건축 콘셉트', conceptText: '본 사이트는 타코마 장수 관광농원 또는 관계 기관의 공식 사업·판매·예약 페이지가 아닙니다. 현재 운영 상태, 소유·권리, 인허가, 공사비, 안전성, 수용·자립 성능은 확인·승인되지 않았습니다.',
-    overviewTitle: <>기존 리조트를 살리고,<br /><em>재난에 대비한 장기 체류 거점</em>으로 바꿉니다.</>,
-    overviewBody: '먼저 기존 본관을 숙박·교육·진료·지역 연계가 가능한 생활 거점으로 정비합니다. 지하 공간은 부지 조사 결과가 적합할 때 단계적으로 검토하며, 소유권·지반·피난·인허가가 확인되기 전에는 규모와 성능을 확정하지 않습니다.',
-    locationTitle: <>주소는 실제로,<br />판단은 <em>근거와 조건</em>으로.</>,
-    architectureTitle: <>한 장면이 아니라,<br /><em>연결된 시스템</em>으로 봅니다.</>,
-    floorsTitle: <>6개 층, 하나의 생활 생태계.</>,
-    systemsTitle: <>5년은 숫자가 아니라<br /><em>운영 규율</em>입니다.</>,
-    proposalTitle: <>부지 재생에서 시작하는<br />새로운 <em>회복력 인프라</em>.</>,
-    contactTitle: <>다음 단계는<br /><em>현장 확인</em>에서 시작합니다.</>,
+    hero: <>장수의 산자락 아래,<br /><em>144명이 5년을 살아가는</em><br />방어형 생활기지를 상상했습니다.</>,
+    heroSub: '실제 타코마 장수리조트 본관을 바탕으로 태양광·보안 로봇·지하 6개 생활층을 결합한 비공식 AI 재구성입니다. 확정 설계가 아니라, 이 장소를 어떻게 다시 쓸 수 있는지 보여주는 시각 제안입니다.',
+    primary: '외관부터 둘러보기', secondary: '지하 6개 층 보기',
+    concept: '먼저 알려드립니다', conceptText: '주소와 사용자가 제공한 본관 사진은 실제 자료입니다. 화면의 방어 시설·지하 공간·로봇·운영 수치는 모두 검토용 AI 콘셉트이며, 시공·운영이 확정된 내용이 아닙니다.',
+    overviewTitle: <>처음 방문하셨다면,<br /><em>사람이 머무는 하루</em>부터 상상해 보세요.</>,
+    overviewBody: '이 제안은 벙커의 두꺼운 벽보다 그 안에서 이어질 식사, 휴식, 건강관리와 일상에 먼저 주목합니다. 기존 본관은 방문·숙박·교육의 지상 거점으로 활용하고, 지하 공간은 충분한 조사와 승인을 거쳐 필요한 기능부터 단계적으로 검토합니다.',
+    locationTitle: <>어디에 있고,<br /><em>무엇이 확인됐는지</em> 먼저 보여드립니다.</>,
+    architectureTitle: <>본관에서 지하 6개 층까지,<br /><em>이동 흐름</em>을 따라가 보세요.</>,
+    floorsTitle: <>버튼을 눌러, 지하 6개 층을 한 층씩 살펴보세요.</>,
+    systemsTitle: <>144명이 오래 머물려면<br /><em>무엇이 필요할까요?</em></>,
+    proposalTitle: <>아이디어를 실제 사업으로 옮기려면<br /><em>이 순서</em>가 필요합니다.</>,
+    contactTitle: <>궁금한 점과<br /><em>협업 제안</em>을 남겨 주세요.</>,
   },
   en: {
     kicker: 'AI BUNKER HOUSE NO.1 · TACOMA JANGSU',
     hero: <>A surface resort connected to<br />a <em>six-level</em>, 144-person residence</>,
     heroSub: 'A five-year, AI-assisted disaster-resilience residence concept grounded in the highland context and adaptive-reuse potential of an existing resort site in Jangsu.',
-    primary: 'Explore project', secondary: 'Download brochure',
+    primary: 'Start the exterior tour', secondary: 'Explore six levels',
     concept: 'UNOFFICIAL ARCHITECTURAL CONCEPT', conceptText: 'This is not an official project, sales or booking page of Tacoma Jangsu Farm Resort or any authority. Operation status, ownership, approvals, cost, safety, capacity and self-reliance performance remain unverified.',
-    overviewTitle: <>Designing <em>long-term resilience</em><br />on the memory of an existing place.</>,
+    overviewTitle: <>Start with <em>everyday life</em><br />inside a resilient place.</>,
     overviewBody: 'The proposal reuses the resort as a surface living and hospitality gateway, with six functional levels beneath adjacent land. Human dignity, operational continuity and evidence-led decisions sit at its core.',
     locationTitle: <>A real address.<br /><em>Conditional, evidence-led</em> decisions.</>,
     architectureTitle: <>Not a single image,<br />but an <em>interconnected system</em>.</>,
@@ -72,34 +72,42 @@ export default function App() {
             <Reveal delay={0.08}><h1 id="hero-title">{t.hero}</h1></Reveal>
             <Reveal delay={0.15}><p className="hero-sub">{t.heroSub}</p></Reveal>
             <Reveal className="hero-actions" delay={0.22}>
-              <a className="button button-primary" href="#overview">{t.primary}<ArrowRight /></a>
-              <a className="button button-ghost" href="/brochure/ai-bunker-house-tacoma-brochure.pdf" download>{t.secondary}<Download /></a>
+              <a className="button button-primary" href="#site-tour">{t.primary}<ArrowRight /></a>
+              <a className="button button-ghost" href="#floors">{t.secondary}<Layers3 /></a>
             </Reveal>
           </div>
           <div className="hero-metrics">
-            <div><strong>144</strong><span>PERSONS<small>계획 수용 기준</small></span></div>
-            <div><strong>5</strong><span>YEARS<small>운영 목표 가정</small></span></div>
-            <div><strong>B6</strong><span>LEVELS<small>지하 프로그램</small></span></div>
-            <div><strong>AI</strong><span>ASSISTED<small>사람이 최종 결정</small></span></div>
+            <div><strong>144</strong><span>{language === 'ko' ? '계획 인원' : 'PEOPLE'}<small>{language === 'ko' ? '콘셉트 기준' : 'concept basis'}</small></span></div>
+            <div><strong>5년</strong><span>{language === 'ko' ? '운영 목표' : 'TARGET'}<small>{language === 'ko' ? '검증 전 가정' : 'to be validated'}</small></span></div>
+            <div><strong>B6</strong><span>{language === 'ko' ? '지하 공간' : 'LEVELS'}<small>{language === 'ko' ? '6개 생활층' : 'six living levels'}</small></span></div>
+            <div><strong>사람</strong><span>{language === 'ko' ? '최종 판단' : 'FINAL SAY'}<small>{language === 'ko' ? 'AI는 운영 보조' : 'AI only assists'}</small></span></div>
           </div>
-          <a className="scroll-cue" href="#notice"><span>SCROLL TO EXPLORE</span><ArrowDown /></a>
+          <a className="scroll-cue" href="#notice"><span>{language === 'ko' ? '아래로 둘러보기' : 'SCROLL TO EXPLORE'}</span><ArrowDown /></a>
         </section>
 
         <aside id="notice" className="concept-notice">
           <span><FileCheck2 /></span>
           <div><strong>{t.concept}</strong><p>{t.conceptText}</p></div>
-          <a href="#evidence">{language === 'ko' ? '근거 보기' : 'View evidence'}<ChevronRight /></a>
+          <a href="#evidence">{language === 'ko' ? '실제 자료와 근거 보기' : 'View evidence'}<ChevronRight /></a>
         </aside>
+
+        <nav className="visitor-path" aria-label={language === 'ko' ? '추천 둘러보기 순서' : 'Recommended tour order'}>
+          <div className="visitor-path-intro"><small>{language === 'ko' ? '처음 오셨나요?' : 'FIRST VISIT?'}</small><strong>{language === 'ko' ? '관심 있는 장면부터 바로 둘러보세요.' : 'Start with the scene that interests you.'}</strong></div>
+          <a href="#overview"><span>01</span><Compass /><strong>{language === 'ko' ? '1분 요약' : 'One-minute view'}</strong><small>{language === 'ko' ? '장소와 계획의 핵심' : 'The idea at a glance'}</small></a>
+          <a href="#site-tour"><span>02</span><Images /><strong>{language === 'ko' ? '외관 투어' : 'Exterior tour'}</strong><small>{language === 'ko' ? '전면·외곽·야간 장면' : 'Front, perimeter and night'}</small></a>
+          <a href="#floors"><span>03</span><Layers3 /><strong>{language === 'ko' ? '지하 6개 층' : 'Six levels'}</strong><small>{language === 'ko' ? '층별 생활 기능' : 'Life on every level'}</small></a>
+          <a href="#evidence"><span>04</span><FileCheck2 /><strong>{language === 'ko' ? '확인된 정보' : 'Verified facts'}</strong><small>{language === 'ko' ? '실제와 가정 구분' : 'Fact versus concept'}</small></a>
+        </nav>
 
         <section id="overview" className="section section-overview">
           <div className="section-number">01</div>
           <div className="section-heading two-col">
-            <Reveal><div><p className="eyebrow">{language === 'ko' ? 'PROJECT DIRECTION · 기본 방향' : 'PROJECT DIRECTION'}</p><h2>{t.overviewTitle}</h2></div></Reveal>
+            <Reveal><div><p className="eyebrow">{language === 'ko' ? '프로젝트 한눈에 보기 · OVERVIEW' : 'PROJECT OVERVIEW'}</p><h2>{t.overviewTitle}</h2></div></Reveal>
             <Reveal delay={0.08}><div><p className="lead">{t.overviewBody}</p><div className="keyword-row">{(language === 'ko' ? ['기존 건물 활용', '사람이 최종 판단', '단계별 검증'] : ['ADAPTIVE REUSE', 'HUMAN DECISION', 'PHASED VALIDATION']).map((item) => <span key={item}>{item}</span>)}</div></div></Reveal>
           </div>
           <Reveal><figure className="premise-visual">
-            <ResponsiveImage base="/images/site/overview-site-review" widths={[640, 1280, 1672]} sizes="(max-width: 820px) 100vw, 1600px" alt={language === 'ko' ? '실제 본관을 참고해 건축·시설 관계자가 현장을 점검하는 모습을 재구성한 밝은 실사형 AI 이미지' : 'Bright photoreal AI reconstruction of architects and facility staff reviewing the existing resort building on site'} />
-            <figcaption><span>{language === 'ko' ? 'AI 현장 활용 이미지 · 실제 본관 참고' : 'AI SITE-USE VISUAL · BASED ON THE ACTUAL BUILDING'}</span><strong>{language === 'ko' ? '공사를 결정하기 전에, 기존 시설의 상태와 활용 가능성부터 확인합니다.' : 'Assess the existing facility and its reuse potential before deciding on construction.'}</strong></figcaption>
+            <ResponsiveImage base="/images/site/visitor-arrival-v1" widths={[640, 1280, 1672]} sizes="(max-width: 820px) 100vw, 1600px" alt={language === 'ko' ? '실제 본관 사진을 참고해 한국인 가족 방문객과 안내자, 태양광 설비와 보안 로봇을 밝게 재구성한 AI 이미지' : 'Bright AI reconstruction of Korean visitors arriving at the actual-building-inspired resilience campus'} />
+            <figcaption><span>{language === 'ko' ? '방문객 시점 AI 재구성 · 실제 본관 사진 참고' : 'AI VISITOR VIEW · BASED ON THE ACTUAL BUILDING'}</span><strong>{language === 'ko' ? '도착하는 순간부터, 에너지·보안·생활 기능을 어렵지 않게 이해할 수 있는 장소를 제안합니다.' : 'A place where energy, security and daily-life systems are easy to understand from arrival.'}</strong></figcaption>
           </figure></Reveal>
           <div className="premise-grid">
             {premiseCards.map((card, index) => {
@@ -112,51 +120,51 @@ export default function App() {
         <section id="site-tour" className="section section-site-tour">
           <div className="section-number">02</div>
           <div className="section-heading two-col light">
-            <Reveal><div><p className="eyebrow">ACTUAL SITE × DEFENSIVE RESILIENCE</p><h2>실제 본관을 바탕으로,<br /><em>다층 방어 태세를 구축합니다.</em></h2></div></Reveal>
-            <Reveal delay={0.08}><p className="lead">태양광·미니 풍력·CCTV·모래주머니 방호선·외곽 철조망·상용급 로봇과 드론 순찰을 실제 본관 외관에 적용한 근미래 비공식 콘셉트입니다. 공격용 무장보다 감시·억제·에너지 지속성에 초점을 맞췄습니다.</p></Reveal>
+            <Reveal><div><p className="eyebrow">외관 실사형 투어 · EXTERIOR TOUR</p><h2>실제 본관이<br /><em>근미래 방어 거점으로 바뀐다면?</em></h2></div></Reveal>
+            <Reveal delay={0.08}><p className="lead">전면 방어 장면부터 외곽 순찰, 옥상 에너지 설비와 야간 경계까지 차례로 둘러보세요. 태양광·CCTV·철조망·로봇·드론은 공격 장비가 아니라 감시, 출입 통제와 운영 지속성을 설명하기 위한 AI 시각 요소입니다.</p></Reveal>
           </div>
           <SiteTour />
         </section>
 
         <section id="location" className="section section-location">
           <div className="section-number">03</div>
-          <Reveal><div className="section-heading"><p className="eyebrow">LOCATION & EVIDENCE</p><h2>{t.locationTitle}</h2><p className="lead narrow">주소, 고원 지형, 도로 접근은 공개 자료로 확인했습니다. 개별 부지의 고도·경계·지반·지하수·배수·소유 관계는 현장과 원문 서류로 다시 검증해야 합니다.</p></div></Reveal>
+          <Reveal><div className="section-heading"><p className="eyebrow">위치와 확인 자료 · LOCATION & EVIDENCE</p><h2>{t.locationTitle}</h2><p className="lead narrow">실제 주소와 공개 자료로 확인할 수 있는 내용, 현장 조사 전에는 알 수 없는 내용을 나눠 표시했습니다. 지도에서 위치를 살펴본 뒤 근거 자료를 직접 열어볼 수 있습니다.</p></div></Reveal>
           <div id="evidence"><MapEvidence /></div>
         </section>
 
         <section id="architecture" className="section section-architecture">
           <div className="section-number">04</div>
           <div className="section-heading two-col light">
-            <Reveal><div><p className="eyebrow">SURFACE × SUBTERRANEAN</p><h2>{t.architectureTitle}</h2></div></Reveal>
-            <Reveal delay={0.08}><p className="lead">본관 내부의 일상적 공간에서 보안·위생 전환 통로를 거쳐 지하 주거 코어로 이어지는 구성입니다. 비상출구·환기구·설비샤프트는 독립성과 점검성을 우선하며, 실제 위치는 법규·지질·피난해석으로 확정합니다.</p></Reveal>
+            <Reveal><div><p className="eyebrow">지상에서 지하로 · SURFACE TO B6</p><h2>{t.architectureTitle}</h2></div></Reveal>
+            <Reveal delay={0.08}><p className="lead">지상 본관에서 출입·위생 전환 구역을 지나 식사, 주거, 건강관리, 식량·물, 에너지 운영층으로 내려갑니다. 화면의 단면은 관계를 이해하기 위한 개념도이며 실제 깊이와 구조는 전문 조사 후 정해야 합니다.</p></Reveal>
           </div>
           <Reveal><div className="cutaway-feature">
             <ResponsiveImage base="/images/renders/defense-cutaway" widths={[640, 1280, 1672]} sizes="100vw" alt="밝게 표현한 실제 본관 기반 태양광·풍력·CCTV·철조망 방어선과 가상의 여섯 개 지하층 비공식 절개 조감도" />
-            <div className="image-legend"><span>DEFENSIVE RESILIENCE AI CONCEPT · NOT FOR CONSTRUCTION</span><strong>에너지·외곽 경계·로봇 순찰과 지하 6개 층의 통합 가정</strong></div>
+            <div className="image-legend"><span>AI 재구성 · 시공 도면 아님</span><strong>지상 방어·에너지 설비와 지하 6개 생활층을 한 장면으로 이해합니다.</strong></div>
           </div></Reveal>
           <Reveal><SectionDiagram /></Reveal>
-          <div className="diagram-note"><b>NOT FOR CONSTRUCTION</b><p>단면은 공간 관계를 설명하는 개념도입니다. 굴착 깊이, 구조 형식, 피난거리, 방재구획, 환기·설비 용량은 전문 설계 전 미확정입니다.</p></div>
+          <div className="diagram-note"><b>시공용 아님</b><p>굴착 깊이, 구조 형식, 피난거리, 방재구획, 환기·설비 용량은 전문 조사와 설계 전에는 확정할 수 없습니다.</p></div>
         </section>
 
         <section className="section section-gallery">
           <div className="section-heading two-col">
-            <Reveal><div><p className="eyebrow">VISUAL NARRATIVE</p><h2>공간을 먼저 보고,<br /><em>가정은 분명히 읽습니다.</em></h2></div></Reveal>
-            <Reveal delay={0.08}><p className="lead">공개 사진은 외관·배치 분위기 파악에만 참고했습니다. 아래 이미지는 기존 사진을 복제하지 않은 독자 AI 재구성물이며, 현재 현장 모습이나 확정 설계를 나타내지 않습니다.</p></Reveal>
+            <Reveal><div><p className="eyebrow">생활 공간 실사 투어 · LIFE INSIDE</p><h2>식사·주거·의료·식량·운영 공간을<br /><em>실사 이미지로 둘러보세요.</em></h2></div></Reveal>
+            <Reveal delay={0.08}><p className="lead">사진을 누르면 크게 볼 수 있습니다. 모든 내부 이미지는 방문객의 이해를 돕기 위한 AI 재구성으로, 현재 현장 모습이나 확정 설계가 아닙니다. 밝기와 색감을 통일해 공간의 차이를 쉽게 비교할 수 있게 했습니다.</p></Reveal>
           </div>
           <Gallery />
         </section>
 
         <section id="floors" className="section section-floors">
           <div className="section-number">05</div>
-          <Reveal><div className="section-heading"><p className="eyebrow">INTERACTIVE FLOOR PROGRAM</p><h2>{t.floorsTitle}</h2><p className="lead narrow">마우스를 올리거나 탭해 각 층의 역할과 인접 동선을 살펴보세요. 총 프로그램 면적 가정은 약 13,000㎡이며, 실측·법정 면적·설비 요구에 따라 크게 달라질 수 있습니다.</p></div></Reveal>
+          <Reveal><div className="section-heading"><p className="eyebrow">층별 둘러보기 · INTERACTIVE FLOOR GUIDE</p><h2>{t.floorsTitle}</h2><p className="lead narrow">왼쪽의 층 버튼을 누르면 그곳에서 무엇을 하고, 어느 층과 연결되는지 바로 확인할 수 있습니다. 표기된 면적과 인원은 공간 구성을 비교하기 위한 계획 가정입니다.</p></div></Reveal>
           <Reveal><FloorExplorer language={language} /></Reveal>
         </section>
 
         <section id="systems" className="section section-systems">
           <div className="section-number">06</div>
           <div className="section-heading two-col light">
-            <Reveal><div><p className="eyebrow">144 PEOPLE × 5 YEARS</p><h2>{t.systemsTitle}</h2></div></Reveal>
-            <Reveal delay={0.08}><p className="lead">완전 자립을 단정하지 않습니다. 저장·재배·외부 보급·예비 설비를 조합하고, 자원 재고와 품질을 사람이 검증하는 운영 모델을 제안합니다.</p></Reveal>
+            <Reveal><div><p className="eyebrow">생활을 지탱하는 8가지 시스템</p><h2>{t.systemsTitle}</h2></div></Reveal>
+            <Reveal delay={0.08}><p className="lead">집처럼 머물려면 주거만으로는 부족합니다. 식량, 물, 공기, 에너지, 의료, 자원순환을 서로 연결하고, AI는 재고와 설비 이상을 알려주는 보조 역할만 맡습니다.</p></Reveal>
           </div>
           <SystemGrid />
           <div className="timeline">
@@ -168,22 +176,22 @@ export default function App() {
 
         <section className="section section-proposal">
           <div className="section-number">07</div>
-          <Reveal><div className="section-heading"><p className="eyebrow">REGENERATION PROPOSAL</p><h2>{t.proposalTitle}</h2></div></Reveal>
+          <Reveal><div className="section-heading"><p className="eyebrow">현실화 순서 · FROM IDEA TO SITE</p><h2>{t.proposalTitle}</h2><p className="lead narrow">멋진 이미지보다 먼저 확인할 것이 있습니다. 기존 시설 점검에서 시작해 작은 실증을 거친 뒤 확장 여부를 결정하는 순서입니다.</p></div></Reveal>
           <div className="proposal-grid">
-            <Reveal><article className="proposal-lead"><span>01</span><h3>기존 자산의 재평가</h3><p>방치 또는 저활용 가능성이 제기된 시설을 철거·신축의 이분법이 아니라 구조·운영·지역 연계 관점에서 다시 봅니다.</p><a href="#contact">현장 실사 협의<ArrowRight /></a></article></Reveal>
-            <Reveal delay={0.06}><article><span>02</span><h3>단계별 사업화</h3><p>권리·안전성 확인 → 지상부 재생 → 실증 모듈 → 지하 확장으로 투자 결정을 분절합니다.</p></article></Reveal>
-            <Reveal delay={0.12}><article><span>03</span><h3>지역과 연결</h3><p>농업·의료·교육·관광·재난대응 파트너가 참여할 수 있는 개방형 운영 거버넌스를 상정합니다.</p></article></Reveal>
-            <Reveal delay={0.18}><article><span>04</span><h3>복제보다 기준화</h3><p>2·3호 확장은 동일 도면 복제가 아니라 입지 검증, 모듈, 운영 프로토콜의 표준화를 목표로 합니다.</p></article></Reveal>
+            <Reveal><article className="proposal-lead"><span>01</span><h3>본관 상태와 권리 확인</h3><p>소유·권리, 구조안전, 설비 상태와 현재 운영 여부를 현장과 원문 서류로 확인합니다.</p><a href="#contact">현장 확인 문의<ArrowRight /></a></article></Reveal>
+            <Reveal delay={0.06}><article><span>02</span><h3>지상 공간부터 재생</h3><p>로비·객실·식당 중 활용 가능한 곳을 먼저 고쳐 방문, 숙박과 교육 프로그램으로 시험합니다.</p></article></Reveal>
+            <Reveal delay={0.12}><article><span>03</span><h3>작은 실증으로 검증</h3><p>에너지·보안·물·스마트팜 모듈을 작게 운영해 비용과 유지관리 난이도를 기록합니다.</p></article></Reveal>
+            <Reveal delay={0.18}><article><span>04</span><h3>근거가 있을 때 확장</h3><p>지질·지하수·피난·인허가와 운영 인력이 확인된 범위에서만 지하 프로그램을 결정합니다.</p></article></Reveal>
           </div>
-          <div className="download-card"><div><Sparkles /><span><small>PROJECT BROCHURE · PDF</small><strong>핵심 콘셉트와 검증 게이트를<br />한 문서로 검토하세요.</strong></span></div><a className="button button-primary" href="/brochure/ai-bunker-house-tacoma-brochure.pdf" download>브로슈어 다운로드<Download /></a></div>
+          <div className="download-card"><div><Sparkles /><span><small>한눈에 보는 프로젝트 안내서 · PDF</small><strong>핵심 장면, 6개 층과 확인 과제를<br />한 문서에서 차분히 살펴보세요.</strong></span></div><a className="button button-primary" href="/brochure/ai-bunker-house-tacoma-brochure.pdf" download>안내서 내려받기<Download /></a></div>
         </section>
 
         <section id="contact" className="section section-contact">
           <div className="contact-aside">
-            <p className="eyebrow">START WITH DUE DILIGENCE</p>
+            <p className="eyebrow">문의와 협업 · CONTACT</p>
             <h2>{t.contactTitle}</h2>
-            <p>사업 검토, 설계 협업, 부지·운영 협의를 남겨 주세요. 공개 자료만으로 답할 수 없는 사항은 확인 필요 상태로 안내합니다.</p>
-            <div className="contact-facts"><span><MapPinned /><small>PROJECT ADDRESS</small>장수군 계남면 장수로 2662-11</span><span><ShieldCheck /><small>STATUS</small>비공식 콘셉트 · 현장 실사 전</span></div>
+            <p>방문, 사업 검토, 설계·기술 협업과 지역 연계에 관한 의견을 남겨 주세요. 아직 확인되지 않은 내용은 추측하지 않고 ‘확인 필요’로 답변합니다.</p>
+            <div className="contact-facts"><span><MapPinned /><small>프로젝트 기준 주소</small>장수군 계남면 장수로 2662-11</span><span><ShieldCheck /><small>현재 상태</small>비공식 AI 콘셉트 · 현장 실사 전</span></div>
           </div>
           <ContactForm />
         </section>
@@ -191,8 +199,8 @@ export default function App() {
 
       <footer>
         <div className="footer-brand"><span className="brand-mark"><i /><i /><i /></span><div><strong>AI BUNKER HOUSE NO.1</strong><small>TACOMA JANGSU CONCEPT</small></div></div>
-        <p>© 2026 Concept presentation. This website is not affiliated with or endorsed by the referenced resort or local authorities.</p>
-        <div><a href="#notice">면책·현황</a><a href="#evidence">출처</a><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">© OpenStreetMap <ExternalLink /></a></div>
+        <p>© 2026 비공식 AI 건축 콘셉트. 실제 리조트 및 관계 기관의 공식 사업·예약·판매 페이지가 아닙니다.</p>
+        <div><a href="#notice">실제와 가정</a><a href="#evidence">확인 자료</a><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">© OpenStreetMap <ExternalLink /></a></div>
       </footer>
     </div>
   );

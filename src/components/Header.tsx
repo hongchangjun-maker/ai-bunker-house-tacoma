@@ -4,12 +4,12 @@ import { useEffect, useState } from 'react';
 type Props = { language: 'ko' | 'en'; onLanguage: () => void };
 
 const nav = [
-  ['overview', '프로젝트', 'Project'],
-  ['site-tour', '현장 투어', 'Site tour'],
-  ['location', '입지', 'Location'],
-  ['architecture', '구조', 'Architecture'],
-  ['floors', '층별 구성', 'Floors'],
-  ['systems', '운영', 'Systems'],
+  ['overview', '한눈에 보기', 'Overview'],
+  ['site-tour', '외관 투어', 'Exterior tour'],
+  ['location', '위치·근거', 'Location & facts'],
+  ['architecture', '공간 구성', 'Layout'],
+  ['floors', '지하 6층', 'Six levels'],
+  ['systems', '생활 시스템', 'Life systems'],
   ['contact', '문의', 'Contact'],
 ] as const;
 
@@ -35,7 +35,7 @@ export function Header({ language, onLanguage }: Props) {
       </nav>
       <div className="header-actions">
         <button className="lang-button" type="button" onClick={onLanguage} aria-label="언어 전환">{language === 'ko' ? 'EN' : 'KO'}</button>
-        <a className="mini-cta" href="#contact">{language === 'ko' ? '제안 문의' : 'Enquire'}</a>
+        <a className="mini-cta" href="#contact">{language === 'ko' ? '문의 남기기' : 'Enquire'}</a>
         <button className="menu-button" type="button" aria-expanded={open} aria-label="메뉴 열기" onClick={() => setOpen((v) => !v)}>{open ? <X /> : <Menu />}</button>
       </div>
     </header>

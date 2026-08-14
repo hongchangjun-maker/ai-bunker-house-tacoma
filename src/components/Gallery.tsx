@@ -35,14 +35,14 @@ export function Gallery() {
       </div>
       {selected !== null && (
         <div className="lightbox" role="dialog" aria-modal="true" aria-label={gallery[selected].title} onClick={() => setSelected(null)}>
-          <button type="button" className="lightbox-close" onClick={() => setSelected(null)} aria-label="확대 보기 닫기"><X /></button>
+          <button type="button" className="lightbox-close" onClick={() => setSelected(null)} aria-label="큰 이미지 닫기"><X /></button>
           <figure onClick={(event) => event.stopPropagation()}>
             {'base' in gallery[selected] && gallery[selected].base && gallery[selected].widths ? (
               <ResponsiveImage base={gallery[selected].base} widths={gallery[selected].widths} sizes="95vw" alt={gallery[selected].alt} />
             ) : (
               <img src={gallery[selected].src} alt={gallery[selected].alt} decoding="async" />
             )}
-            <figcaption><span>{gallery[selected].tag}</span>{gallery[selected].title}<small>실제 본관을 참조했더라도 현황·설계도·시공 결과가 아닌 비공식 AI 콘셉트 이미지입니다.</small></figcaption>
+            <figcaption><span>{gallery[selected].tag}</span>{gallery[selected].title}<small>방문객의 이해를 돕기 위한 비공식 AI 재구성입니다. 현재 현장이나 확정 설계를 보여주는 사진이 아닙니다.</small></figcaption>
           </figure>
         </div>
       )}
