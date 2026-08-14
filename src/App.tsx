@@ -112,8 +112,8 @@ export default function App() {
         <section id="site-tour" className="section section-site-tour">
           <div className="section-number">02</div>
           <div className="section-heading two-col light">
-            <Reveal><div><p className="eyebrow">ACTUAL SITE × DEFENSIVE RESILIENCE</p><h2>실제 본관에서 출발해,<br /><em>다층 방어 태세를 구축합니다.</em></h2></div></Reveal>
-            <Reveal delay={0.08}><p className="lead">현장 원본은 그대로 보존하고, 태양광·미니 풍력·CCTV·모래주머니 방호선·외곽 철조망·상용급 로봇과 드론 순찰을 실제 본관 외관 위에 겹쳤습니다. 공격용 무장이 아닌 감시·억제·에너지 지속성을 중심으로 한 근미래 비공식 콘셉트입니다.</p></Reveal>
+            <Reveal><div><p className="eyebrow">ACTUAL SITE × DEFENSIVE RESILIENCE</p><h2>실제 본관을 바탕으로,<br /><em>다층 방어 태세를 구축합니다.</em></h2></div></Reveal>
+            <Reveal delay={0.08}><p className="lead">태양광·미니 풍력·CCTV·모래주머니 방호선·외곽 철조망·상용급 로봇과 드론 순찰을 실제 본관 외관에 적용한 근미래 비공식 콘셉트입니다. 공격용 무장보다 감시·억제·에너지 지속성에 초점을 맞췄습니다.</p></Reveal>
           </div>
           <SiteTour />
         </section>

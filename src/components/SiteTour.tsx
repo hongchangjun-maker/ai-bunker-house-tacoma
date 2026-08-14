@@ -1,19 +1,8 @@
-import { Aperture, Bot, Camera, Map, MoonStar, ShieldCheck } from 'lucide-react';
+import { Aperture, Bot, Map, MoonStar, ShieldCheck } from 'lucide-react';
 import { useState } from 'react';
 import { ResponsiveImage } from './ResponsiveImage';
 
 const scenes = [
-  {
-    key: 'actual',
-    title: '현재 본관 전경 원본',
-    nav: '현장 원본',
-    badge: '현장 제공 사진 · 2026.08.12',
-    description: '사용자가 제공한 타코마 장수리조트 실제 전면 사진입니다. 본관의 매스, 중앙 유리면, 캐노피와 진입도로를 모든 재구성의 장소 기준으로 삼았습니다.',
-    base: '/images/site/actual-front',
-    widths: [624],
-    icon: Camera,
-    actual: true,
-  },
   {
     key: 'front-defense',
     title: '본관 전면 방어 전환',
@@ -67,12 +56,12 @@ const scenes = [
 ] as const;
 
 export function SiteTour() {
-  const [activeKey, setActiveKey] = useState<(typeof scenes)[number]['key']>('actual');
+  const [activeKey, setActiveKey] = useState<(typeof scenes)[number]['key']>('front-defense');
   const active = scenes.find((scene) => scene.key === activeKey) ?? scenes[0];
 
   return (
     <div className="site-tour">
-      <div className={`site-tour-media ${active.key === 'actual' ? 'is-actual' : ''}`}>
+      <div className="site-tour-media">
         <ResponsiveImage
           key={active.key}
           base={active.base}
@@ -112,7 +101,7 @@ export function SiteTour() {
         <article><strong>방호</strong><span>옥상·지면 모래주머니 진지</span></article>
       </div>
       <p className="defense-reference">장비 외형 참고: <a href="https://bostondynamics.com/products/spot/" target="_blank" rel="noreferrer">상용 4족 검사 로봇</a> · <a href="https://knightscope.com/the-force" target="_blank" rel="noreferrer">자율 보안 순찰 로봇</a> · <a href="https://www.1x.tech/discover/neo-home-robot" target="_blank" rel="noreferrer">2026 배송 예정 휴머노이드</a>. 휴머노이드 경비 역할과 봉 소지는 시각 콘셉트 가정이며 공급사·법규·안전성 검토 전 미확정입니다.</p>
-      <p className="site-tour-disclaimer"><strong>구분 원칙</strong> 첫 장면만 실제 현장 사진이며, 나머지는 그 사진을 건물 정체성 기준으로 삼아 만든 비공식 AI 경관 재구성입니다. 현황·시공 결과·설계도·측량도를 의미하지 않습니다.</p>
+      <p className="site-tour-disclaimer"><strong>구분 원칙</strong> 모든 장면은 실제 본관 사진을 건물 정체성의 참고 기준으로 삼아 만든 비공식 AI 경관 재구성입니다. 현재 현황·시공 결과·설계도·측량도를 의미하지 않습니다.</p>
     </div>
   );
 }

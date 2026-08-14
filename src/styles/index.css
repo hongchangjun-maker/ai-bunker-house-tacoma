@@ -123,14 +123,12 @@ h1 em, h2 em { color: var(--emerald); font-style: normal; }
 .site-tour-media { position: relative; min-height: min(70vw, 820px); overflow: hidden; background: #0b1922; }
 .site-tour-media picture, .site-tour-media picture img { display: block; width: 100%; height: 100%; position: absolute; inset: 0; }
 .site-tour-media picture img { object-fit: cover; animation: tour-in .55s ease-out; }
-.site-tour-media.is-actual picture img { object-fit: contain; padding: 3.5%; background: radial-gradient(circle at 50% 40%, #23333c 0, #0b171f 72%); }
 .site-tour-media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(2,8,12,.94), transparent 45%); pointer-events: none; }
 .site-tour-caption { position: absolute; z-index: 2; left: clamp(22px,5vw,80px); bottom: clamp(25px,5vw,70px); max-width: 680px; }
 .site-tour-caption span { display: inline-block; margin-bottom: 13px; padding: 8px 10px; background: rgba(5,15,22,.78); color: var(--emerald); border: 1px solid rgba(86,215,178,.36); font-size: 8px; letter-spacing: .14em; }
-.site-tour-media.is-actual .site-tour-caption span { color: var(--gold); border-color: rgba(244,196,107,.42); }
 .site-tour-caption strong { display: block; color: #fff; font-size: clamp(25px,3vw,45px); font-weight: 400; }
 .site-tour-caption p { max-width: 620px; margin: 13px 0 0; color: #b7c2c8; font-size: 12px; line-height: 1.75; word-break: keep-all; }
-.site-tour-nav { display: grid; grid-template-columns: repeat(6,1fr); background: #0c1e29; border: 1px solid var(--line); border-top: 0; }
+.site-tour-nav { display: grid; grid-template-columns: repeat(5,1fr); background: #0c1e29; border: 1px solid var(--line); border-top: 0; }
 .site-tour-nav button { min-height: 105px; padding: 18px; display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 7px 12px; border: 0; border-right: 1px solid var(--line); color: #8da0aa; background: transparent; text-align: left; cursor: pointer; transition: .25s; }
 .site-tour-nav button:last-child { border-right: 0; }
 .site-tour-nav button:hover, .site-tour-nav button[aria-selected="true"] { color: #fff; background: #132b36; }
@@ -447,7 +445,6 @@ footer a svg { width: 11px; }
   .lead { font-size: 13px; }
   .keyword-row { display: none; }
   .site-tour-media { min-height: 560px; }
-  .site-tour-media.is-actual picture img { padding: 0; object-fit: cover; }
   .site-tour-caption { left: 20px; right: 20px; bottom: 22px; }
   .site-tour-caption p { font-size: 10px; }
   .site-tour-nav { grid-template-columns: repeat(2,1fr); }
