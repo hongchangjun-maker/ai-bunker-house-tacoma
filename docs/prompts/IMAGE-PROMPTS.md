@@ -1,24 +1,25 @@
 # 생성 비주얼 프롬프트 기록
 
-모든 자산은 내장 ImageGen으로 새로 생성했다. 외부 사진은 다운로드·복제·편집 입력으로 사용하지 않았다.
+모든 AI 자산은 내장 ImageGen으로 새로 생성했다. `actual-front-*`는 사용자가 제공한 실제 현장 원본이며 수정하지 않고 별도 보존했다. `defense-front-day-*`는 이 원본을 편집 대상으로 삼아 만든 파생 재구성이고, 나머지 방어 장면은 원본을 장소 정체성 참고 이미지로 사용했다.
 
 ## 공통 원칙
 
-- original, not an exact replica of any existing property
-- premium architectural photography / competition render
-- realistic, construction-plausible, not exaggerated science fiction
-- no weapons, no military motifs, no logos, no watermark, no readable text
-- deep navy, stone, brushed metal, restrained emerald and warm lighting
+- 실제 본관의 매스·중앙 유리면·캐노피·진입도로는 장소 기준으로 유지
+- 밝고 자연스러운 주간 또는 읽기 쉬운 블루아워 실사 건축 사진
+- 대규모 태양광, 미니 수직축 풍력, CCTV, 열화상, 철조망, 모래주머니 방호선
+- 4족·차륜·휴머노이드 보안 로봇과 소형 드론 순찰, 사람이 최종 감독
+- 총기·포탑·미사일·공격 장면·로고·워터마크·읽을 수 있는 임의 문구 금지
+- 모든 파생 장면은 `AI 디펜스 재구성` 또는 `DEFENSE CONCEPT × AI`로 표시
 
 ## 자산별 목적
 
-1. `tacoma-gateway-dusk.webp`: 산지 고원에 놓인 독자 설계 3층 리조트 게이트웨이, 해질녘 히어로
-2. `six-level-cutaway.webp`: 지상 리조트 + 연결통로 + 정확히 6개 지하층의 절개 조감
-3. `resort-connection.webp`: 본관 로비에서 접근 가능한 전환 통로와 승강기로 이어지는 장면
-4. `community-lounge.webp`: 식당·라운지·도서·실내정원이 결합된 B2 커먼즈
-5. `residential-suite.webp`: 가족실·개인실·세탁·수납이 보이는 B3 주거
-6. `medical-wellbeing.webp`: 관찰 병상·상담·재활·정원이 결합된 B4
-7. `smart-farm.webp`: 수직재배·작업·정수 설비를 함께 보여주는 B5
-8. `ai-operations.webp`: 사람이 감독하는 에너지·물·공기 통합 운영센터 B6
+1. `defense-front-day-*`: 실제 본관 전면에 옥상 태양광·풍력·CCTV·철조망·모래주머니·로봇·드론을 결합한 밝은 히어로
+2. `defense-aerial-*`: 본관과 외곽 경계, 지상 태양광 캐노피까지 한눈에 보는 주간 항공 장면
+3. `defense-patrol-walk-*`: 조경 보행로의 휴머노이드·4족 로봇·드론 경계 장면
+4. `defense-terrace-*`: 일상 이용을 유지하면서 로봇 순찰과 방호선을 결합한 보호 커먼즈
+5. `defense-night-*`: 노출을 과도하게 낮추지 않은 블루아워 야간 경계
+6. `defense-cutaway-*`: 지상 다층 방어선과 정확히 6개 지하층의 밝은 절개 조감
+7. `defense-operations-*`: 사람이 태양광·풍력·CCTV·로봇·드론을 감독하는 B6 통합 운영센터
+8. 기존 `resort-connection.webp`, `community-lounge.webp`, `residential-suite.webp`, `medical-wellbeing.webp`, `smart-farm.webp`: 지하 생활 프로그램 보조 장면
 
-각 최종 프롬프트는 위 목적에 장면, 재료, 카메라, 조명, 금지 요소를 구조화해 사용했다. 향후 교체 시에도 현장 사진으로 오인될 수 있는 표현을 피하고 `AI CONCEPT VISUAL` 표기를 유지한다.
+각 최종 프롬프트는 위 목적에 장면, 재료, 카메라, 조명, 보존 조건과 금지 요소를 구조화해 사용했다. 향후 교체 시에도 실제 원본을 덮어쓰지 않고, 현장 사진으로 오인되지 않도록 `AI CONCEPT VISUAL` 또는 `AI 디펜스 재구성` 표기를 유지한다.

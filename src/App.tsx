@@ -55,7 +55,7 @@ export default function App() {
       <Header language={language} onLanguage={() => setLanguage((v) => v === 'ko' ? 'en' : 'ko')} />
       <main id="main">
         <section className="hero" aria-labelledby="hero-title">
-          <ResponsiveImage className="hero-image" base="/images/site/night-arrival" widths={[640, 1280, 1692]} sizes="100vw" loading="eager" fetchPriority="high" alt="실제 타코마 장수리조트 본관 외관을 기준으로 재구성한 블루아워 야간 경관 콘셉트" />
+          <ResponsiveImage className="hero-image" base="/images/site/defense-front-day" widths={[640, 1280, 1511]} sizes="100vw" loading="eager" fetchPriority="high" alt="실제 타코마 장수리조트 본관에 태양광, 미니 풍력, CCTV, 모래주머니 진지, 외곽 철조망과 보안 로봇을 합성한 밝은 AI 디펜스 콘셉트" />
           <div className="hero-overlay" />
           <div className="hero-grid" aria-hidden="true" />
           <div className="hero-content">
@@ -98,8 +98,8 @@ export default function App() {
         <section id="site-tour" className="section section-site-tour">
           <div className="section-number">02</div>
           <div className="section-heading two-col light">
-            <Reveal><div><p className="eyebrow">ACTUAL SITE × LANDSCAPE TOUR</p><h2>실제 본관에서 출발해,<br /><em>가능한 경관을 걷습니다.</em></h2></div></Reveal>
-            <Reveal delay={0.08}><p className="lead">제공된 실제 전경을 첫 장면에 그대로 싣고, 그 건물의 외관 정체성을 유지한 도착정원·보행로·테라스·조감·야간 장면을 이어 붙였습니다. 각 장면의 실제/AI 여부와 가정 범위를 이미지 위에 표시했습니다.</p></Reveal>
+            <Reveal><div><p className="eyebrow">ACTUAL SITE × DEFENSIVE RESILIENCE</p><h2>실제 본관에서 출발해,<br /><em>다층 방어 태세를 구축합니다.</em></h2></div></Reveal>
+            <Reveal delay={0.08}><p className="lead">현장 원본은 그대로 보존하고, 태양광·미니 풍력·CCTV·모래주머니 방호선·외곽 철조망·상용급 로봇과 드론 순찰을 실제 본관 외관 위에 겹쳤습니다. 공격용 무장이 아닌 감시·억제·에너지 지속성을 중심으로 한 근미래 비공식 콘셉트입니다.</p></Reveal>
           </div>
           <SiteTour />
         </section>
@@ -117,8 +117,8 @@ export default function App() {
             <Reveal delay={0.08}><p className="lead">본관 내부의 일상적 공간에서 보안·위생 전환 통로를 거쳐 지하 주거 코어로 이어지는 구성입니다. 비상출구·환기구·설비샤프트는 독립성과 점검성을 우선하며, 실제 위치는 법규·지질·피난해석으로 확정합니다.</p></Reveal>
           </div>
           <Reveal><div className="cutaway-feature">
-            <ResponsiveImage base="/images/renders/actual-site-cutaway" widths={[640, 1280, 1672]} sizes="100vw" alt="실제 타코마 장수리조트 본관 외관과 가상의 여섯 개 지하층을 합성한 비공식 개념 절개 조감도" />
-            <div className="image-legend"><span>ACTUAL FAÇADE REFERENCE × AI CONCEPT · NOT FOR CONSTRUCTION</span><strong>실제 본관의 장소성에서 시작한 지상-지하 연결 가정</strong></div>
+            <ResponsiveImage base="/images/renders/defense-cutaway" widths={[640, 1280, 1672]} sizes="100vw" alt="밝게 표현한 실제 본관 기반 태양광·풍력·CCTV·철조망 방어선과 가상의 여섯 개 지하층 비공식 절개 조감도" />
+            <div className="image-legend"><span>DEFENSIVE RESILIENCE AI CONCEPT · NOT FOR CONSTRUCTION</span><strong>에너지·외곽 경계·로봇 순찰과 지하 6개 층의 통합 가정</strong></div>
           </div></Reveal>
           <Reveal><SectionDiagram /></Reveal>
           <div className="diagram-note"><b>NOT FOR CONSTRUCTION</b><p>단면은 공간 관계를 설명하는 개념도입니다. 굴착 깊이, 구조 형식, 피난거리, 방재구획, 환기·설비 용량은 전문 설계 전 미확정입니다.</p></div>

@@ -55,7 +55,7 @@ button { color: inherit; }
 .hero-image, .hero-overlay, .hero-grid { position: absolute; inset: 0; width: 100%; height: 100%; }
 .hero-image { display: block; }
 .hero-image img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
-.hero-overlay { background: linear-gradient(90deg, rgba(4,11,19,.96) 0%, rgba(5,13,23,.78) 32%, rgba(5,13,23,.2) 67%, rgba(5,13,23,.48) 100%), linear-gradient(0deg, rgba(4,11,19,.9), transparent 45%); }
+.hero-overlay { background: linear-gradient(90deg, rgba(4,11,19,.84) 0%, rgba(5,13,23,.6) 34%, rgba(5,13,23,.08) 70%, rgba(5,13,23,.18) 100%), linear-gradient(0deg, rgba(4,11,19,.62), transparent 48%); }
 .hero-grid { opacity: .16; background-image: linear-gradient(rgba(255,255,255,.16) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.16) 1px,transparent 1px); background-size: 12.5vw 12.5vw; mask-image: linear-gradient(90deg,#000,transparent 65%); }
 .hero-content { position: relative; z-index: 2; max-width: 1080px; }
 .hero-kicker, .eyebrow { margin: 0 0 24px; color: var(--emerald); font-size: 11px; font-weight: 700; letter-spacing: .22em; }
@@ -131,6 +131,14 @@ h1 em, h2 em { color: var(--emerald); font-style: normal; }
 .site-tour-nav small { grid-column: 1 / -1; color: #536873; font-size: 8px; letter-spacing: .16em; }
 .site-tour-nav svg { width: 17px; color: var(--emerald); }
 .site-tour-nav span { font-size: 11px; white-space: nowrap; }
+.defense-principles { display: grid; grid-template-columns: repeat(5,1fr); border: 1px solid var(--line); border-top: 0; background: #0a1821; }
+.defense-principles article { min-height: 92px; padding: 21px 18px; border-right: 1px solid var(--line); }
+.defense-principles article:last-child { border-right: 0; }
+.defense-principles strong, .defense-principles span { display: block; }
+.defense-principles strong { color: var(--gold); font-size: 8px; letter-spacing: .16em; }
+.defense-principles span { margin-top: 10px; color: #c2cdd3; font-size: 10px; line-height: 1.55; }
+.defense-reference { max-width: 1040px; margin: 24px 0 0 auto; color: #82939d; font-size: 10px; line-height: 1.8; text-align: right; }
+.defense-reference a { color: #9ee5d0; border-bottom: 1px solid rgba(158,229,208,.35); }
 .site-tour-disclaimer { margin: 22px 0 0 auto; max-width: 770px; color: #7d8e98; font-size: 10px; line-height: 1.8; text-align: right; }
 .site-tour-disclaimer strong { color: var(--gold); margin-right: 10px; }
 @keyframes tour-in { from { opacity: .45; transform: scale(1.012); } }
@@ -215,6 +223,7 @@ h1 em, h2 em { color: var(--emerald); font-style: normal; }
 .gallery-3 { grid-column: span 4; }
 .gallery-4, .gallery-5, .gallery-6 { grid-column: span 4; }
 .gallery-7 { grid-column: span 12; }
+.gallery-card picture { display: block; width: 100%; height: 100%; }
 .gallery-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s cubic-bezier(.22,1,.36,1),filter .4s; }
 .gallery-card:hover img { transform: scale(1.035); filter: brightness(.78); }
 .gallery-shade { position: absolute; inset: 0; background: linear-gradient(0deg,rgba(3,9,14,.84),transparent 55%); }
@@ -223,6 +232,7 @@ h1 em, h2 em { color: var(--emerald); font-style: normal; }
 .gallery-card > svg { position: absolute; right: 20px; bottom: 20px; width: 18px; color: #fff; }
 .lightbox { position: fixed; z-index: 500; inset: 0; display: grid; place-items: center; padding: 70px; background: rgba(2,8,13,.94); backdrop-filter: blur(16px); }
 .lightbox figure { max-width: min(1500px,100%); max-height: 100%; margin: 0; }
+.lightbox figure picture { display: block; }
 .lightbox figure img { max-height: calc(100vh - 180px); margin: auto; object-fit: contain; }
 .lightbox figcaption { padding: 15px 0; color: #fff; font-size: 15px; }
 .lightbox figcaption span, .lightbox figcaption small { display: block; }
@@ -376,7 +386,10 @@ footer a svg { width: 11px; }
   .site-tour-media { min-height: 640px; }
   .site-tour-nav { grid-template-columns: repeat(3,1fr); }
   .site-tour-nav button { min-height: 90px; border-bottom: 1px solid var(--line); }
-  .site-tour-disclaimer { text-align: left; }
+  .defense-principles { grid-template-columns: repeat(2,1fr); }
+  .defense-principles article { border-bottom: 1px solid var(--line); }
+  .defense-principles article:nth-child(2n) { border-right: 0; }
+  .defense-reference, .site-tour-disclaimer { text-align: left; }
   .map-shell, .map-shell iframe { min-height: 500px; }
   .site-analysis { padding: 35px 25px; }
   .evidence-panel { display: block; }
@@ -430,6 +443,8 @@ footer a svg { width: 11px; }
   .site-tour-caption p { font-size: 10px; }
   .site-tour-nav { grid-template-columns: repeat(2,1fr); }
   .site-tour-nav button:nth-child(2n) { border-right: 0; }
+  .defense-principles { grid-template-columns: 1fr; }
+  .defense-principles article { min-height: 74px; border-right: 0; }
   .map-badge { left: 12px; right: 12px; bottom: 75px; max-width: none; }
   .map-links { left: 12px; bottom: 18px; }
   .gallery-grid { display: block; }

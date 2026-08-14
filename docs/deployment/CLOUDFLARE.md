@@ -67,7 +67,7 @@ npx wrangler pages deployment list --project-name ai-bunker-house-tacoma
 익명 브라우저에서 다음을 확인한다.
 
 1. `/`와 앵커 URL이 로그인 없이 열린다.
-2. `/images/hero/tacoma-gateway-dusk.webp`가 열린다.
+2. `/images/site/defense-front-day-1280.avif`가 열리고, 실제 원본 `/images/site/actual-front-624.webp`도 보존되어 있다.
 3. `/brochure/ai-bunker-house-tacoma-brochure.pdf`가 열린다.
 4. 유효한 문의 1건이 성공하고 D1에 생성된다.
 5. 유효하지 않은 데이터는 422, DB 미연결은 503을 반환한다.

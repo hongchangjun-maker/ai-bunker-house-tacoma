@@ -96,7 +96,7 @@ c.setTitle('AI벙커하우스 1호 - 타코마 장수 리조트 콘셉트 브로
 c.setAuthor('AI Bunker House No.1 Concept Team')
 
 # Cover
-hero = ROOT / 'public/images/site/night-arrival-1692.webp'
+hero = ROOT / 'public/images/site/defense-front-day-1511.webp'
 draw_image_cover(c, hero, 0, 0, W, H, .46)
 c.setFillColor(EMERALD); c.rect(42, H - 64, 60, 2, fill=1, stroke=0)
 text(c, 'AI BUNKER HOUSE NO.1', 42, H - 52, 8, EMERALD, 'MalgunBold')
@@ -133,22 +133,22 @@ footer(c); c.showPage()
 
 # Actual site and landscape tour
 c.setFillColor(NAVY); c.rect(0,0,W,H,fill=1,stroke=0); header(c,3,'Actual site & landscape tour')
-text(c, '실제 본관에서 출발한 경관 투어', 42, H - 82, 23, HexColor('#FFFFFF'), 'MalgunBold')
-text(c, '첫 장면은 제공된 현장 사진 · 나머지는 실제 본관 외관을 기준으로 생성한 AI 경관 재구성', 42, H - 105, 7.5, GOLD, 'MalgunBold')
+text(c, '실제 본관에서 출발한 디펜스 투어', 42, H - 82, 23, HexColor('#FFFFFF'), 'MalgunBold')
+text(c, '첫 장면은 제공된 현장 사진 · 나머지는 태양광·풍력·CCTV·철조망·로봇 순찰 AI 재구성', 42, H - 105, 7.5, GOLD, 'MalgunBold')
 tour_images = [
     (ROOT / 'docs/reference/tacoma-jangsu-site-photo-2026-08-12.jpeg', '실제 현장 전경 · 2026.08.12', True),
-    (ROOT / 'public/images/site/landscape-arrival-1280.webp', '도착 정원 · AI 재구성', False),
-    (ROOT / 'public/images/site/garden-walk-1280.webp', '보행 진입 · AI 재구성', False),
-    (ROOT / 'public/images/site/healing-terrace-1280.webp', '치유 테라스 · AI 재구성', False),
-    (ROOT / 'public/images/site/aerial-masterplan-1280.webp', '경관 조감 · AI 재구성', False),
-    (ROOT / 'public/images/site/night-arrival-1280.webp', '야간 경관 · AI 재구성', False),
+    (ROOT / 'public/images/site/defense-front-day-1280.webp', '전면 방어 · AI 재구성', False),
+    (ROOT / 'public/images/site/defense-patrol-walk-1280.webp', '로봇 순찰 · AI 재구성', False),
+    (ROOT / 'public/images/site/defense-terrace-1280.webp', '보호 커먼즈 · AI 재구성', False),
+    (ROOT / 'public/images/site/defense-aerial-1280.webp', '외곽 방어 · AI 재구성', False),
+    (ROOT / 'public/images/site/defense-night-1280.webp', '야간 경계 · AI 재구성', False),
 ]
 for i,(path,label,is_actual) in enumerate(tour_images):
     col=i%3; row=i//3; x=42+col*255; y=H-290-row*195
     draw_image_cover(c, path, x,y,235,154,.06)
     c.setFillColor(NAVY); c.setFillAlpha(.88); c.rect(x,y,235,26,fill=1,stroke=0); c.setFillAlpha(1)
     text(c,label,x+9,y+9,6.7,GOLD if is_actual else HexColor('#FFFFFF'),'MalgunBold')
-text(c,'AI 장면은 현황·측량·설계도·시공 결과를 의미하지 않으며 위치·식재·조명은 전문 검토 전 가정입니다.',42,23,6.3,MUTED,'MalgunBold')
+text(c,'AI 장면은 현황·측량·설계도·시공 결과가 아닙니다. 휴머노이드 경비·봉 소지는 콘셉트 가정이며 공급사·법규·안전 검토 전 미확정입니다.',42,23,6.3,MUTED,'MalgunBold')
 c.showPage()
 
 # Location
@@ -180,12 +180,12 @@ footer(c); c.showPage()
 
 # Cutaway
 c.setFillColor(NAVY); c.rect(0,0,W,H,fill=1,stroke=0); header(c,5,'Architecture')
-cutaway = ROOT / 'public/images/renders/actual-site-cutaway-1672.webp'
+cutaway = ROOT / 'public/images/renders/defense-cutaway-1672.webp'
 draw_image_cover(c, cutaway, 0, 0, W, H - 36, .08)
 c.setFillColor(NAVY); c.setFillAlpha(.88); c.rect(30,35,355,84,fill=1,stroke=0); c.setFillAlpha(1)
 text(c, 'SURFACE × SUBTERRANEAN', 48, 96, 6.5, EMERALD, 'MalgunBold')
-text(c, '본관 내부에서 6개 지하층까지', 48, 72, 17, HexColor('#FFFFFF'), 'MalgunBold')
-wrap(c, '실제 본관 외관을 참조한 비공식 AI 개념 절개 조감. 지하 시설의 현황·확정 설계·시공 가능성을 나타내지 않습니다.', 48, 52, 315, 6.5, 10, HexColor('#A6B4BD'))
+text(c, '다층 방어선에서 6개 지하층까지', 48, 72, 17, HexColor('#FFFFFF'), 'MalgunBold')
+wrap(c, '태양광·풍력·CCTV·철조망·로봇 순찰과 실제 본관 외관을 결합한 비공식 AI 개념 절개 조감입니다.', 48, 52, 315, 6.5, 10, HexColor('#A6B4BD'))
 text(c, 'NOT FOR CONSTRUCTION', W-155, 45, 7, GOLD, 'MalgunBold')
 c.showPage()
 
@@ -232,7 +232,7 @@ footer(c); c.showPage()
 c.setFillColor(PAPER); c.rect(0,0,W,H,fill=1,stroke=0); header(c,8,'Interior concepts')
 imgs=[
     ('community-lounge.webp','B2 커먼즈'),('residential-suite.webp','B3 리빙'),('medical-wellbeing.webp','B4 웰빙·의료'),
-    ('smart-farm.webp','B5 스마트팜'),('ai-operations.webp','B6 운영센터'),('resort-connection.webp','본관 연결 게이트')]
+    ('smart-farm.webp','B5 스마트팜'),('defense-operations-1280.webp','B6 방어·에너지 운영센터'),('resort-connection.webp','본관 연결 게이트')]
 for i,(name,label) in enumerate(imgs):
     col=i%3; row=i//3; x=42+col*255; y=H-230-row*205
     draw_image_cover(c, ROOT / ('public/images/interiors/'+name) if 'connection' not in name else ROOT / ('public/images/renders/'+name), x,y,235,165,.1)

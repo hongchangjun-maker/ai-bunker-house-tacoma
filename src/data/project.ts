@@ -32,13 +32,13 @@ export const systems = [
 ];
 
 export const gallery = [
-  { src: '/images/renders/actual-site-cutaway-1280.webp', title: '실제 본관 기반 지상-지하 절개 조감', tag: 'ACTUAL REFERENCE × AI', alt: '실제 타코마 장수리조트 본관 외관과 정확히 여섯 개 지하층을 합성한 비공식 개념 절개 조감도' },
+  { src: '/images/renders/defense-cutaway-1280.webp', base: '/images/renders/defense-cutaway', widths: [640, 1280, 1672], title: '다층 방어형 지상-지하 절개 조감', tag: 'DEFENSE CONCEPT × AI', alt: '실제 본관 외관에 태양광, 풍력, CCTV, 철조망과 로봇 순찰을 더하고 정확히 여섯 개 지하층을 합성한 비공식 개념 절개 조감도' },
   { src: '/images/renders/resort-connection.webp', title: '본관 내부 연결 게이트', tag: 'CONCEPT VISUAL', alt: '고급 리조트 로비에서 지하 연결통로로 이어지는 접근 가능한 진입 공간' },
   { src: '/images/interiors/community-lounge.webp', title: 'B2 커뮤니티 커먼즈', tag: 'AI RECONSTRUCTION', alt: '식당과 라운지, 실내 정원이 결합된 장기 거주 공동생활 공간' },
   { src: '/images/interiors/residential-suite.webp', title: 'B3 리빙 클러스터', tag: 'AI RECONSTRUCTION', alt: '가족실과 개인실, 세탁 공간이 연결된 따뜻한 주거 구역' },
   { src: '/images/interiors/medical-wellbeing.webp', title: 'B4 웰빙·의료', tag: 'AI RECONSTRUCTION', alt: '관찰 병상과 상담, 재활 공간이 함께 있는 밝은 의료 웰빙 구역' },
   { src: '/images/interiors/smart-farm.webp', title: 'B5 스마트팜', tag: 'AI RECONSTRUCTION', alt: '수직재배 선반과 작업대, 설비 관찰 복도가 있는 지하 스마트팜' },
-  { src: '/images/interiors/ai-operations.webp', title: 'B6 통합 운영센터', tag: 'AI RECONSTRUCTION', alt: '사람이 에너지와 물, 공기를 감독하는 통합 운영센터' },
+  { src: '/images/interiors/defense-operations-1280.webp', base: '/images/interiors/defense-operations', widths: [640, 1280, 1659], title: 'B6 방어·에너지 통합 운영센터', tag: 'DEFENSE CONCEPT × AI', alt: '사람이 태양광, 풍력, CCTV, 로봇과 드론 순찰을 감독하는 밝은 통합 운영센터' },
 ];
 
 export const evidence = [

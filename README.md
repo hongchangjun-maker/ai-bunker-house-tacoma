@@ -7,7 +7,8 @@
 ## 구현 범위
 
 - 반응형 React 19 + TypeScript 웹
-- 사용자 제공 실제 본관 전경 1종과 그 외관을 기준으로 만든 실사형 AI 경관 투어 6장면
+- 사용자 제공 실제 본관 전경 1종과 그 외관을 기준으로 만든 실사형 AI 디펜스 투어 5장면
+- 대규모 태양광·미니 풍력·CCTV·외곽 철조망·모래주머니 방호선·로봇/드론 순찰 콘셉트
 - AVIF/WebP 이중 포맷, 640/1280/약 1690px 반응형 변형, 지연 로딩과 1년 정적 캐시
 - 주소 기반 OpenStreetMap 임베드 및 외부 지도 링크
 - 근거 출처와 확인 필요 사항 분리
@@ -77,7 +78,7 @@ Git 연결 배포에서는 Build command를 `npm run build`, output directory를
 - 주요 페이지 카피: `src/App.tsx`
 - 색상·반응형: `src/styles/index.css`
 - 현장 원본: `docs/reference/tacoma-jangsu-site-photo-2026-08-12.jpeg` (사용자 제공, 2026-08-12)
-- 투어 이미지: `public/images/site/`의 AVIF/WebP 폭별 변형
+- 디펜스 투어 이미지: `public/images/site/defense-*`의 AVIF/WebP 폭별 변형
 - 이미지 최적화: `python scripts/optimize_images.py 원본 대상기본명 --widths 640 1280`
 - 브로슈어: `scripts/build_brochure.py` 수정 후 다시 실행
 - 문의 스키마: `migrations/`에 새 순번의 마이그레이션 추가
