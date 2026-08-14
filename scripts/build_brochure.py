@@ -110,15 +110,15 @@ for i, (n, label) in enumerate([('144','PERSONS'),('5','YEARS'),('B6','LEVELS'),
 text(c, 'CONCEPT PRESENTATION · 2026.08', W - 190, 42, 6.5, GOLD, 'MalgunBold')
 c.showPage()
 
-# Premise
+# Project direction
 c.setFillColor(PAPER); c.rect(0, 0, W, H, fill=1, stroke=0); header(c, 2, 'Project premise')
-text(c, '기존 장소의 기억 위에,', 42, H - 95, 23, INK, 'Malgun')
-text(c, '재난 대응형 장기 거주를 설계합니다.', 42, H - 130, 25, INK, 'MalgunBold')
-wrap(c, '기존 리조트를 지상 생활·환대 거점으로 재생하고 인접 부지 하부에 6개 기능층을 배치하는 제안입니다. 사람의 존엄, 운영 지속성, 검증 가능한 의사결정을 중심에 둡니다.', 42, H - 165, 470, 9, 15, HexColor('#5A6962'))
+text(c, '기존 리조트를 살리고,', 42, H - 95, 23, INK, 'Malgun')
+text(c, '재난에 대비한 장기 체류 거점으로 바꿉니다.', 42, H - 130, 23, INK, 'MalgunBold')
+wrap(c, '먼저 기존 본관을 숙박·교육·진료·지역 연계가 가능한 생활 거점으로 정비합니다. 지하 공간은 부지 조사 결과가 적합할 때 단계적으로 검토하며, 소유권·지반·피난·인허가 확인 전에는 규모와 성능을 확정하지 않습니다.', 42, H - 165, 470, 8.5, 14, HexColor('#5A6962'))
 cards = [
-    ('01','지상은 열린 일상','환대·교육·단기 체류·지역 연계를 담당하는 공개 생활 거점'),
-    ('02','지하는 장기 회복력','거주·의료·식량·물·에너지·운영을 분리하고 연결'),
-    ('03','검증이 설계의 시작','권리·지질·수문·피난·인허가 전 성능값은 미확정'),
+    ('01','본관부터 현실적으로 활용','기존 공간은 안전점검 후 숙박·교육·진료·지역 협력에 우선 활용'),
+    ('02','지하는 조사 후 단계적으로','지질·지하수·배수·피난 조건을 확인한 뒤 가능한 범위부터 검토'),
+    ('03','확인된 내용만 사업에 반영','소유권·안전·인허가·공사비·운영인력 확인 전 성능값은 미확정'),
 ]
 for i,(n,title,body) in enumerate(cards):
     x = 42 + i * 252
@@ -129,6 +129,9 @@ for i,(n,title,body) in enumerate(cards):
 c.setFillColor(HexColor('#F4E8CE')); c.rect(550, H - 180, 245, 90, fill=1, stroke=0)
 text(c, 'CONCEPT STATUS', 568, H - 112, 6.5, HexColor('#8A6423'), 'MalgunBold')
 wrap(c, '공식 사업·판매·예약 페이지가 아닙니다. 운영 상태, 소유·권리, 인허가, 안전성, 수용·자립 성능은 확인·승인되지 않았습니다.', 568, H - 134, 205, 7.5, 12, HexColor('#6C5838'))
+draw_image_cover(c, ROOT / 'public/images/site/overview-site-review-1280.webp', 550, 260, 245, 140, .04)
+c.setFillColor(NAVY); c.setFillAlpha(.82); c.rect(550, 260, 245, 25, fill=1, stroke=0); c.setFillAlpha(1)
+text(c, 'AI 현장 활용 이미지 · 실제 본관 참고', 560, 269, 6.5, HexColor('#FFFFFF'), 'MalgunBold')
 footer(c); c.showPage()
 
 # Actual site and landscape tour

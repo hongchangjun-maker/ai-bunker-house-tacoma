@@ -21,5 +21,6 @@
 6. `defense-cutaway-*`: 지상 다층 방어선과 정확히 6개 지하층의 밝은 절개 조감
 7. `defense-operations-*`: 사람이 태양광·풍력·CCTV·로봇·드론을 감독하는 B6 통합 운영센터
 8. 기존 `resort-connection.webp`, `community-lounge.webp`, `residential-suite.webp`, `medical-wellbeing.webp`, `smart-farm.webp`: 지하 생활 프로그램 보조 장면
+9. `overview-site-review-*`: 실제 본관을 참고해 시설관리자와 건축·기술 관계자가 기존 시설의 활용 가능성을 점검하는 밝은 실사형 장면
 
 각 최종 프롬프트는 위 목적에 장면, 재료, 카메라, 조명, 보존 조건과 금지 요소를 구조화해 사용했다. 향후 교체 시에도 실제 원본을 덮어쓰지 않고, 현장 사진으로 오인되지 않도록 `AI CONCEPT VISUAL` 또는 `AI 디펜스 재구성` 표기를 유지한다.

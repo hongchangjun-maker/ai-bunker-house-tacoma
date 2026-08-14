@@ -20,8 +20,8 @@ const copy = {
     heroSub: '전북 장수 고원의 입지와 기존 리조트 부지 재생 가능성을 바탕으로 제안하는 5년 자립형 AI 재난대응 레지던스 콘셉트.',
     primary: '프로젝트 탐색', secondary: '브로슈어 PDF',
     concept: '비공식 건축 콘셉트', conceptText: '본 사이트는 타코마 장수 관광농원 또는 관계 기관의 공식 사업·판매·예약 페이지가 아닙니다. 현재 운영 상태, 소유·권리, 인허가, 공사비, 안전성, 수용·자립 성능은 확인·승인되지 않았습니다.',
-    overviewTitle: <>기존 장소의 기억 위에,<br /><em>재난 대응형 장기 거주</em>를 설계합니다.</>,
-    overviewBody: '기존 리조트를 지상 생활·환대 거점으로 재생하고, 인접 부지 하부에 6개 기능층을 배치하는 제안입니다. 사람의 존엄, 운영 지속성, 검증 가능한 의사결정을 설계의 중심에 둡니다.',
+    overviewTitle: <>기존 리조트를 살리고,<br /><em>재난에 대비한 장기 체류 거점</em>으로 바꿉니다.</>,
+    overviewBody: '먼저 기존 본관을 숙박·교육·진료·지역 연계가 가능한 생활 거점으로 정비합니다. 지하 공간은 부지 조사 결과가 적합할 때 단계적으로 검토하며, 소유권·지반·피난·인허가가 확인되기 전에는 규모와 성능을 확정하지 않습니다.',
     locationTitle: <>주소는 실제로,<br />판단은 <em>근거와 조건</em>으로.</>,
     architectureTitle: <>한 장면이 아니라,<br /><em>연결된 시스템</em>으로 봅니다.</>,
     floorsTitle: <>6개 층, 하나의 생활 생태계.</>,
@@ -49,6 +49,15 @@ const copy = {
 export default function App() {
   const [language, setLanguage] = useState<Lang>('ko');
   const t = copy[language];
+  const premiseCards = language === 'ko' ? [
+    { title: '본관부터 현실적으로 활용', body: '객실·로비·식당 등 기존 공간은 구조와 설비를 점검한 뒤 숙박, 교육, 진료, 지역 협력에 우선 활용합니다.', icon: Building2 },
+    { title: '지하는 조사 후 단계적으로', body: '지질·지하수·배수·피난 조건을 먼저 확인하고, 실제로 가능한 범위 안에서 필요한 시설부터 순차적으로 검토합니다.', icon: Layers3 },
+    { title: '확인된 내용만 사업에 반영', body: '소유권, 구조안전, 인허가, 공사비와 운영인력이 확인되기 전에는 수용인원이나 자립 성능을 확정하지 않습니다.', icon: ShieldCheck },
+  ] : [
+    { title: 'Start with the existing building', body: 'Guest rooms, the lobby and dining areas are reused for lodging, education, care and local partnerships after structural and services checks.', icon: Building2 },
+    { title: 'Study underground works in phases', body: 'Geology, groundwater, drainage and evacuation conditions are verified before any below-ground programme is advanced.', icon: Layers3 },
+    { title: 'Build only on verified facts', body: 'Capacity and performance remain unconfirmed until ownership, safety, approvals, cost and operating staff are established.', icon: ShieldCheck },
+  ];
 
   return (
     <div id="top" className={`app lang-${language}`}>
@@ -85,13 +94,18 @@ export default function App() {
         <section id="overview" className="section section-overview">
           <div className="section-number">01</div>
           <div className="section-heading two-col">
-            <Reveal><div><p className="eyebrow">PROJECT PREMISE</p><h2>{t.overviewTitle}</h2></div></Reveal>
-            <Reveal delay={0.08}><div><p className="lead">{t.overviewBody}</p><div className="keyword-row"><span>ADAPTIVE REUSE</span><span>HUMAN-IN-LOOP AI</span><span>PHASED VALIDATION</span></div></div></Reveal>
+            <Reveal><div><p className="eyebrow">{language === 'ko' ? 'PROJECT DIRECTION · 기본 방향' : 'PROJECT DIRECTION'}</p><h2>{t.overviewTitle}</h2></div></Reveal>
+            <Reveal delay={0.08}><div><p className="lead">{t.overviewBody}</p><div className="keyword-row">{(language === 'ko' ? ['기존 건물 활용', '사람이 최종 판단', '단계별 검증'] : ['ADAPTIVE REUSE', 'HUMAN DECISION', 'PHASED VALIDATION']).map((item) => <span key={item}>{item}</span>)}</div></div></Reveal>
           </div>
+          <Reveal><figure className="premise-visual">
+            <ResponsiveImage base="/images/site/overview-site-review" widths={[640, 1280, 1672]} sizes="(max-width: 820px) 100vw, 1600px" alt={language === 'ko' ? '실제 본관을 참고해 건축·시설 관계자가 현장을 점검하는 모습을 재구성한 밝은 실사형 AI 이미지' : 'Bright photoreal AI reconstruction of architects and facility staff reviewing the existing resort building on site'} />
+            <figcaption><span>{language === 'ko' ? 'AI 현장 활용 이미지 · 실제 본관 참고' : 'AI SITE-USE VISUAL · BASED ON THE ACTUAL BUILDING'}</span><strong>{language === 'ko' ? '공사를 결정하기 전에, 기존 시설의 상태와 활용 가능성부터 확인합니다.' : 'Assess the existing facility and its reuse potential before deciding on construction.'}</strong></figcaption>
+          </figure></Reveal>
           <div className="premise-grid">
-            <Reveal><article><span>01</span><Building2 /><h3>지상은 열린 일상</h3><p>리조트 본관은 환대·교육·단기 체류·지역 연계를 담당하는 공개 생활 거점으로 재생합니다.</p></article></Reveal>
-            <Reveal delay={0.06}><article><span>02</span><Layers3 /><h3>지하는 장기 회복력</h3><p>거주·의료·식량·물·에너지·운영 기능을 분리하면서 수직 코어로 긴밀히 연결합니다.</p></article></Reveal>
-            <Reveal delay={0.12}><article><span>03</span><ShieldCheck /><h3>검증이 설계의 시작</h3><p>권리·측량·지질·수문·피난·인허가 검토 전에는 어떤 성능도 확정값으로 주장하지 않습니다.</p></article></Reveal>
+            {premiseCards.map((card, index) => {
+              const Icon = card.icon;
+              return <Reveal key={card.title} delay={index * 0.06}><article><span>{String(index + 1).padStart(2, '0')}</span><Icon /><h3>{card.title}</h3><p>{card.body}</p></article></Reveal>;
+            })}
           </div>
         </section>
 
