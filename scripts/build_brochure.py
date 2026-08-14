@@ -220,7 +220,7 @@ footer(c); c.showPage()
 c.setFillColor(NAVY); c.rect(0,0,W,H,fill=1,stroke=0); header(c,7,'Five-year operations')
 text(c, '144명이 오래 머물려면 무엇이 필요할까요?', 42, H-88, 24, HexColor('#FFFFFF'), 'MalgunBold')
 wrap(c, '저장·재배·외부 보급·예비 설비를 조합하고, 자원 재고와 품질을 사람이 검증하는 운영 모델입니다. 완전 자립을 보장하지 않습니다.',42,H-116,560,8.5,14,MUTED)
-systems=[('주거','144침상'),('식량','5.78억 kcal 수요'),('물','394만 L 최소수요'),('공기','구역 분리'),('에너지','부하 산정 전'),('의료','1차 대응'),('자원순환','분리 처리'),('AI 운영','사람이 최종 결정')]
+systems=[('주거','144침상'),('식량','5.78억 kcal 수요'),('물','525.6만 L 검토수요'),('공기','성능 산정 전'),('에너지','부하 산정 전'),('의료','인력·후송 미확정'),('자원순환','성능 산정 전'),('AI 운영','사람이 최종 결정')]
 for i,(title,value) in enumerate(systems):
     x=42+(i%4)*190; y=H-205-(i//4)*105
     c.setStrokeColor(LINE); c.rect(x,y,174,86,fill=0,stroke=1)
@@ -232,8 +232,32 @@ text(c,'AI는 감지·예측·제안을 담당하고, 사람은 승인·기록·
 text(c,'권한 최소화  ·  수동 우회  ·  감사 기록  ·  오프라인 절차',58,58,7,MUTED)
 footer(c); c.showPage()
 
+# Expert and citizen audit
+c.setFillColor(NAVY); c.rect(0,0,W,H,fill=1,stroke=0); header(c,8,'Readiness audit')
+text(c,'완성도를 말하기 전에 통과해야 할 질문',42,H-88,24,HexColor('#FFFFFF'),'MalgunBold')
+wrap(c,'현재 검증 완료된 안전·성능 항목은 0건입니다. 공간 프로그램과 AI 이미지는 현장·법규·성능 증거가 아니므로 아래 항목이 닫히기 전에는 144명·5년 생존 가능이라고 판단하지 않습니다.',42,H-116,650,8.5,14,MUTED)
+summary=[('0','전문가 검증 완료',HexColor('#FFFFFF')),('8','착수 전 필수',HexColor('#FF7D6E')),('4','운영 증거 필요',GOLD),('6','시민 검증 질문',EMERALD)]
+for i,(value,label,color) in enumerate(summary):
+    x=42+i*190
+    c.setStrokeColor(LINE); c.rect(x,H-220,174,72,fill=0,stroke=1)
+    text(c,value,x+14,H-181,20,color,'MalgunBold'); text(c,label,x+55,H-181,7,MUTED,'MalgunBold')
+blockers=[
+    ('01','권리·현황','소유·경계·용도·현재 운영 원문'),('02','지반·수문','시추·지하수·사면·배수'),
+    ('03','화재·피난','계단 이격·보행거리·제연·지상배출'),('04','구조·옥상','태양광·풍력·방호물 추가하중'),
+    ('05','물·위생','525.6만L 수요·90㎥는 약 31일'),('06','공기·감염','외기·여과·압력·정전환기'),
+    ('07','전력','필수부하·계절발전·블랙스타트'),('08','접근성','장애·노인·아동 보조피난')]
+for i,(n,title,body) in enumerate(blockers):
+    col=i%2; row=i//2; x=42+col*380; y=H-275-row*57
+    c.setFillColor(NAVY2); c.rect(x,y-36,360,46,fill=1,stroke=0)
+    text(c,n,x+12,y-10,6.5,HexColor('#FF8B7E'),'MalgunBold'); text(c,title,x+48,y-9,9,HexColor('#FFFFFF'),'MalgunBold')
+    text(c,body,x+128,y-9,6.4,MUTED)
+c.setFillColor(HexColor('#102B35')); c.rect(42,42,W-84,65,fill=1,stroke=0)
+text(c,'시민 질문',58,82,6.5,EMERALD,'MalgunBold')
+wrap(c,'화재와 정전이 겹쳐도 모두 지상으로 나갈 수 있는가? 물·공기·전력이 끊기면 며칠인가? 누가 책임지고 주민은 감시·AI·운영 결정에 이의를 제기할 수 있는가?',58,64,W-120,8.5,13,HexColor('#FFFFFF'),'MalgunBold')
+footer(c); c.showPage()
+
 # 3D floor plans
-c.setFillColor(PAPER); c.rect(0,0,W,H,fill=1,stroke=0); header(c,8,'3D floor plans')
+c.setFillColor(PAPER); c.rect(0,0,W,H,fill=1,stroke=0); header(c,9,'3D floor plans')
 imgs=[
     ('b1-plan-v1-1280.webp','B1 출입·물류 · 1,650㎡'),('b2-plan-v1-1280.webp','B2 식당·커뮤니티 · 2,250㎡'),('b3-plan-v1-1280.webp','B3 144침상 숙소 · 2,850㎡'),
     ('b4-plan-v1-1280.webp','B4 건강관리 · 1,800㎡'),('b5-plan-v1-1280.webp','B5 식량·물 · 2,400㎡'),('b6-plan-v1-1280.webp','B6 에너지·운영 · 2,050㎡')]
@@ -246,7 +270,7 @@ text(c,'층별 면적표와 같은 프로그램을 사용한 AI 3D 시각화입�
 c.showPage()
 
 # Next steps
-c.setFillColor(NAVY); c.rect(0,0,W,H,fill=1,stroke=0); header(c,9,'Next steps')
+c.setFillColor(NAVY); c.rect(0,0,W,H,fill=1,stroke=0); header(c,10,'Next steps')
 text(c,'아이디어를 실제 사업으로 옮기는 순서',42,H-92,25,HexColor('#FFFFFF'),'MalgunBold')
 steps=[('01','권리·현황','소유·경계·영업·용도·시설 상태 원문 확인'),('02','기술 실사','구조·지질·수문·사면·배수·환경 기준선'),('03','사업 게이트','범위·CAPEX/OPEX·단계·운영주체·중단 조건'),('04','설계 착수','건축·구조·MEP·소방·의료·식량 전문팀 통합')]
 for i,(n,title,body) in enumerate(steps):

@@ -7,6 +7,7 @@ import { Header } from './components/Header';
 import { MapEvidence } from './components/MapEvidence';
 import { Reveal } from './components/Reveal';
 import { ResponsiveImage } from './components/ResponsiveImage';
+import { ReadinessAudit } from './components/ReadinessAudit';
 import { SectionDiagram } from './components/SectionDiagram';
 import { SiteTour } from './components/SiteTour';
 import { SystemGrid } from './components/SystemGrid';
@@ -97,7 +98,7 @@ export default function App() {
           <a href="#overview"><span>01</span><Compass /><strong>{language === 'ko' ? '1분 요약' : 'One-minute view'}</strong><small>{language === 'ko' ? '장소와 계획의 핵심' : 'The idea at a glance'}</small></a>
           <a href="#site-tour"><span>02</span><Images /><strong>{language === 'ko' ? '외관 투어' : 'Exterior tour'}</strong><small>{language === 'ko' ? '전면·외곽·야간 장면' : 'Front, perimeter and night'}</small></a>
           <a href="#floors"><span>03</span><Layers3 /><strong>{language === 'ko' ? '지하 6개 층' : 'Six levels'}</strong><small>{language === 'ko' ? '층별 생활 기능' : 'Life on every level'}</small></a>
-          <a href="#evidence"><span>04</span><FileCheck2 /><strong>{language === 'ko' ? '확인된 정보' : 'Verified facts'}</strong><small>{language === 'ko' ? '실제와 가정 구분' : 'Fact versus concept'}</small></a>
+          <a href="#audit"><span>04</span><FileCheck2 /><strong>{language === 'ko' ? '안전 검증' : 'Safety review'}</strong><small>{language === 'ko' ? '검증 0건 · 필수 과제 8개' : '0 verified · 8 blockers'}</small></a>
         </nav>
 
         <section id="overview" className="section section-overview">
@@ -137,7 +138,7 @@ export default function App() {
           <div className="section-number">04</div>
           <div className="section-heading two-col light">
             <Reveal><div><p className="eyebrow">지상에서 지하로 · SURFACE TO B6</p><h2>{t.architectureTitle}</h2></div></Reveal>
-            <Reveal delay={0.08}><p className="lead">지상 본관에서 출입·위생 전환 구역을 지나 식사, 주거, 건강관리, 식량·물, 에너지 운영층으로 내려갑니다. 화면의 단면은 관계를 이해하기 위한 개념도이며 실제 깊이와 구조는 전문 조사 후 정해야 합니다.</p></Reveal>
+            <Reveal delay={0.08}><p className="lead">지상 본관에서 출입·위생 전환 구역을 지나 식사, 주거, 건강관리, 식량·물, 에너지 운영층을 차례로 배치하는 개념입니다. 화면의 단면은 관계를 이해하기 위한 구상이며 실제 깊이·구조·피난 체계는 전문 조사와 인허가 검토 후 정해야 합니다.</p></Reveal>
           </div>
           <Reveal><div className="cutaway-feature">
             <ResponsiveImage base="/images/renders/program-cutaway-v2" widths={[640, 1280, 1672]} sizes="100vw" alt="실제 본관 사진을 참고하고 동일한 통합 면적표에 맞춘 지하 6개 층의 밝은 AI 개념 단면" />
@@ -146,10 +147,10 @@ export default function App() {
           <Reveal><div className="survival-baseline" aria-label="144명 5년 계획 기준">
             <article><small>정확한 침상 구성</small><strong>{planningBaseline.beds.total}침상</strong><p>4인 가족실 24실 96명 + 2인실 24실 48명</p></article>
             <article><small>6개 층 연면적</small><strong>{planningBaseline.grossArea.toLocaleString()}㎡</strong><p>B1~B6 층별 구역 면적 합계와 일치</p></article>
-            <article><small>5년 누적 최소 물 수요</small><strong>394만 L</strong><p>15 L/인·일 기준. 90㎥ 비상 버퍼와 처리·재보급 병행</p></article>
+            <article><small>5년 장기 검토 물 수요</small><strong>525.6만 L</strong><p>20 L/인·일 초기 비교값. 90㎥ 버퍼는 약 31일분</p></article>
             <article><small>5년 계획 열량</small><strong>5.78억 kcal</strong><p>2,200 kcal/인·일 기준. 손실·안전재고는 별도 검토</p></article>
           </div></Reveal>
-          <p className="baseline-sources">계획 기준 참고: <a href="https://www.who.int/teams/environment-climate-change-and-health/water-sanitation-and-health/environmental-health-in-emergencies/humanitarian-emergencies" target="_blank" rel="noreferrer">WHO 비상 물 기준</a><span>·</span><a href="https://www.fema.gov/sites/default/files/2020-07/safe-rooms-design-criteria_recovery-advisory.pdf" target="_blank" rel="noreferrer">FEMA 장기 수용 고려사항</a><span>·</span><a href="https://www.ars.usda.gov/ARSUserFiles/np305/NP%20305%20Action%20Plan%202024-2029_Finalv2.pdf" target="_blank" rel="noreferrer">USDA 환경제어농업 한계</a></p>
+          <p className="baseline-sources">계획 기준 참고: <a href="https://www.who.int/teams/environment-climate-change-and-health/water-sanitation-and-health/environmental-health-in-emergencies/humanitarian-emergencies" target="_blank" rel="noreferrer">WHO 비상 물 기준</a><span>·</span><a href="https://www.law.go.kr/LSW/lsLinkCommonInfo.do?lsJoLnkSeq=1030364627" target="_blank" rel="noreferrer">국내 직통계단 기준</a><span>·</span><a href="https://www.ars.usda.gov/ARSUserFiles/np305/NP%20305%20Action%20Plan%202024-2029_Finalv2.pdf" target="_blank" rel="noreferrer">USDA 환경제어농업 한계</a></p>
           <Reveal><SectionDiagram /></Reveal>
           <div className="diagram-note"><b>통합 개념 설계 · 시공용 아님</b><p>단면, 3D 평면도와 면적표는 동일한 프로그램을 사용합니다. 굴착 깊이, 구조, 피난거리, 방재구획, 환기·설비 용량은 지반·구조·소방·기계 전문가의 현장 조사와 인허가 설계가 필요합니다.</p></div>
         </section>
@@ -182,8 +183,17 @@ export default function App() {
           <div className="governance-banner"><BrainMark /><div><small>AI GOVERNANCE PRINCIPLE</small><strong>AI는 감지·예측·제안을 담당하고,<br />사람은 승인·기록·중단 권한을 가집니다.</strong></div><ul><li>권한 최소화</li><li>수동 우회</li><li>감사 기록</li><li>오프라인 절차</li></ul></div>
         </section>
 
-        <section className="section section-proposal">
+        <section id="audit" className="section section-audit">
           <div className="section-number">07</div>
+          <div className="section-heading two-col light">
+            <Reveal><div><p className="eyebrow">20년차 운영 관점 × 시민 검증단 · READINESS AUDIT</p><h2>완성도를 말하기 전에,<br /><em>통과해야 할 질문</em>부터 공개합니다.</h2></div></Reveal>
+            <Reveal delay={0.08}><p className="lead">이 화면은 인증서나 안전 판정서가 아닙니다. 지하 장기거주 시설을 실제로 검토할 때 전문가와 시민이 요구해야 할 증거, 책임 분야와 중단 조건을 한곳에 모은 공개 검증 대시보드입니다.</p></Reveal>
+          </div>
+          <Reveal><ReadinessAudit /></Reveal>
+        </section>
+
+        <section className="section section-proposal">
+          <div className="section-number">08</div>
           <Reveal><div className="section-heading"><p className="eyebrow">현실화 순서 · FROM IDEA TO SITE</p><h2>{t.proposalTitle}</h2><p className="lead narrow">멋진 이미지보다 먼저 확인할 것이 있습니다. 기존 시설 점검에서 시작해 작은 실증을 거친 뒤 확장 여부를 결정하는 순서입니다.</p></div></Reveal>
           <div className="proposal-grid">
             <Reveal><article className="proposal-lead"><span>01</span><h3>본관 상태와 권리 확인</h3><p>소유·권리, 구조안전, 설비 상태와 현재 운영 여부를 현장과 원문 서류로 확인합니다.</p><a href="#contact">현장 확인 문의<ArrowRight /></a></article></Reveal>
@@ -208,7 +218,7 @@ export default function App() {
       <footer>
         <div className="footer-brand"><span className="brand-mark"><i /><i /><i /></span><div><strong>AI BUNKER HOUSE NO.1</strong><small>TACOMA JANGSU CONCEPT</small></div></div>
         <p>© 2026 비공식 AI 건축 콘셉트. 실제 리조트 및 관계 기관의 공식 사업·예약·판매 페이지가 아닙니다.</p>
-        <div><a href="#notice">실제와 가정</a><a href="#evidence">확인 자료</a><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">© OpenStreetMap <ExternalLink /></a></div>
+        <div><a href="#notice">실제와 가정</a><a href="#audit">전문가·시민 검증</a><a href="#evidence">확인 자료</a><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">© OpenStreetMap <ExternalLink /></a></div>
       </footer>
     </div>
   );

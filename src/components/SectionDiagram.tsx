@@ -27,7 +27,7 @@ export function SectionDiagram() {
         <span>총 프로그램 <strong>{planningBaseline.grossArea.toLocaleString()}㎡</strong></span>
         <span>계획 정원 <strong>{planningBaseline.residents}명</strong></span>
         <span>숙소 <strong>{planningBaseline.beds.total}침상</strong></span>
-        <span>공통 원칙 <strong>양방향 피난 + 중앙 서비스 코어</strong></span>
+        <span>공통 원칙 <strong>양방향 피난 후보 + 중앙 서비스 코어</strong></span>
       </div>
     </div>
   );

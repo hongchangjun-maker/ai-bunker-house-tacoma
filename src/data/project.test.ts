@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { floors, gallery, planningBaseline, systems } from './project';
+import { auditItems, citizenChecks } from './readiness';
 
 describe('project data invariants', () => {
   it('defines exactly six contiguous underground levels', () => {
@@ -30,11 +31,18 @@ describe('project data invariants', () => {
   it('calculates five-year water and food planning demand', () => {
     expect(planningBaseline.durationDays).toBe(365 * 5);
     expect(planningBaseline.water.fiveYearLitres).toBe(
-      planningBaseline.residents * planningBaseline.durationDays * planningBaseline.water.emergencyLitresPerPersonDay,
+      planningBaseline.residents * planningBaseline.durationDays * planningBaseline.water.longStayPlanningLitresPerPersonDay,
     );
     expect(planningBaseline.food.fiveYearKcal).toBe(
       planningBaseline.residents * planningBaseline.durationDays * planningBaseline.food.kcalPerPersonDay,
     );
+  });
+
+  it('does not present any expert domain as verified before evidence exists', () => {
+    expect(auditItems).toHaveLength(12);
+    expect(auditItems.every((item) => item.status === 'blocker' || item.status === 'unverified')).toBe(true);
+    expect(auditItems.filter((item) => item.status === 'blocker')).toHaveLength(8);
+    expect(citizenChecks).toHaveLength(6);
   });
 
   it('links every floor to a unique responsive 3D plan', () => {

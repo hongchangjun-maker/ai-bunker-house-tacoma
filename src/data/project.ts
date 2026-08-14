@@ -18,15 +18,15 @@ export type Floor = {
 
 export const floors: Floor[] = [
   {
-    code: 'B1', name: '출입·물류층', nameEn: 'Arrival & Logistics', area: '1,650㎡', people: '동시 48명', purpose: '사람·물자·폐기물의 흐름을 분리하는 첫 관문', purposeEn: 'Safe transition from surface to residence', functions: ['출입·보안 확인', '제염·단기 격리', '하역·장기 비축', '정비·관리'], adjacent: '지상 본관 · B2 · 중앙 서비스 코어', color: '#f4c46b', planBase: '/images/floors/b1-plan-v1', planWidths: [640, 1280, 1536], capacityBasis: '방문·입고 피크 동시 48명, 차량 하역과 보행 동선 분리', circulation: '양 끝 피난계단 2곳 + 중앙 승강기·서비스 코어 + 청결/오염 동선 분리',
+    code: 'B1', name: '출입·물류층', nameEn: 'Arrival & Logistics', area: '1,650㎡', people: '동시 48명', purpose: '사람·물자·폐기물의 흐름을 분리하는 첫 관문', purposeEn: 'Safe transition from surface to residence', functions: ['출입·보안 확인', '위생 전환·임시 분리', '하역·장기 비축', '정비·관리'], adjacent: '지상 본관 · B2 · 중앙 서비스 코어', color: '#f4c46b', planBase: '/images/floors/b1-plan-v1', planWidths: [640, 1280, 1536], capacityBasis: '방문·입고 피크 동시 48명, 차량 하역과 보행 동선 분리', circulation: '양 끝 피난계단 2곳 + 중앙 승강기·서비스 코어 + 청결/오염 동선 분리 후보',
     zones: [
-      { name: '출입·보안 확인', area: 180, detail: '안내, 신원 확인, 보안 검색과 대기' }, { name: '제염·단기 격리', area: 160, detail: '전실, 샤워, 탈의, 청결/오염 분리' }, { name: '하역·입고', area: 360, detail: '서비스 차량, 검수, 입고 버퍼' }, { name: '건식·대량 비축', area: 380, detail: '팔레트 랙, 밀폐 식품·소모품' }, { name: '정비 작업실', area: 180, detail: '공구, 부품, 로봇·설비 경정비' }, { name: '보안·운영 사무', area: 140, detail: '경비, 안내, 입출고 기록' }, { name: '코어·지원', area: 250, detail: '피난계단, 승강기, 화장실, 설비' },
+      { name: '출입·보안 확인', area: 180, detail: '안내, 신원 확인, 보안 검색과 대기' }, { name: '위생 전환·임시 분리', area: 160, detail: '전실, 샤워, 탈의, 청결/오염 분리 후보' }, { name: '하역·입고', area: 360, detail: '서비스 차량, 검수, 입고 버퍼' }, { name: '건식·대량 비축', area: 380, detail: '팔레트 랙, 밀폐 식품·소모품' }, { name: '정비 작업실', area: 180, detail: '공구, 부품, 로봇·설비 경정비' }, { name: '보안·운영 사무', area: 140, detail: '경비, 안내, 입출고 기록' }, { name: '코어·지원', area: 250, detail: '피난계단, 승강기, 화장실, 설비' },
     ],
   },
   {
-    code: 'B2', name: '식당·커뮤니티층', nameEn: 'Community Commons', area: '2,250㎡', people: '144명', purpose: '식사·학습·돌봄·의사결정이 만나는 공동생활 중심', purposeEn: 'The social heart for dining, learning and governance', functions: ['공용식당·주방', '가족 라운지', '교육·도서관', '돌봄·협업'], adjacent: 'B1 · B3 · 실내 정원', color: '#55d7b2', planBase: '/images/floors/b2-plan-v1', planWidths: [640, 1280, 1536], capacityBasis: '144명 전원 이용, 식당은 2교대 운영을 기준으로 좌석과 주방 분리', circulation: '양 끝 피난계단 2곳 + 중앙 코어 + 주방 서비스 동선 독립',
+    code: 'B2', name: '식당·커뮤니티층', nameEn: 'Community Commons', area: '2,250㎡', people: '144명', purpose: '식사·학습·돌봄·의사결정이 만나는 공동생활 중심', purposeEn: 'The social heart for dining, learning and governance', functions: ['공용식당·주방', '가족 라운지', '교육·도서관', '돌봄·협업'], adjacent: 'B1 · B3 · 인공광 휴게정원', color: '#55d7b2', planBase: '/images/floors/b2-plan-v1', planWidths: [640, 1280, 1536], capacityBasis: '144명 전원 이용, 식당은 2교대 운영을 기준으로 좌석과 주방 분리', circulation: '양 끝 피난계단 2곳 + 중앙 코어 + 주방 서비스 동선 독립 후보',
     zones: [
-      { name: '공용식당', area: 360, detail: '2교대 식사, 다양한 연령 좌석' }, { name: '전문 주방', area: 300, detail: '전처리, 조리, 제과, 세척' }, { name: '커뮤니티 라운지', area: 360, detail: '휴식, 소모임, 행사' }, { name: '교육·도서관', area: 300, detail: '교실, 학습실, 자료 보관' }, { name: '아동·가족 공간', area: 180, detail: '놀이, 돌봄, 가족 활동' }, { name: '협업·미디어', area: 210, detail: '회의, 원격업무, 공동 의사결정' }, { name: '실내 정원', area: 180, detail: '채광형 휴게·심리 회복 공간' }, { name: '코어·지원', area: 360, detail: '복도, 화장실, 수납, 피난·설비' },
+      { name: '공용식당', area: 360, detail: '2교대 식사, 다양한 연령 좌석' }, { name: '전문 주방', area: 300, detail: '전처리, 조리, 제과, 세척' }, { name: '커뮤니티 라운지', area: 360, detail: '휴식, 소모임, 행사' }, { name: '교육·도서관', area: 300, detail: '교실, 학습실, 자료 보관' }, { name: '아동·가족 공간', area: 180, detail: '놀이, 돌봄, 가족 활동' }, { name: '협업·미디어', area: 210, detail: '회의, 원격업무, 공동 의사결정' }, { name: '인공광 휴게정원', area: 180, detail: '일주기 조명과 심리 회복을 검토하는 후보 공간' }, { name: '코어·지원', area: 360, detail: '복도, 화장실, 수납, 피난·설비' },
     ],
   },
   {
@@ -38,17 +38,17 @@ export const floors: Floor[] = [
   {
     code: 'B4', name: '건강관리층', nameEn: 'Health & Wellbeing', area: '1,800㎡', people: '동시 72명', purpose: '진료·격리·재활·상담·여가를 분리해 장기 체류 건강을 지원', purposeEn: 'Physical, psychological and social resilience', functions: ['진료·관찰', '격리·검사·약제', '상담·재활', '조용한 회복'], adjacent: 'B3 · B5 · 임상 서비스 코어', color: '#c7a7ff', planBase: '/images/floors/b4-plan-v1', planWidths: [640, 1280, 1536], capacityBasis: '일상 진료와 재활·상담의 동시 이용을 분산하고 격리 동선은 별도 운용', circulation: '양 끝 피난계단 2곳 + 중앙 코어 + 청결/의료폐기물 동선 분리',
     zones: [
-      { name: '진료·관찰', area: 260, detail: '진찰실, 처치실, 관찰 4병상' }, { name: '격리 구역', area: 120, detail: '음압 후보 격리실과 전실' }, { name: '치과·검사·약제', area: 180, detail: '치과, 기초검사, 약품·소모품' }, { name: '상담실', area: 160, detail: '개인·가족·심리 상담' }, { name: '재활·운동', area: 300, detail: '무장애 운동, 물리·작업 재활' }, { name: '조용한 회복·여가', area: 260, detail: '명상, 취미, 사회적 회복' }, { name: '원격의료·운영', area: 120, detail: '협진, 기록, 의료진 지원' }, { name: '코어·지원', area: 400, detail: '복도, 화장실, 청결·오염 지원' },
+      { name: '진료·관찰', area: 260, detail: '진찰실, 처치실, 관찰 4병상 후보' }, { name: '격리 구역', area: 120, detail: '압력제어 후보 격리실과 전실' }, { name: '치과·검사·약제', area: 180, detail: '치과, 기초검사, 약품·소모품 후보' }, { name: '상담실', area: 160, detail: '개인·가족·심리 상담' }, { name: '재활·운동', area: 300, detail: '무장애 운동, 물리·작업 재활' }, { name: '조용한 회복·여가', area: 260, detail: '명상, 취미, 사회적 회복' }, { name: '외부 의료연계·운영', area: 120, detail: '외부 협진 후보, 기록, 의료진 지원' }, { name: '코어·지원', area: 400, detail: '복도, 화장실, 청결·오염 지원' },
     ],
   },
   {
-    code: 'B5', name: '식량·물 관리층', nameEn: 'Food & Water', area: '2,400㎡', people: '운영 36명', purpose: '5년 비축 열량과 신선식품 재배, 물 처리·순환을 역할별로 분리', purposeEn: 'Integrated cultivation, storage and water stewardship', functions: ['다단 재배', '장기 식량 비축', '수처리·저장', '자원 회수'], adjacent: 'B4 · B6 · 식품·물류 리프트', color: '#7ed27b', planBase: '/images/floors/b5-plan-v1', planWidths: [640, 1280, 1536], capacityBasis: '실내재배는 신선식품 보완용이며, 주 열량은 건식 비축·순환 입고를 함께 사용', circulation: '양 끝 피난계단 2곳 + 중앙 코어 + 식품 청결 동선/폐기물 동선 분리',
+    code: 'B5', name: '식량·물 관리층', nameEn: 'Food & Water', area: '2,400㎡', people: '운영 36명', purpose: '5년 계획 수요를 비교하기 위한 비축·재배·수처리 후보 공간', purposeEn: 'Integrated cultivation, storage and water stewardship', functions: ['다단 재배', '장기 식량 비축', '수처리·저장', '자원 회수'], adjacent: 'B4 · B6 · 식품·물류 리프트', color: '#7ed27b', planBase: '/images/floors/b5-plan-v1', planWidths: [640, 1280, 1536], capacityBasis: '실내재배는 신선식품 보완 후보이며, 총 열량·에너지·작황·저장 손실은 별도 실증이 필요', circulation: '양 끝 피난계단 2곳 + 중앙 코어 + 식품 청결 동선/폐기물 동선 분리 후보',
     zones: [
       { name: '다단 수경재배', area: 720, detail: '잎채소, 허브, 일부 채소' }, { name: '버섯·마이크로그린', area: 240, detail: '분리 생육실과 위생 전실' }, { name: '건식 주식 비축', area: 360, detail: '팔레트 랙, 밀폐 용기, 선입선출' }, { name: '냉장·냉동', area: 180, detail: '저온·냉동 저장과 완충 전실' }, { name: '종자·양액', area: 120, detail: '종자, 배지, 영양염, 소모품' }, { name: '수처리·비상저장', area: 300, detail: '정수, 재이용, 90㎥급 계획 버퍼' }, { name: '자원 회수', area: 180, detail: '유기성 자원, 폐기물 분리' }, { name: '품질·포장', area: 120, detail: '세척, 검사, 포장, 출고' }, { name: '코어·지원', area: 180, detail: '복도, 기계 지원, 피난·설비' },
     ],
   },
   {
-    code: 'B6', name: '에너지·운영층', nameEn: 'Core Systems', area: '2,050㎡', people: '운영 28명', purpose: '전력·공기·물·통신을 이중화하고 사람이 최종 통제', purposeEn: 'Human-supervised operation of critical systems', functions: ['통합 관제', '전력·배터리', '공조·수처리', '정비·비상운영'], adjacent: 'B5 · 이중 설비 샤프트 · 독립 피난계단', color: '#ff896f', planBase: '/images/floors/b6-plan-v1', planWidths: [640, 1280, 1536], capacityBasis: '24시간 교대 운영, 중요 설비는 화재·침수 구획과 정비 여유 공간을 전제로 검토', circulation: '양 끝 피난계단 2곳 + 중앙 코어 + 이중 설비 라이저 + 배터리 방화구획',
+    code: 'B6', name: '에너지·운영층', nameEn: 'Core Systems', area: '2,050㎡', people: '운영 28명', purpose: '전력·공기·물·통신의 이중화 후보를 모아 사람이 최종 통제하는 운영 개념', purposeEn: 'Human-supervised operation of critical systems', functions: ['통합 관제', '전력·배터리', '공조·수처리', '정비·비상운영'], adjacent: 'B5 · 이중 설비 샤프트 · 독립 피난계단', color: '#ff896f', planBase: '/images/floors/b6-plan-v1', planWidths: [640, 1280, 1536], capacityBasis: '24시간 교대 운영 후보이며, 중요 설비의 부하·예비율·화재·침수 구획은 별도 전문 설계 필요', circulation: '양 끝 피난계단 2곳 + 중앙 코어 + 이중 설비 라이저 + 배터리 방화구획 후보',
     zones: [
       { name: '통합 관제실', area: 180, detail: '사람 중심의 설비·보안 통합 관제' }, { name: '전기실', area: 260, detail: '수배전, 변환, 분전' }, { name: '배터리·UPS', area: 240, detail: '분리 방화구획과 감시' }, { name: '공조·공기처리', area: 360, detail: '구역 공조, 여과, 압력 제어 후보' }, { name: '물·오수·소방 펌프', area: 220, detail: '급배수, 재이용, 소방 계통' }, { name: '통신·보안 IT', area: 160, detail: '통신, 서버, CCTV·출입 데이터' }, { name: '정비·예비부품', area: 260, detail: '공작, 수리, 핵심 부품 보관' }, { name: '비상운영실', area: 160, detail: '상황회의, 수동운전, 기록' }, { name: '코어·방재 지원', area: 210, detail: '피난, 방화, 이중 샤프트' },
     ],
@@ -60,7 +60,7 @@ export const planningBaseline = {
   durationDays: 1825,
   grossArea: 13000,
   beds: { familySuites: 24, familyBeds: 96, twinRooms: 24, twinBeds: 48, total: 144 },
-  water: { emergencyLitresPerPersonDay: 15, fiveYearLitres: 3_942_000, plannedBufferLitres: 90_000 },
+  water: { emergencyLitresPerPersonDay: 15, longStayPlanningLitresPerPersonDay: 20, fiveYearLitres: 5_256_000, plannedBufferLitres: 90_000 },
   food: { kcalPerPersonDay: 2200, fiveYearKcal: 578_160_000, reserveFactor: '별도 손실·여유율 검토' },
   commonCore: '전 층 양 끝 피난계단 2곳, 중앙 승강기·서비스 코어, 이중 설비 라이저',
 };
@@ -68,11 +68,11 @@ export const planningBaseline = {
 export const systems = [
   { key: 'home', icon: 'Home', title: '주거', value: '144침상', note: '4인 가족실 24실 96명 + 2인실 24실 48명' },
   { key: 'food', icon: 'Sprout', title: '식량', value: '5.78억 kcal 수요', note: '5년 계획 수요. 건식 비축·냉장·재배·재보급을 함께 검토' },
-  { key: 'water', icon: 'Droplets', title: '물', value: '394만 L 최소수요', note: '15 L/인·일 기준 누적치. 90㎥ 버퍼와 처리·재보급 병행' },
-  { key: 'air', icon: 'Wind', title: '공기', value: '구역 분리', note: '독립 공조와 필터링, 양압 계획은 전문 설계 대상' },
+  { key: 'water', icon: 'Droplets', title: '물', value: '525.6만 L 검토수요', note: '20 L/인·일 초기 비교값. 90㎥ 버퍼는 약 31일분이며 충분한 장기 설계값은 아님' },
+  { key: 'air', icon: 'Wind', title: '공기', value: '성능 산정 전', note: '구역 분리 개념만 반영했으며 풍량·압력·필터·비상 운전은 별도 검증' },
   { key: 'energy', icon: 'Zap', title: '에너지', value: '부하 산정 전', note: '계통·저장·발전과 예비 설비 조합은 전문 부하 산정 후 확정' },
-  { key: 'care', icon: 'HeartPulse', title: '의료', value: '1차 대응', note: '상시 건강관리와 원격 협진을 전제로 한 공간' },
-  { key: 'waste', icon: 'Recycle', title: '자원순환', value: '분리 처리', note: '생활·오수·유기성 폐기물 흐름을 구획' },
+  { key: 'care', icon: 'HeartPulse', title: '의료', value: '인력·후송 미확정', note: '진료·관찰 공간 후보이며 의료진·약품·외부 후송 협약은 별도 검증' },
+  { key: 'waste', icon: 'Recycle', title: '자원순환', value: '성능 산정 전', note: '생활·오수·유기성 폐기물의 구역과 흐름 개념만 반영' },
   { key: 'ai', icon: 'BrainCircuit', title: 'AI 운영', value: '사람이 최종 결정', note: '예측정비·수요예측을 지원하며 자동 권한은 제한' },
 ];
 

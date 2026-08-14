@@ -9,7 +9,7 @@ const nav = [
   ['location', '위치·근거', 'Location & facts'],
   ['architecture', '공간 구성', 'Layout'],
   ['floors', '지하 6층', 'Six levels'],
-  ['systems', '생활 시스템', 'Life systems'],
+  ['audit', '전문가·시민 검증', 'Readiness audit'],
   ['contact', '문의', 'Contact'],
 ] as const;
 
@@ -36,7 +36,7 @@ export function Header({ language, onLanguage }: Props) {
       <div className="header-actions">
         <button className="lang-button" type="button" onClick={onLanguage} aria-label="언어 전환">{language === 'ko' ? 'EN' : 'KO'}</button>
         <a className="mini-cta" href="#contact">{language === 'ko' ? '문의 남기기' : 'Enquire'}</a>
-        <button className="menu-button" type="button" aria-expanded={open} aria-label="메뉴 열기" onClick={() => setOpen((v) => !v)}>{open ? <X /> : <Menu />}</button>
+        <button className="menu-button" type="button" aria-expanded={open} aria-label={open ? '메뉴 닫기' : '메뉴 열기'} onClick={() => setOpen((v) => !v)}>{open ? <X /> : <Menu />}</button>
       </div>
     </header>
   );
