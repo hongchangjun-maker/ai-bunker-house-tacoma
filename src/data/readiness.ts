@@ -1,4 +1,4 @@
-export type AuditStatus = 'blocker' | 'unverified' | 'concept';
+export type AuditStatus = 'blocker' | 'unverified' | 'planned';
 
 export type AuditItem = {
   id: string;

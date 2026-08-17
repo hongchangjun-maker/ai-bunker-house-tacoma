@@ -18,25 +18,25 @@ type Lang = 'ko' | 'en';
 const copy = {
   ko: {
     kicker: 'AI BUNKER HOUSE NO.1 · TACOMA JANGSU',
-    hero: <>장수의 산자락 아래,<br /><em>144명·5년을 기준으로 설계한</em><br />방어형 생활기지를 상상했습니다.</>,
-    heroSub: '실제 타코마 장수리조트 본관 사진을 바탕으로, 144명·5년 운영 가정과 지하 6개 층의 통합 공간 프로그램을 시각화한 비공식 AI 개념 제안입니다.',
+    hero: <>장수의 산자락 아래,<br /><em>144명·5년을 기준으로 설계한</em><br />방어형 생활기지를 구축했습니다.</>,
+    heroSub: '실제 타코마 장수리조트 본관 사진을 바탕으로, 144명·5년 운영 기준과 지하 6개 층의 공간·설비·운영 체계를 통합한 비공식 AI 구축안입니다.',
     primary: '외관부터 둘러보기', secondary: '지하 6개 층 보기',
-    concept: '먼저 알려드립니다', conceptText: '주소와 사용자가 제공한 본관 사진은 실제 자료입니다. 화면의 방어 시설·지하 공간·로봇·운영 수치는 모두 검토용 AI 콘셉트이며, 시공·운영이 확정된 내용이 아닙니다.',
-    overviewTitle: <>처음 방문하셨다면,<br /><em>사람이 머무는 하루</em>부터 상상해 보세요.</>,
-    overviewBody: '이 제안은 벙커의 두꺼운 벽보다 그 안에서 이어질 식사, 휴식, 건강관리와 일상에 먼저 주목합니다. 기존 본관은 방문·숙박·교육의 지상 거점으로 활용하고, 지하 공간은 충분한 조사와 승인을 거쳐 필요한 기능부터 단계적으로 검토합니다.',
+    concept: '구축 범위를 먼저 확인하세요', conceptText: '주소와 사용자가 제공한 본관 사진은 실제 자료입니다. 여기서 구축은 공간 프로그램·운영 기준·AI 시각화로 구성한 구축안을 뜻합니다. 화면의 방어 시설과 지하 공간은 현장 시공 완료 상태가 아니며 전문 실사·설계·인허가가 필요합니다.',
+    overviewTitle: <>처음 방문하셨다면,<br /><em>사람이 머무는 하루</em>부터 확인하세요.</>,
+    overviewBody: '이 구축안은 벙커의 두꺼운 벽보다 그 안에서 이어질 식사, 휴식, 건강관리와 일상에 먼저 주목합니다. 기존 본관은 방문·숙박·교육의 지상 거점으로 활용하고, 지하 공간은 충분한 조사와 승인을 거쳐 필요한 기능부터 단계적으로 검토합니다.',
     locationTitle: <>어디에 있고,<br /><em>무엇이 확인됐는지</em> 먼저 보여드립니다.</>,
     architectureTitle: <>하나의 면적표로 맞춘<br /><em>지하 6개 층</em>을 확인하세요.</>,
     floorsTitle: <>각 층을 눌러, 고화질 3D 평면도를 살펴보세요.</>,
     systemsTitle: <>144명이 오래 머물려면<br /><em>무엇이 필요할까요?</em></>,
-    proposalTitle: <>아이디어를 실제 사업으로 옮기려면<br /><em>이 순서</em>가 필요합니다.</>,
+    proposalTitle: <>구축안을 실제 사업으로 옮기려면<br /><em>이 순서</em>가 필요합니다.</>,
     contactTitle: <>궁금한 점과<br /><em>협업 제안</em>을 남겨 주세요.</>,
   },
   en: {
     kicker: 'AI BUNKER HOUSE NO.1 · TACOMA JANGSU',
     hero: <>A surface resort connected to<br />a <em>six-level</em>, 144-person residence</>,
-    heroSub: 'A five-year, AI-assisted disaster-resilience residence concept grounded in the highland context and adaptive-reuse potential of an existing resort site in Jangsu.',
+    heroSub: 'An integrated five-year resilience delivery plan grounded in the existing resort building, with six underground levels subject to survey, engineering and approval.',
     primary: 'Start the exterior tour', secondary: 'Explore six levels',
-    concept: 'UNOFFICIAL ARCHITECTURAL CONCEPT', conceptText: 'This is not an official project, sales or booking page of Tacoma Jangsu Farm Resort or any authority. Operation status, ownership, approvals, cost, safety, capacity and self-reliance performance remain unverified.',
+    concept: 'UNOFFICIAL ARCHITECTURAL DELIVERY PLAN', conceptText: '“Built” refers to this integrated spatial, operational and visual plan, not completed site construction. This is not an official project, sales or booking page. Ownership, approvals, cost, safety and performance remain unverified.',
     overviewTitle: <>Start with <em>everyday life</em><br />inside a resilient place.</>,
     overviewBody: 'The proposal reuses the resort as a surface living and hospitality gateway, with six functional levels beneath adjacent land. Human dignity, operational continuity and evidence-led decisions sit at its core.',
     locationTitle: <>A real address.<br /><em>Conditional, evidence-led</em> decisions.</>,
@@ -66,7 +66,7 @@ export default function App() {
       <Header language={language} onLanguage={() => setLanguage((v) => v === 'ko' ? 'en' : 'ko')} />
       <main id="main">
         <section className="hero" aria-labelledby="hero-title">
-          <ResponsiveImage className="hero-image" base="/images/site/defense-front-day" widths={[640, 1280, 1511]} sizes="100vw" loading="eager" fetchPriority="high" alt="실제 타코마 장수리조트 본관에 태양광, 미니 풍력, CCTV, 모래주머니 진지, 외곽 철조망과 보안 로봇을 합성한 밝은 AI 디펜스 콘셉트" />
+          <ResponsiveImage className="hero-image" base="/images/site/defense-front-day" widths={[640, 1280, 1511]} sizes="100vw" loading="eager" fetchPriority="high" alt="실제 타코마 장수리조트 본관 사진을 기반으로 태양광, 미니 풍력, CCTV, 모래주머니 진지, 외곽 철조망과 보안 로봇을 배치한 AI 방어 구축안" />
           <div className="hero-overlay" />
           <div className="hero-grid" aria-hidden="true" />
           <div className="hero-content">
@@ -79,7 +79,7 @@ export default function App() {
             </Reveal>
           </div>
           <div className="hero-metrics">
-            <div><strong>144</strong><span>{language === 'ko' ? '계획 인원' : 'PEOPLE'}<small>{language === 'ko' ? '콘셉트 기준' : 'concept basis'}</small></span></div>
+            <div><strong>144</strong><span>{language === 'ko' ? '계획 인원' : 'PEOPLE'}<small>{language === 'ko' ? '설계 기준' : 'planning basis'}</small></span></div>
             <div><strong>5년</strong><span>{language === 'ko' ? '운영 목표' : 'TARGET'}<small>{language === 'ko' ? '검증 전 가정' : 'to be validated'}</small></span></div>
             <div><strong>B6</strong><span>{language === 'ko' ? '지하 공간' : 'LEVELS'}<small>{language === 'ko' ? '6개 생활층' : 'six living levels'}</small></span></div>
             <div><strong>사람</strong><span>{language === 'ko' ? '최종 판단' : 'FINAL SAY'}<small>{language === 'ko' ? 'AI는 운영 보조' : 'AI only assists'}</small></span></div>
@@ -122,7 +122,7 @@ export default function App() {
         <section id="site-tour" className="section section-site-tour">
           <div className="section-number">02</div>
           <div className="section-heading two-col light">
-            <Reveal><div><p className="eyebrow">외관 실사형 투어 · EXTERIOR TOUR</p><h2>실제 본관이<br /><em>근미래 방어 거점으로 바뀐다면?</em></h2></div></Reveal>
+            <Reveal><div><p className="eyebrow">외관 실사형 투어 · EXTERIOR TOUR</p><h2>실제 본관을 기준으로<br /><em>방어 거점 구축안을 제시합니다.</em></h2></div></Reveal>
             <Reveal delay={0.08}><p className="lead">전면 방어 장면부터 외곽 순찰, 옥상 에너지 설비와 야간 경계까지 차례로 둘러보세요. 태양광·CCTV·철조망·로봇·드론은 공격 장비가 아니라 감시, 출입 통제와 운영 지속성을 설명하기 위한 AI 시각 요소입니다.</p></Reveal>
           </div>
           <SiteTour />
@@ -138,11 +138,11 @@ export default function App() {
           <div className="section-number">04</div>
           <div className="section-heading two-col light">
             <Reveal><div><p className="eyebrow">지상에서 지하로 · SURFACE TO B6</p><h2>{t.architectureTitle}</h2></div></Reveal>
-            <Reveal delay={0.08}><p className="lead">지상 본관에서 출입·위생 전환 구역을 지나 식사, 주거, 건강관리, 식량·물, 에너지 운영층을 차례로 배치하는 개념입니다. 화면의 단면은 관계를 이해하기 위한 구상이며 실제 깊이·구조·피난 체계는 전문 조사와 인허가 검토 후 정해야 합니다.</p></Reveal>
+            <Reveal delay={0.08}><p className="lead">지상 본관에서 출입·위생 전환 구역을 지나 식사, 주거, 건강관리, 식량·물, 에너지 운영층을 차례로 배치한 통합 계획입니다. 화면의 단면은 층별 관계를 정리한 기본계획이며 실제 깊이·구조·피난 체계는 전문 조사와 인허가 검토 후 확정해야 합니다.</p></Reveal>
           </div>
           <Reveal><div className="cutaway-feature">
-            <ResponsiveImage base="/images/renders/program-cutaway-v2" widths={[640, 1280, 1672]} sizes="100vw" alt="실제 본관 사진을 참고하고 동일한 통합 면적표에 맞춘 지하 6개 층의 밝은 AI 개념 단면" />
-            <div className="image-legend"><span>AI 개념 단면 · 인허가·시공 도면 아님</span><strong>B1 출입·물류부터 B6 핵심 설비까지, 층별 평면도와 같은 프로그램으로 구성했습니다.</strong></div>
+            <ResponsiveImage base="/images/renders/program-cutaway-v2" widths={[640, 1280, 1672]} sizes="100vw" alt="실제 본관 사진을 참고하고 동일한 통합 면적표에 맞춘 지하 6개 층의 AI 계획 단면" />
+            <div className="image-legend"><span>AI 기본계획 단면 · 인허가·시공 도면 아님</span><strong>B1 출입·물류부터 B6 핵심 설비까지, 층별 평면도와 같은 프로그램으로 구성했습니다.</strong></div>
           </div></Reveal>
           <Reveal><div className="survival-baseline" aria-label="144명 5년 계획 기준">
             <article><small>정확한 침상 구성</small><strong>{planningBaseline.beds.total}침상</strong><p>4인 가족실 24실 96명 + 2인실 24실 48명</p></article>
@@ -152,7 +152,7 @@ export default function App() {
           </div></Reveal>
           <p className="baseline-sources">계획 기준 참고: <a href="https://www.who.int/teams/environment-climate-change-and-health/water-sanitation-and-health/environmental-health-in-emergencies/humanitarian-emergencies" target="_blank" rel="noreferrer">WHO 비상 물 기준</a><span>·</span><a href="https://www.law.go.kr/LSW/lsLinkCommonInfo.do?lsJoLnkSeq=1030364627" target="_blank" rel="noreferrer">국내 직통계단 기준</a><span>·</span><a href="https://www.ars.usda.gov/ARSUserFiles/np305/NP%20305%20Action%20Plan%202024-2029_Finalv2.pdf" target="_blank" rel="noreferrer">USDA 환경제어농업 한계</a></p>
           <Reveal><SectionDiagram /></Reveal>
-          <div className="diagram-note"><b>통합 개념 설계 · 시공용 아님</b><p>단면, 3D 평면도와 면적표는 동일한 프로그램을 사용합니다. 굴착 깊이, 구조, 피난거리, 방재구획, 환기·설비 용량은 지반·구조·소방·기계 전문가의 현장 조사와 인허가 설계가 필요합니다.</p></div>
+          <div className="diagram-note"><b>통합 기본계획 · 실시설계 전</b><p>단면, 3D 평면도와 면적표는 동일한 프로그램을 사용합니다. 굴착 깊이, 구조, 피난거리, 방재구획, 환기·설비 용량은 지반·구조·소방·기계 전문가의 현장 조사와 인허가 설계가 필요합니다.</p></div>
         </section>
 
         <section className="section section-gallery">
@@ -209,15 +209,15 @@ export default function App() {
             <p className="eyebrow">문의와 협업 · CONTACT</p>
             <h2>{t.contactTitle}</h2>
             <p>방문, 사업 검토, 설계·기술 협업과 지역 연계에 관한 의견을 남겨 주세요. 아직 확인되지 않은 내용은 추측하지 않고 ‘확인 필요’로 답변합니다.</p>
-            <div className="contact-facts"><span><MapPinned /><small>프로젝트 기준 주소</small>장수군 계남면 장수로 2662-11</span><span><ShieldCheck /><small>현재 상태</small>비공식 AI 콘셉트 · 현장 실사 전</span></div>
+            <div className="contact-facts"><span><MapPinned /><small>프로젝트 기준 주소</small>장수군 계남면 장수로 2662-11</span><span><ShieldCheck /><small>현재 상태</small>비공식 AI 구축안 · 현장 실사·실시설계 전</span></div>
           </div>
           <ContactForm />
         </section>
       </main>
 
       <footer>
-        <div className="footer-brand"><span className="brand-mark"><i /><i /><i /></span><div><strong>AI BUNKER HOUSE NO.1</strong><small>TACOMA JANGSU CONCEPT</small></div></div>
-        <p>© 2026 비공식 AI 건축 콘셉트. 실제 리조트 및 관계 기관의 공식 사업·예약·판매 페이지가 아닙니다.</p>
+        <div className="footer-brand"><span className="brand-mark"><i /><i /><i /></span><div><strong>AI BUNKER HOUSE NO.1</strong><small>TACOMA JANGSU MASTER PLAN</small></div></div>
+        <p>© 2026 비공식 AI 건축·운영 구축안. 실제 리조트 및 관계 기관의 공식 사업·예약·판매 페이지가 아니며 현장 시공 완료를 뜻하지 않습니다.</p>
         <div><a href="#notice">실제와 가정</a><a href="#audit">전문가·시민 검증</a><a href="#evidence">확인 자료</a><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">© OpenStreetMap <ExternalLink /></a></div>
       </footer>
     </div>

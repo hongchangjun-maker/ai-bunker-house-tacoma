@@ -7,7 +7,7 @@ describe('project data invariants', () => {
     expect(floors.map((floor) => floor.code)).toEqual(['B1', 'B2', 'B3', 'B4', 'B5', 'B6']);
   });
 
-  it('keeps the concept program area at 13,000 square metres', () => {
+  it('keeps the master-plan program area at 13,000 square metres', () => {
     const total = floors.reduce((sum, floor) => sum + Number(floor.area.replace(/[^0-9]/g, '')), 0);
     expect(total).toBe(13_000);
   });
@@ -56,7 +56,7 @@ describe('project data invariants', () => {
     expect(systems.every((system) => system.note.length > 10)).toBe(true);
   });
 
-  it('labels every gallery item as generated concept material', () => {
+  it('labels every gallery item as AI-generated planning material', () => {
     expect(gallery).toHaveLength(7);
     expect(gallery.every((item) => item.tag.includes('CONCEPT') || item.tag.includes('AI'))).toBe(true);
     expect(gallery.every((item) => item.alt.length > 20)).toBe(true);

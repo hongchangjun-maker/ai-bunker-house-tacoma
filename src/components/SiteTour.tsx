@@ -38,7 +38,7 @@ const scenes = [
     title: '위에서 보는 외곽 경계와 에너지 설비',
     nav: '외곽 방어',
     badge: 'AI 디펜스 재구성 · 측량/배치도 아님',
-    description: '외곽 철조망, 통제 게이트, CCTV 타워, 로봇·드론 순찰과 옥상·캐노피 태양광 및 미니 풍력을 한눈에 보여주는 개념 조감입니다.',
+    description: '외곽 철조망, 통제 게이트, CCTV 타워, 로봇·드론 순찰과 옥상·캐노피 태양광 및 미니 풍력의 배치 원칙을 한눈에 보여주는 계획 조감입니다.',
     base: '/images/site/defense-aerial',
     widths: [640, 1280, 1672],
     icon: Map,
@@ -48,7 +48,7 @@ const scenes = [
     title: '어두운 곳 없이 살피는 야간 경계',
     nav: '야간 경계',
     badge: 'AI 디펜스 재구성 · 조명/운영 가정',
-    description: '어두운 영화적 연출을 줄이고 본관·철조망·CCTV·로봇 도킹과 드론 항로가 식별되도록 밝힌 블루아워 경계 콘셉트입니다.',
+    description: '어두운 영화적 연출을 줄이고 본관·철조망·CCTV·로봇 도킹과 드론 항로가 식별되도록 정리한 블루아워 경계 운영안입니다.',
     base: '/images/site/defense-night',
     widths: [640, 1280, 1690],
     icon: MoonStar,
@@ -93,7 +93,7 @@ export function SiteTour() {
           );
         })}
       </div>
-      <div className="defense-principles" aria-label="디펜스 콘셉트 핵심 구성">
+      <div className="defense-principles" aria-label="방어 구축안 핵심 구성">
         <article><strong>에너지</strong><span>대규모 태양광 + 미니 풍력</span></article>
         <article><strong>경계</strong><span>외곽 철조망 + 통제 게이트</span></article>
         <article><strong>감시</strong><span>CCTV + 열화상 + 드론</span></article>

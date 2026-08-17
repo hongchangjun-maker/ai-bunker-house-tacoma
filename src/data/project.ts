@@ -48,7 +48,7 @@ export const floors: Floor[] = [
     ],
   },
   {
-    code: 'B6', name: '에너지·운영층', nameEn: 'Core Systems', area: '2,050㎡', people: '운영 28명', purpose: '전력·공기·물·통신의 이중화 후보를 모아 사람이 최종 통제하는 운영 개념', purposeEn: 'Human-supervised operation of critical systems', functions: ['통합 관제', '전력·배터리', '공조·수처리', '정비·비상운영'], adjacent: 'B5 · 이중 설비 샤프트 · 독립 피난계단', color: '#ff896f', planBase: '/images/floors/b6-plan-v1', planWidths: [640, 1280, 1536], capacityBasis: '24시간 교대 운영 후보이며, 중요 설비의 부하·예비율·화재·침수 구획은 별도 전문 설계 필요', circulation: '양 끝 피난계단 2곳 + 중앙 코어 + 이중 설비 라이저 + 배터리 방화구획 후보',
+    code: 'B6', name: '에너지·운영층', nameEn: 'Core Systems', area: '2,050㎡', people: '운영 28명', purpose: '전력·공기·물·통신의 이중화 후보를 모아 사람이 최종 통제하도록 설계한 운영안', purposeEn: 'Human-supervised operation of critical systems', functions: ['통합 관제', '전력·배터리', '공조·수처리', '정비·비상운영'], adjacent: 'B5 · 이중 설비 샤프트 · 독립 피난계단', color: '#ff896f', planBase: '/images/floors/b6-plan-v1', planWidths: [640, 1280, 1536], capacityBasis: '24시간 교대 운영 후보이며, 중요 설비의 부하·예비율·화재·침수 구획은 별도 전문 설계 필요', circulation: '양 끝 피난계단 2곳 + 중앙 코어 + 이중 설비 라이저 + 배터리 방화구획 후보',
     zones: [
       { name: '통합 관제실', area: 180, detail: '사람 중심의 설비·보안 통합 관제' }, { name: '전기실', area: 260, detail: '수배전, 변환, 분전' }, { name: '배터리·UPS', area: 240, detail: '분리 방화구획과 감시' }, { name: '공조·공기처리', area: 360, detail: '구역 공조, 여과, 압력 제어 후보' }, { name: '물·오수·소방 펌프', area: 220, detail: '급배수, 재이용, 소방 계통' }, { name: '통신·보안 IT', area: 160, detail: '통신, 서버, CCTV·출입 데이터' }, { name: '정비·예비부품', area: 260, detail: '공작, 수리, 핵심 부품 보관' }, { name: '비상운영실', area: 160, detail: '상황회의, 수동운전, 기록' }, { name: '코어·방재 지원', area: 210, detail: '피난, 방화, 이중 샤프트' },
     ],
@@ -69,15 +69,15 @@ export const systems = [
   { key: 'home', icon: 'Home', title: '주거', value: '144침상', note: '4인 가족실 24실 96명 + 2인실 24실 48명' },
   { key: 'food', icon: 'Sprout', title: '식량', value: '5.78억 kcal 수요', note: '5년 계획 수요. 건식 비축·냉장·재배·재보급을 함께 검토' },
   { key: 'water', icon: 'Droplets', title: '물', value: '525.6만 L 검토수요', note: '20 L/인·일 초기 비교값. 90㎥ 버퍼는 약 31일분이며 충분한 장기 설계값은 아님' },
-  { key: 'air', icon: 'Wind', title: '공기', value: '성능 산정 전', note: '구역 분리 개념만 반영했으며 풍량·압력·필터·비상 운전은 별도 검증' },
+  { key: 'air', icon: 'Wind', title: '공기', value: '성능 산정 전', note: '구역 분리 계획만 반영했으며 풍량·압력·필터·비상 운전은 별도 검증' },
   { key: 'energy', icon: 'Zap', title: '에너지', value: '부하 산정 전', note: '계통·저장·발전과 예비 설비 조합은 전문 부하 산정 후 확정' },
   { key: 'care', icon: 'HeartPulse', title: '의료', value: '인력·후송 미확정', note: '진료·관찰 공간 후보이며 의료진·약품·외부 후송 협약은 별도 검증' },
-  { key: 'waste', icon: 'Recycle', title: '자원순환', value: '성능 산정 전', note: '생활·오수·유기성 폐기물의 구역과 흐름 개념만 반영' },
+  { key: 'waste', icon: 'Recycle', title: '자원순환', value: '성능 산정 전', note: '생활·오수·유기성 폐기물의 구역과 처리 흐름 계획만 반영' },
   { key: 'ai', icon: 'BrainCircuit', title: 'AI 운영', value: '사람이 최종 결정', note: '예측정비·수요예측을 지원하며 자동 권한은 제한' },
 ];
 
 export const gallery = [
-  { src: '/images/renders/program-cutaway-v2-1280.webp', base: '/images/renders/program-cutaway-v2', widths: [640, 1280, 1672], title: '144명·5년 통합 프로그램 단면', tag: 'AI 개념 단면 · 6개 층', alt: '실제 본관 사진을 참고하고 동일한 면적표로 맞춘 여섯 개 지하 생활층의 밝은 비공식 개념 단면' },
+  { src: '/images/renders/program-cutaway-v2-1280.webp', base: '/images/renders/program-cutaway-v2', widths: [640, 1280, 1672], title: '144명·5년 통합 프로그램 단면', tag: 'AI 기본계획 단면 · 6개 층', alt: '실제 본관 사진을 참고하고 동일한 면적표로 맞춘 여섯 개 지하 생활층의 비공식 AI 계획 단면' },
   { src: '/images/renders/resort-connection.webp', title: '본관에서 지하로 내려가는 길', tag: 'AI 재구성 · 출입 공간', alt: '리조트 로비에서 지하 연결통로로 이어지는 접근 가능한 진입 공간' },
   { src: '/images/interiors/community-commons-v1-1280.webp', base: '/images/interiors/community-commons-v1', widths: [640, 1280, 1672], title: '함께 식사하고 쉬는 공간', tag: 'AI 재구성 · B2 생활', alt: '한국인 가족과 어르신이 식사와 독서, 휴식을 즐기는 밝은 공동생활 공간' },
   { src: '/images/interiors/residential-suite.webp', title: '가족과 개인을 위한 숙소', tag: 'AI 재구성 · B3 생활', alt: '가족실과 개인실, 세탁 공간이 연결된 따뜻한 주거 구역' },

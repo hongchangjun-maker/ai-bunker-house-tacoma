@@ -5,7 +5,7 @@ import { auditItems, citizenChecks, type AuditStatus } from '../data/readiness';
 const statusCopy: Record<AuditStatus, string> = {
   blocker: '착수 전 필수',
   unverified: '검증 필요',
-  concept: '개념 반영',
+  planned: '계획 반영',
 };
 
 const formatNumber = (value: number) => new Intl.NumberFormat('ko-KR', { maximumFractionDigits: 1 }).format(value);
@@ -22,7 +22,7 @@ export function ReadinessAudit() {
   const counts = useMemo(() => ({
     blocker: auditItems.filter((item) => item.status === 'blocker').length,
     unverified: auditItems.filter((item) => item.status === 'unverified').length,
-    concept: auditItems.filter((item) => item.status === 'concept').length,
+    planned: auditItems.filter((item) => item.status === 'planned').length,
   }), []);
   const days = Math.round(years * 365);
   const totalWater = people * days * water;

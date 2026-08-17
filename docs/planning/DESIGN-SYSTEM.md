@@ -23,7 +23,7 @@
 - `eyebrow`: 섹션 상태·영문 분류
 - `concept-notice`: 비공식·미검증 상태를 첫 화면 직후 고정 전달
 - `floor-stack`: 키보드, 마우스, 터치를 모두 지원하는 층별 탭
-- `gallery-card`: 원본 복제 없이 생성한 콘셉트 이미지와 생성 상태 표시
+- `gallery-card`: 원본 복제 없이 생성한 AI 계획 이미지와 생성 상태 표시
 - `risk-strip`: GO/NO-GO 선행조사
 - `system-grid`: 시스템별 목표와 조건의 동일한 위계
 

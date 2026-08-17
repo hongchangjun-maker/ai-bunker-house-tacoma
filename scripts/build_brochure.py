@@ -84,16 +84,16 @@ def wrap(c, value, x, y, max_width, size=10, leading=15, color=MUTED, font='Malg
 def header(c, page, section):
     c.setStrokeColor(LINE)
     c.line(38, H - 34, W - 38, H - 34)
-    text(c, 'AI BUNKER HOUSE NO.1 · TACOMA JANGSU CONCEPT', 38, H - 25, 6.5, MUTED, 'MalgunBold')
+    text(c, 'AI BUNKER HOUSE NO.1 · TACOMA JANGSU MASTER PLAN', 38, H - 25, 6.5, MUTED, 'MalgunBold')
     text(c, f'{page:02d}', W - 54, H - 25, 7, EMERALD, 'MalgunBold')
     text(c, section.upper(), W - 175, H - 25, 6.5, MUTED, 'MalgunBold')
 
 def footer(c):
-    text(c, '비공식 AI 건축 콘셉트 · 실제와 AI 재구성 구분 · 전문 설계 및 현장 실사 전', 38, 20, 6, MUTED, 'MalgunBold')
+    text(c, '비공식 AI 건축·운영 구축안 · 실제와 AI 재구성 구분 · 현장 실사 및 실시설계 전', 38, 20, 6, MUTED, 'MalgunBold')
 
 c = canvas.Canvas(str(OUT), pagesize=(W, H), pageCompression=1)
-c.setTitle('AI벙커하우스 1호 - 타코마 장수 리조트 콘셉트 브로슈어')
-c.setAuthor('AI Bunker House No.1 Concept Team')
+c.setTitle('AI벙커하우스 1호 - 타코마 장수 리조트 구축안 브로슈어')
+c.setAuthor('AI Bunker House No.1 Planning Team')
 
 # Cover
 hero = ROOT / 'public/images/site/defense-front-day-1511.webp'
@@ -102,19 +102,19 @@ c.setFillColor(EMERALD); c.rect(42, H - 64, 60, 2, fill=1, stroke=0)
 text(c, 'AI BUNKER HOUSE NO.1', 42, H - 52, 8, EMERALD, 'MalgunBold')
 text(c, '장수의 산자락 아래,', 42, H - 145, 24, HexColor('#FFFFFF'), 'Malgun')
 text(c, '144명·5년을 기준으로 설계한', 42, H - 180, 29, HexColor('#FFFFFF'), 'MalgunBold')
-text(c, '방어형 생활기지', 42, H - 215, 29, EMERALD, 'MalgunBold')
-wrap(c, '실제 본관 사진과 144명·5년 운영 가정을 바탕으로 지하 6개 층의 공간 프로그램을 통합한 비공식 AI 개념 제안입니다.', 42, H - 245, 430, 9, 15, HexColor('#CBD4DA'))
+text(c, '방어형 생활기지를 구축했습니다', 42, H - 215, 26, EMERALD, 'MalgunBold')
+wrap(c, '실제 본관 사진과 144명·5년 운영 기준을 바탕으로 지하 6개 층의 공간·설비·운영 체계를 통합한 비공식 AI 구축안입니다. 현장 시공 완료를 뜻하지 않습니다.', 42, H - 245, 470, 9, 15, HexColor('#CBD4DA'))
 for i, (n, label) in enumerate([('144','계획 인원'),('5년','운영 목표'),('B6','지하 공간'),('사람','최종 판단')]):
     x = 42 + i * 105
     text(c, n, x, 58, 19, HexColor('#FFFFFF'), 'MalgunBold')
     text(c, label, x, 43, 5.5, MUTED, 'MalgunBold')
-text(c, 'CONCEPT PRESENTATION · 2026.08', W - 190, 42, 6.5, GOLD, 'MalgunBold')
+text(c, 'MASTER PLAN · 2026.08', W - 145, 42, 6.5, GOLD, 'MalgunBold')
 c.showPage()
 
 # Project direction
 c.setFillColor(PAPER); c.rect(0, 0, W, H, fill=1, stroke=0); header(c, 2, 'Project premise')
 text(c, '처음 방문하셨다면,', 42, H - 95, 23, INK, 'Malgun')
-text(c, '사람이 머무는 하루부터 상상해 보세요.', 42, H - 130, 23, INK, 'MalgunBold')
+text(c, '사람이 머무는 하루부터 확인하세요.', 42, H - 130, 23, INK, 'MalgunBold')
 wrap(c, '벙커의 두꺼운 벽보다 그 안에서 이어질 식사, 휴식, 건강관리와 일상에 먼저 주목합니다. 기존 본관은 지상 생활 거점으로 활용하고 지하 공간은 조사와 승인을 거쳐 단계적으로 검토합니다.', 42, H - 165, 470, 8.5, 14, HexColor('#5A6962'))
 cards = [
     ('01','본관부터 현실적으로 활용','기존 공간은 안전점검 후 숙박·교육·진료·지역 협력에 우선 활용'),
@@ -128,8 +128,8 @@ for i,(n,title,body) in enumerate(cards):
     text(c, title, x + 18, 170, 15, INK, 'MalgunBold')
     wrap(c, body, x + 18, 143, 190, 8, 13, HexColor('#66756D'))
 c.setFillColor(HexColor('#F4E8CE')); c.rect(550, H - 180, 245, 90, fill=1, stroke=0)
-text(c, 'CONCEPT STATUS', 568, H - 112, 6.5, HexColor('#8A6423'), 'MalgunBold')
-wrap(c, '공식 사업·판매·예약 페이지가 아닙니다. 운영 상태, 소유·권리, 인허가, 안전성, 수용·자립 성능은 확인·승인되지 않았습니다.', 568, H - 134, 205, 7.5, 12, HexColor('#6C5838'))
+text(c, 'DELIVERY STATUS', 568, H - 112, 6.5, HexColor('#8A6423'), 'MalgunBold')
+wrap(c, '구축은 공간·운영·시각화 계획을 뜻하며 현장 시공 완료가 아닙니다. 소유·권리, 인허가, 안전성, 수용·자립 성능은 확인·승인되지 않았습니다.', 568, H - 134, 205, 7.5, 12, HexColor('#6C5838'))
 draw_image_cover(c, ROOT / 'public/images/site/visitor-arrival-v1-1280.webp', 550, 260, 245, 140, .04)
 c.setFillColor(NAVY); c.setFillAlpha(.82); c.rect(550, 260, 245, 25, fill=1, stroke=0); c.setFillAlpha(1)
 text(c, '방문객 시점 AI 재구성 · 실제 본관 사진 참고', 560, 269, 6.5, HexColor('#FFFFFF'), 'MalgunBold')
@@ -137,7 +137,7 @@ footer(c); c.showPage()
 
 # Actual site and landscape tour
 c.setFillColor(NAVY); c.rect(0,0,W,H,fill=1,stroke=0); header(c,3,'Actual site & landscape tour')
-text(c, '실제 본관이 근미래 방어 거점으로 바뀐다면?', 42, H - 82, 23, HexColor('#FFFFFF'), 'MalgunBold')
+text(c, '실제 본관을 기준으로 방어 거점 구축안을 제시합니다.', 42, H - 82, 22, HexColor('#FFFFFF'), 'MalgunBold')
 text(c, '전면 방어부터 외곽 순찰, 옥상 에너지와 야간 경계까지 모두 AI 재구성으로 둘러봅니다.', 42, H - 105, 7.5, GOLD, 'MalgunBold')
 tour_images = [
     (ROOT / 'public/images/site/visitor-arrival-v1-1280.webp', '방문객 도착 · AI 재구성', False),
@@ -152,7 +152,7 @@ for i,(path,label,is_actual) in enumerate(tour_images):
     draw_image_cover(c, path, x,y,235,154,.06)
     c.setFillColor(NAVY); c.setFillAlpha(.88); c.rect(x,y,235,26,fill=1,stroke=0); c.setFillAlpha(1)
     text(c,label,x+9,y+9,6.7,GOLD if is_actual else HexColor('#FFFFFF'),'MalgunBold')
-text(c,'AI 장면은 현황·측량·설계도·시공 결과가 아닙니다. 휴머노이드 경비·봉 소지는 콘셉트 가정이며 공급사·법규·안전 검토 전 미확정입니다.',42,23,6.3,MUTED,'MalgunBold')
+text(c,'AI 장면은 현황·측량·설계도·시공 결과가 아닙니다. 휴머노이드 경비·봉 소지는 배치 검토안이며 공급사·법규·안전 검토 전 미확정입니다.',42,23,6.3,MUTED,'MalgunBold')
 c.showPage()
 
 # Location
@@ -189,7 +189,7 @@ draw_image_cover(c, cutaway, 0, 0, W, H - 36, .08)
 c.setFillColor(NAVY); c.setFillAlpha(.88); c.rect(30,35,355,84,fill=1,stroke=0); c.setFillAlpha(1)
 text(c, 'SURFACE × SUBTERRANEAN', 48, 96, 6.5, EMERALD, 'MalgunBold')
 text(c, '하나의 면적표로 맞춘 지하 6개 층', 48, 72, 17, HexColor('#FFFFFF'), 'MalgunBold')
-wrap(c, 'B1 출입·물류부터 B6 핵심 설비까지 층별 평면도와 같은 프로그램을 사용한 비공식 AI 개념 단면입니다.', 48, 52, 315, 6.5, 10, HexColor('#A6B4BD'))
+wrap(c, 'B1 출입·물류부터 B6 핵심 설비까지 층별 평면도와 같은 프로그램을 사용한 비공식 AI 기본계획 단면입니다.', 48, 52, 315, 6.5, 10, HexColor('#A6B4BD'))
 text(c, 'NOT FOR CONSTRUCTION', W-155, 45, 7, GOLD, 'MalgunBold')
 c.showPage()
 
@@ -271,7 +271,7 @@ c.showPage()
 
 # Next steps
 c.setFillColor(NAVY); c.rect(0,0,W,H,fill=1,stroke=0); header(c,10,'Next steps')
-text(c,'아이디어를 실제 사업으로 옮기는 순서',42,H-92,25,HexColor('#FFFFFF'),'MalgunBold')
+text(c,'구축안을 실제 사업으로 옮기는 순서',42,H-92,25,HexColor('#FFFFFF'),'MalgunBold')
 steps=[('01','권리·현황','소유·경계·영업·용도·시설 상태 원문 확인'),('02','기술 실사','구조·지질·수문·사면·배수·환경 기준선'),('03','사업 게이트','범위·CAPEX/OPEX·단계·운영주체·중단 조건'),('04','설계 착수','건축·구조·MEP·소방·의료·식량 전문팀 통합')]
 for i,(n,title,body) in enumerate(steps):
     y=H-160-i*70
@@ -282,6 +282,6 @@ text(c,'PROJECT ENQUIRY',60,112,6.5,EMERALD,'MalgunBold')
 text(c,'웹사이트에서 방문·현장 확인, 사업 검토, 건축·기술 협업과 지역·운영 협력 문의를 남길 수 있습니다.',60,86,10,HexColor('#FFFFFF'),'MalgunBold')
 text(c,'개인정보는 문의 응대를 위해 수집하며 최대 1년 보관 후 삭제하는 정책을 전제로 합니다.',60,63,7,MUTED)
 text(c,'AI BUNKER HOUSE NO.1',W-220,112,8,GOLD,'MalgunBold')
-text(c,'TACOMA JANGSU CONCEPT',W-220,93,6.5,MUTED,'MalgunBold')
+text(c,'TACOMA JANGSU MASTER PLAN',W-235,93,6.5,MUTED,'MalgunBold')
 footer(c); c.save()
 print(OUT)
