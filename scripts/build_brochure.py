@@ -8,7 +8,7 @@ from reportlab.lib.utils import ImageReader
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / 'public' / 'brochure' / 'ai-bunker-house-tacoma-brochure.pdf'
+OUT = ROOT / 'public' / 'brochure' / 'ai-bunker-house-tacoma-master-plan.pdf'
 CACHE = ROOT / 'tmp' / 'pdfs' / 'image-cache'
 CACHE.mkdir(parents=True, exist_ok=True)
 W, H = landscape(A4)

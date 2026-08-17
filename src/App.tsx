@@ -201,7 +201,7 @@ export default function App() {
             <Reveal delay={0.12}><article><span>03</span><h3>작은 실증으로 검증</h3><p>에너지·보안·물·스마트팜 모듈을 작게 운영해 비용과 유지관리 난이도를 기록합니다.</p></article></Reveal>
             <Reveal delay={0.18}><article><span>04</span><h3>근거가 있을 때 확장</h3><p>지질·지하수·피난·인허가와 운영 인력이 확인된 범위에서만 지하 프로그램을 결정합니다.</p></article></Reveal>
           </div>
-          <div className="download-card"><div><Sparkles /><span><small>한눈에 보는 프로젝트 안내서 · PDF</small><strong>핵심 장면, 6개 층과 확인 과제를<br />한 문서에서 차분히 살펴보세요.</strong></span></div><a className="button button-primary" href="/brochure/ai-bunker-house-tacoma-brochure.pdf" download>안내서 내려받기<Download /></a></div>
+          <div className="download-card"><div><Sparkles /><span><small>한눈에 보는 구축안 안내서 · PDF</small><strong>핵심 장면, 6개 층과 확인 과제를<br />한 문서에서 차분히 살펴보세요.</strong></span></div><a className="button button-primary" href="/brochure/ai-bunker-house-tacoma-master-plan.pdf" download>구축안 내려받기<Download /></a></div>
         </section>
 
         <section id="contact" className="section section-contact">
